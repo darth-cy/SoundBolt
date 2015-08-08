@@ -4,7 +4,7 @@ window.Soundbolt = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    console.log("Initialize!");
   }
 };
 
