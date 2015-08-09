@@ -14,5 +14,72 @@
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+$violet: #7301a0;
+$violetDark: #510170;
+$violetDarker: #21002E;
+$violetLight: #B401FA;
+
+$pink: #BB0079;
+$pinkDark: #830055;
+$pinkDarker: #350023;
+$pinkLight: #FC00A4;
+
+$green: #A2E400;
+$greenDark: #72A000;
+$greenDarker: #2E4100;
+$greenLight: #B5FE00;
+
+$yellow: #E3EF00;
+$yellowDark: #9FA800;
+$yellowDarker: #414400;
+$yellowLight: #F2FF00;
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  font-family: "Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+}
+
+.title-navbar{
+  background: $violet;
+  height: 80px;
+  font-size: 36px;
+}
+
+.title-elements{
+  color: white;
+  bottom: 10px;
+  padding: 15px 0px 10px 0px
+}
+
+.title-small{
+  font-size: 18px;
+  bottom: 10px;
+  padding: 30px 0px 10px 0px;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.title-container{
+  height: 80px;
+  position: relative;
+}
+
+.navbar-buffer{
+  height: 80px;
+  display: block;
+  width: 100%;
+}
+
+.elegent-link{
+  color: white;
+  text-decoration: none;
+}
+
+.elegent-link:hover {
+  color: $yellowLight;
+  text-decoration: none;
+}
