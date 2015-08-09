@@ -112,3 +112,34 @@ body {
   padding: 50px;
   z-index: 1;
 }
+
+.sign-in-form .btn-primary{
+  background-color: $violetDark;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border: 1px solid white;
+}
+
+.title-info-content{
+  margin: 0 auto;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  padding: 30px 0px 0px 0px;
+  width: 900px;
+  color: white;
+}
+
+.info-jumbo-first {
+  text-align: left;
+  background-image: url("/assets/title-pic-2.jpg");
+}
+
+.info-jumbo-second {
+  text-align: right;
+  background-image: url("/assets/title-pic-3.jpg");
+}
+
+.jumbotron{
+  margin: 0;
+}
