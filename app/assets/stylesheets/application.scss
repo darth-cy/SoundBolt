@@ -40,6 +40,7 @@ $yellowLight: #F2FF00;
 
 body {
   font-family: "Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+  background-color: black;
 }
 
 .title-navbar{
@@ -82,4 +83,32 @@ body {
 .elegent-link:hover {
   color: $yellowLight;
   text-decoration: none;
+}
+
+.sign-in-jumbo{
+  background-image: url("/assets/title-pic-1.jpg");
+}
+
+.sign-in-jumbo-content{
+  margin: 0 auto;
+  padding: 30px 0px 0px 0px;
+  width: 900px;
+  color: white;
+  text-align: center;
+}
+
+.sign-in-form-field{
+  background: black;
+  opacity: 1;
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+
+.sign-in-form{
+  margin: 0 auto;
+  width: 400px;
+  padding: 50px;
+  z-index: 1;
 }
