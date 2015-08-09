@@ -24,7 +24,7 @@ gem 'figaro'
 
 # Use paperclip and aws-sdk to interact with file system
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 2'
 
 group :development, :test do
   gem 'pry-rails'
