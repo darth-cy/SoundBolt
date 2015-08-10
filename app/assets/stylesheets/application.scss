@@ -99,7 +99,7 @@ body {
 
 .sign-in-form-field{
   background: black;
-  opacity: 1;
+  opacity: 0.8;
   width: 800px;
   margin: 0 auto;
   margin-top: 80px;
@@ -107,10 +107,11 @@ body {
 }
 
 .sign-in-form{
+  color: white;
+  opacity: 1;
   margin: 0 auto;
   width: 400px;
   padding: 50px;
-  z-index: 1;
 }
 
 .sign-in-form .btn-primary{
