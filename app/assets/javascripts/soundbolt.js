@@ -5,6 +5,10 @@ window.Soundbolt = {
   Routers: {},
   initialize: function() {
     console.log("Initialize!");
+    new SoundBolt.Routers.Router(
+      $rootEl = $("#soundbolt-content-master")
+    );
+
   }
 };
 
