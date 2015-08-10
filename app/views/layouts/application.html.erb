@@ -8,6 +8,26 @@
 </head>
 <body>
 
+  <nav class="navbar navbar-default navbar-fixed-top title-navbar">
+    <div class="container title-container">
+      <div class="navbar-header">
+        <div class="title-elements"><a href="<%= root_url %>" class="elegent-link"><strong>SoundBolt</strong></a></div>
+      </div>
+
+      <!-- <img src="http://netdna.webdesignerdepot.com/uploads/2012/10/9_weather-app-thunder.jpg" alt="#"
+            style="width: 120px; height: 79px; margin-left: 100px;"/> -->
+
+      <div class="nav navbar-nav navbar-right">
+        <div class="title-elements title-small"><a href="#" class="elegent-link">About</a></div>
+        <div class="title-elements title-small"><a href="#" class="elegent-link">Support</a></div>
+        <div class="title-elements title-small"><a href="<%= new_user_url %>" class="elegent-link">Sign Up</a></div>
+      </div>
+    </div>
+  </nav>
+  <div class="navbar-buffer"></div>
+
+
+
 <%= yield %>
 
 </body>
