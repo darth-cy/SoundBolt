@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   validates :username, :email, :password_digest, :session_token, presence: true
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
-  validates :avatar, attachment_size: { less_than: 5.megabytes }
+  validates :avatar, attachment_size: { less_than: 2.megabytes }
 
   has_attached_file :avatar, styles: { thumb: '100x100>', square: '200x200#' }
   after_initialize :ensure_session_token
