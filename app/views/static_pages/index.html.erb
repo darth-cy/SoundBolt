@@ -5,7 +5,8 @@
       <h2>With Lightening Inspiration</h2>
 
       <div class="sign-in-form-field">
-        <form class="form-group sign-in-form">
+        <form action="<%= session_url %>" class="form-group sign-in-form" method="post">
+          <%= insert_authenticity_token %>
           <h2>Sign in to your Account</h2>
           <br>
           <label for="username_field"><h4>Username</h4></label>
