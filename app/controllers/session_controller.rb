@@ -1,9 +1,5 @@
 class SessionController < ApplicationController
 
-  def new
-    render :new
-  end
-
   def create
     @user = User.find_by_email(session_params[:email]);
 
@@ -12,7 +8,7 @@ class SessionController < ApplicationController
       redirect_to user_url(@user)
     else
       flash.now[:errors] = @user.errors.full_messages
-      render :new
+      redirect_to root_url
     end
   end
 
