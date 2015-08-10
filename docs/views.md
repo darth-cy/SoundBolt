@@ -22,6 +22,8 @@
 
 ## Title Screen
 + The front door.
++ Please visit the heroku link. The front page is already on.
+
 
 [user-show]: ./wireframes/user_show.jpg
 [user-show-focus]: ./wireframes/user_show_focus.jpg
