@@ -8,11 +8,17 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
 
     this.addTracks();
 
-    this.listenTo(this.collection, 'add remove reset sync', this.render.bind(this));
+    this.listenTo(this.collection, 'add remove reset sync', this.updateRender.bind(this));
+  },
+
+  updateRender: function(){
+    this.addTracks();
+    this.render();
   },
 
   addTracks: function(){
     var thisField = this;
+    thisField.emptyComponents();
 
     this.collection.each(function(track){
       var trackView = new Soundbolt.Views.TrackView({ track: track });

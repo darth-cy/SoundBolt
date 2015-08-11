@@ -21,6 +21,11 @@ Backbone.FusedView = Backbone.View.extend({
     });
   },
 
+  emptyComponents: function(){
+    this._allComponents = {};
+    return _(this._allComponents);
+  },
+
   _renderComponent: function(component){
     this.$el.append(component.$el);
     component.delegateEvents();

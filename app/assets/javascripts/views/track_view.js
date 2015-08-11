@@ -4,10 +4,10 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
 
   initialize: function(options){
     this.model = options.track;
+    this.listenTo(this.model, 'sync', this.render().$el);
   },
 
   render: function(){
-    debugger;
     var content = this.template({ track: this.model });
     this.$el.html(content);
     return this;
