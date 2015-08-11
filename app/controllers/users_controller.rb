@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
     # nothing to access here.
+    # Dummy Comments
   end
 
   def show
