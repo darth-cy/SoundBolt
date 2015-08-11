@@ -1,24 +1,23 @@
 Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   template: JST['user_index'],
+  className: 'user-view-normal-master',
 
   initialize: function(options){
     this.model = options.user;
-    this.render();
+    this.collection = options.tracks;
 
     this.addSideBar();
     this.addOwnTrackField();
-
-    this.listenTo(this.collection, 'add change remove reset', this.render.bind(this));
   },
 
   addSideBar: function(){
     var sideBarView = new Soundbolt.Views.SideBarView({ user: this.model });
-    this.addComponent('.user-view-normal-master', sideBarView);
+    this.addComponent(sideBarView);
   },
 
   addOwnTrackField: function(){
-    // var tracksView = new Soundbolt.Views.TracksFieldView({ tracks: this.collection });
-    // this.collection.each
+    var tracksFieldView = new Soundbolt.Views.TracksFieldView({ tracks: this.collection });
+    this.addComponent(tracksFieldView);
   },
 
   render: function(){

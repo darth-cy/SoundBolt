@@ -6,8 +6,8 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    render json: @user
+    @user = User.includes(:tracks).find(params[:id])
+    render 'show'
   end
 
   private
