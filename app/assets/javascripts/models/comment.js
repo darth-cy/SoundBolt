@@ -1,3 +1,3 @@
-SoundBolt.Models.Comment = Backbone.Model.extend({
+Soundbolt.Models.Comment = Backbone.Model.extend({
   urlRoot: ""
 })

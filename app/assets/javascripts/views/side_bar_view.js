@@ -1,4 +1,4 @@
-SoundBolt.Views.SideBarView = Backbone.View.extend({
+Soundbolt.Views.SideBarView = Backbone.View.extend({
   template: JST['side_bar'],
 
   initialize: function(options){

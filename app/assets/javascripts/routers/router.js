@@ -1,4 +1,4 @@
-SoundBolt.Routers.Router = Backbone.Router.extend({
+Soundbolt.Routers.Router = Backbone.Router.extend({
   routes: {
     "user/home": "index"
   },

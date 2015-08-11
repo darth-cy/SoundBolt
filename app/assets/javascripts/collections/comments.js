@@ -1,4 +1,4 @@
-SoundBolt.Collections.Comments = Backbone.Collection.extend({
+Soundbolt.Collections.Comments = Backbone.Collection.extend({
   url: "",
-  model: SoundBolt.Models.Comment
+  model: Soundbolt.Models.Comment
 })

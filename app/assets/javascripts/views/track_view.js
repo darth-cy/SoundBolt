@@ -1,4 +1,4 @@
-SoundBolt.Views.TrackView = Backbone.View.extend({
+Soundbolt.Views.TrackView = Backbone.View.extend({
   template: JST['track'],
 
   initialize: function(options){

@@ -1,3 +1,3 @@
-SoundBolt.Models.User = Backbone.Model.extend({
+Soundbolt.Models.User = Backbone.Model.extend({
   urlRoot: "/users"
 })

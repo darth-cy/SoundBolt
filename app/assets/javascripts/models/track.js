@@ -1,3 +1,3 @@
-SoundBolt.Models.Track = Backbone.Model.extend({
-  
+Soundbolt.Models.Track = Backbone.Model.extend({
+
 })

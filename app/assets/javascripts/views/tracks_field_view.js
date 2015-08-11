@@ -1,4 +1,4 @@
-SoundBolt.Views.TracksFieldView = Backbone.FusedView.extend({
+Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   template: JST['tracks_field'],
 
   initialize: function(){
@@ -14,7 +14,7 @@ SoundBolt.Views.TracksFieldView = Backbone.FusedView.extend({
       var trackView = new SoundBolt.Views.TrackView({ track: track });
       thisView.addComponent('user-view-normal-trackfield', trackView);
     })
-  }
+  },
 
   render: function(){
     var content = this.template({ tracks: this.collection });

@@ -1,4 +1,4 @@
-SoundBolt.Views.UserIndex = Backbone.FusedView.extend({
+Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   template: JST['user_index'],
 
   initialize: function(){
