@@ -27,6 +27,20 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, styles: { thumb: '100x100>', square: '200x200#' }
   after_initialize :ensure_session_token
 
+  has_many :followings
+  
+  has_many{
+    :followed_users,
+    through: :followings,
+    source: :followed_user
+  }
+
+  has_many{
+    :following_users,
+    through: :followings,
+    source: :following_user
+  }
+
   def password=(password)
     self.password_digest = BCypt::Password.create(password)
   end
