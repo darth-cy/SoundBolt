@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, styles: { thumb: '100x100>', square: '200x200#' }, storage: :s3
   after_initialize :ensure_session_token
+  validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   has_many :tracks
   has_many :albums
   has_many :comments

@@ -1,5 +1,6 @@
 <div class="sign-up-form-field">
-  <form class="form-group">
+  <form action="<%= users_url %>" class="form-group" method="post" enctype="multipart/form-data">
+    <%= insert_authenticity_token %>
     <h3>Sign up for an Account</h3>
 
     <br>
@@ -23,8 +24,7 @@
     <br>
 
     <label for="avatar_field">Upload a Profile Picture</label>
-    <input type="file" name="user[avatar]"
-           id="avatar_field">
+    <%= file_field(:user, :avatar) %>
 
     <br>
 
