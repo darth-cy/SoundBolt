@@ -11,10 +11,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150810005956) do
+ActiveRecord::Schema.define(version: 20150811025638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "albums", force: :cascade do |t|
+    t.integer  "user_id",            null: false
+    t.string   "title",              null: false
+    t.text     "description"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id",                      null: false
+    t.integer  "track_id",                     null: false
+    t.string   "content",           limit: 50
+    t.float    "timeline_position",            null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "comments", ["track_id"], name: "index_comments_on_track_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "followings", force: :cascade do |t|
+    t.integer  "following_user_id", null: false
+    t.integer  "followed_user_id",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "followings", ["followed_user_id"], name: "index_followings_on_followed_user_id", using: :btree
+  add_index "followings", ["following_user_id"], name: "index_followings_on_following_user_id", using: :btree
+
+  create_table "tracks", force: :cascade do |t|
+    t.integer  "user_id",                null: false
+    t.integer  "album_id"
+    t.string   "title",                  null: false
+    t.text     "description"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "trackfile_file_name"
+    t.string   "trackfile_content_type"
+    t.integer  "trackfile_file_size"
+    t.datetime "trackfile_updated_at"
+  end
+
+  add_index "tracks", ["user_id"], name: "index_tracks_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",            null: false
