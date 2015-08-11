@@ -4,7 +4,6 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
 
   initialize: function(options){
     this.model = options.user;
-    this.collection = options.tracks;
 
     this.addSideBar();
     this.addOwnTrackField();
@@ -16,7 +15,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   },
 
   addOwnTrackField: function(){
-    var tracksFieldView = new Soundbolt.Views.TracksFieldView({ tracks: this.collection });
+    var tracksFieldView = new Soundbolt.Views.TracksFieldView({ tracks: this.model.tracks() });
     this.addComponent(tracksFieldView);
   },
 

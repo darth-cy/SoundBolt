@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:index, :show]
+    resources :tracks, only: [:index, :show, :new, :create]
   end
 end

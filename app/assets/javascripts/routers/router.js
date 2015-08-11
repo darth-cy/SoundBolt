@@ -8,14 +8,13 @@ Soundbolt.Routers.Router = Backbone.Router.extend({
   },
 
   index: function(){
-    alert(currentUserId);
+    console.log("Current user id: " + window.currentUserId); // TEST: verify current user id.
 
-    var tracks = new Soundbolt.Collections.Tracks();
-    var user = new Soundbolt.Models.User({ id: currentUserId, collection: tracks });
+    var user = new Soundbolt.Models.User({ id: currentUserId });
 
     user.fetch();
 
-    var indexView = new Soundbolt.Views.UserIndex({ user: user, tracks: tracks });
+    var indexView = new Soundbolt.Views.UserIndex({ user: user });
     this._swap(indexView);
   },
 

@@ -15,7 +15,7 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
     var thisField = this;
 
     this.collection.each(function(track){
-      var trackView = new SoundBolt.Views.TrackView({ track: track });
+      var trackView = new Soundbolt.Views.TrackView({ track: track });
       thisField.addComponent(trackView);
     })
   },
@@ -24,5 +24,7 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
     var content = this.template({ tracks: this.collection });
     this.$el.html(content);
     this.fusion();
+
+    return this;
   }
 })

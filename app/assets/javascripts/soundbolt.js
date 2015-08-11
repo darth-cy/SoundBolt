@@ -4,7 +4,7 @@ window.Soundbolt = {
   Views: {},
   Routers: {},
   initialize: function() {
-    console.log("Initialize!");
+    console.log("Soundbolt namespace is initialize."); // TEST: initialize Soundbolt namespace
     new Soundbolt.Routers.Router({
       $rootEl: $("#soundbolt-content-master")
     });
