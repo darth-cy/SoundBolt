@@ -24,11 +24,11 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :avatar, attachment_size: { less_than: 2.megabytes }
 
-  has_attached_file :avatar, styles: { thumb: '100x100>', square: '200x200#' }
+  has_attached_file :avatar, styles: { thumb: '100x100>', square: '200x200#' }, storage: :s3
   after_initialize :ensure_session_token
 
   has_many :followings
-  
+
   has_many{
     :followed_users,
     through: :followings,

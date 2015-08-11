@@ -18,4 +18,5 @@ class Album < ActiveRecord::Base
   validates :user, :title, presence: true
   belongs_to :user
   has_many :tracks
+  has_attached_file :cover, styles: { thumb: '100x100>', square: '200x200#' }, storage: :s3
 end
