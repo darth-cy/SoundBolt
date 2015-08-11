@@ -1,6 +1,8 @@
 Soundbolt.Views.SideBarView = Backbone.View.extend({
   template: JST['side_bar'],
 
+  className: 'user-view-normal-sidebar',
+
   initialize: function(options){
     this.model = options.user;
     this.listenTo(this.model, 'sync', this.render.bind(this));

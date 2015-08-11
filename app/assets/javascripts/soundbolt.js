@@ -5,9 +5,9 @@ window.Soundbolt = {
   Routers: {},
   initialize: function() {
     console.log("Initialize!");
-    new Soundbolt.Routers.Router(
-      $rootEl = $("#soundbolt-content-master")
-    );
+    new Soundbolt.Routers.Router({
+      $rootEl: $("#soundbolt-content-master")
+    });
     Backbone.history.start();
   }
 };

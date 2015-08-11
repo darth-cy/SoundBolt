@@ -3,6 +3,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
 
   initialize: function(options){
     this.model = options.user;
+    this.render();
 
     this.addSideBar();
     this.addOwnTrackField();
@@ -11,12 +12,13 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   },
 
   addSideBar: function(){
-    var sideBarView = new SoundBolt.Views.SideBarView({ user: this.model });
-    this.addComponent('.user-view-normal-sidebar', sideBarView);
+    var sideBarView = new Soundbolt.Views.SideBarView({ user: this.model });
+    this.addComponent('.user-view-normal-master', sideBarView);
+    debugger;
   },
 
   addOwnTrackField: function(){
-    var tracksView = new SoundBolt.Views.TracksView({ tracks: this.collection });
+    // var tracksView = new Soundbolt.Views.TracksFieldView({ tracks: this.collection });
     // this.collection.each
   },
 
@@ -25,5 +27,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
     this.$el.html(content);
 
     this.fusion();
+
+    return this;
   }
 })

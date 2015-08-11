@@ -8,9 +8,12 @@ Soundbolt.Routers.Router = Backbone.Router.extend({
   },
 
   index: function(){
+    Backbone.history.navigate("");
     alert(currentUserId);
-    var
-    var indexView = new Soundbolt.Views.UserIndex({ user: user })
+    var user = new Soundbolt.Models.User({ id: currentUserId });
+    user.fetch();
+    var indexView = new Soundbolt.Views.UserIndex({ user: user });
+    this._swap(indexView);
   },
 
   _swap: function(view){
