@@ -40,8 +40,10 @@
   </div>
 
   <script>
-    var currentUserId = <%= current_user.id %>;
-    var currentUserAvatarUrl = '<%= current_user.avatar.url %>';
+    <% if current_user %>
+      var currentUserId = <%= current_user.id %>;
+      var currentUserAvatarUrl = '<%= current_user.avatar.url %>';
+    <% end %>
   </script>
 
 </body>
