@@ -79,4 +79,9 @@ class User < ActiveRecord::Base
   def ensure_session_token
     self.session_token ||= User.generate_session_token
   end
+
+  def self.find_by_credentials(email, password)
+    @user = User.find_by_email(email)
+    (@user && @user.is_password?(password)) ? @user : nil
+  end
 end

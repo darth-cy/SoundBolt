@@ -1,9 +1,9 @@
 class SessionsController < ApplicationController
 
   def create
-    @user = User.find_by_email(session_params[:email]);
+    @user = User.find_by_credentials(session_params[:email], sesssion_params[:password]);
 
-    if @user && @user.is_password?(session_params[:password]);
+    if @user
       log_in!(@user)
       redirect_to user_url(@user)
     else
@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out!
+    redirect_to root_url
   end
 
   private
