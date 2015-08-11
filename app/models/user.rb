@@ -28,16 +28,17 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   has_many :tracks
   has_many :albums
+  has_many :comments
 
   has_many(
-    :followings_followed,
+    :followings_followed, # NOTE: The current model is followed entity in this association.
     foreign_key: :followed_user_id,
     primary_key: :id,
     class_name: 'Following'
   )
 
   has_many(
-    :followings_following,
+    :followings_following, # NOTE: The current model is the following entity in this association.
     foreign_key: :following_user_id,
     primary_key: :id,
     class_name: 'Following'
@@ -45,13 +46,13 @@ class User < ActiveRecord::Base
 
   has_many(
     :followed_users,
-    through: :followings_followed,
+    through: :followings_following,
     source: :followed_user
   )
 
   has_many(
     :following_users,
-    through: :followings_following,
+    through: :followings_followed,
     source: :following_user
   )
 
