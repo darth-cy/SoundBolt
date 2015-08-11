@@ -1,0 +1,6 @@
+<!-- have user passed in -->
+
+<h1><%= user.get('username') %></h1>
+<h1><%= user.get('email') %></h1>
+<h1><%= user.get('description') %></h1>
+<img src="<%= asset_url(user.avatar.url(:thumb)) %>" alt="#" />

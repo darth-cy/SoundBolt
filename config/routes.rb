@@ -4,4 +4,8 @@ Rails.application.routes.draw do
 
   resources :users
   resource :session, only: [:create, :destroy]
+
+  namespace :api do
+    resources :users, only: [:index, :show]
+  end
 end

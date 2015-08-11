@@ -35,9 +35,13 @@
     <h1><%= flash[:errors] %></h1>
   <% end %>
 
-<div class="soundbolt-content-master">
-  <%= yield %>
-</div>
+  <div class="soundbolt-content-master">
+    <%= yield %>
+  </div>
+
+  <script>
+    var currentUserId = <%= current_user.id %>;
+  </script>
 
 </body>
 </html>

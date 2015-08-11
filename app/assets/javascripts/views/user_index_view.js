@@ -1,7 +1,9 @@
 Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   template: JST['user_index'],
 
-  initialize: function(){
+  initialize: function(options){
+    this.model = options.user;
+
     this.addSideBar();
     this.addOwnTrackField();
 
@@ -15,7 +17,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
 
   addOwnTrackField: function(){
     var tracksView = new SoundBolt.Views.TracksView({ tracks: this.collection });
-    this.collection.each
+    // this.collection.each
   },
 
   render: function(){
