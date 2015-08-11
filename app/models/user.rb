@@ -26,18 +26,32 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, styles: { thumb: '100x100>', square: '200x200#' }, storage: :s3
   after_initialize :ensure_session_token
+  has_many :tracks
+  has_many :albums
 
-  has_many :followings
+  has_many(
+    :followings_followed,
+    foreign_key: :followed_user_id,
+    primary_key: :id,
+    class_name: 'Following'
+  )
+
+  has_many(
+    :followings_following,
+    foreign_key: :following_user_id,
+    primary_key: :id,
+    class_name: 'Following'
+  )
 
   has_many(
     :followed_users,
-    through: :followings,
+    through: :followings_followed,
     source: :followed_user
   )
 
   has_many(
     :following_users,
-    through: :followings,
+    through: :followings_following,
     source: :following_user
   )
 

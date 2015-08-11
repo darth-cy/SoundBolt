@@ -17,6 +17,7 @@
 
 class Track < ActiveRecord::Base
   validates :user, :title, presence: true
+  has_many :comments
   belongs_to :user
   belongs_to :album
   has_attached_file :trackfile, storage: :s3
