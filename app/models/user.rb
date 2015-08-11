@@ -29,17 +29,17 @@ class User < ActiveRecord::Base
 
   has_many :followings
 
-  has_many{
+  has_many(
     :followed_users,
     through: :followings,
     source: :followed_user
-  }
+  )
 
-  has_many{
+  has_many(
     :following_users,
     through: :followings,
     source: :following_user
-  }
+  )
 
   def password=(password)
     self.password_digest = BCypt::Password.create(password)
