@@ -1,6 +1,12 @@
 <!-- have user passed in -->
 
-<img src="<%= currentUserAvatarUrl %>" alt="#" />
-<h1><%= user.get('username') %></h1>
-<h1><%= user.get('email') %></h1>
-<h1><%= user.get('description') %></h1>
+<img class="user-sidebar-img" src="<%= currentUserAvatarUrl %>" alt="#" />
+<div class="sidebar-username"><%= user.get('username') %></div>
+<div class="sidebar-useremail"><%= user.get('email') %></div>
+<hr>
+<div><%= user.get('description') %></div>
+
+<div class="sidebar-link"><a class="elegent-link-sidebar" href="#">My Own Tracks</a></div>
+<div class="sidebar-link"><a class="elegent-link-sidebar" href="#">My Streams</a></div>
+<div class="sidebar-link"><a class="elegent-link-sidebar" href="#">Create a Song</a></div>
+<div class="sidebar-link"><a class="elegent-link-sidebar" href="#">Explore</a></div>

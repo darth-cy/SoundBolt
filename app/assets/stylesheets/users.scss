@@ -7,3 +7,57 @@
   width: 45%;
   margin: 0 auto;
 }
+
+// User Show Page SideBar CSS
+
+.user-view-normal-sidebar{
+  height: inherit;
+  position: absolute;
+  width: inherit;
+  background: white;
+  top: 80px;
+  left: 20px;
+  border: 10px solid black;
+}
+
+.sidebar-username{
+  margin-left: 15px;
+  color: #808080;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.sidebar-useremail{
+  margin-left: 15px;
+  font-size: 16px;
+  color: #9FA800; //yellow dark
+}
+
+.user-sidebar-img{
+  width: 250px;
+  margin: 20px;
+  padding: 0px;
+  border-style: groove;
+  border-width: 5px;
+  border-color: #72A000; //greenDark
+}
+
+.sidebar-link{
+  border-radius: 10px;
+  font-family: "Arial";
+  padding: 10px;
+  text-align: center;
+  background: #B401FA; //violetLight
+  margin: 25px;
+}
+
+.elegent-link-sidebar{
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.elegent-link-sidebar:hover{
+  color: #72A000; //greenDark
+  text-decoration: none;
+}
