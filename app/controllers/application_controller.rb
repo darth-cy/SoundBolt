@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
-    !!User.find_by_session_token(session[:session_token])
+    User.find_by_session_token(session[:session_token])
   end
 
   def log_in!(user)
@@ -13,8 +13,8 @@ class ApplicationController < ActionController::Base
   end
 
   def log_out!
+    current_user.reset_session_token!
     session[:session_token] = nil;
-    user.reset_session_token!
   end
 
   def bounce_back_if_not_signed_in

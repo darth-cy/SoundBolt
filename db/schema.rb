@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20150811025638) do
   add_index "tracks", ["user_id"], name: "index_tracks_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",            null: false
+    t.string   "username"
     t.string   "email",               null: false
     t.string   "description"
     t.string   "password_digest",     null: false

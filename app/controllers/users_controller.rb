@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :bounce_back_if_not_signed_in, only: [:show, :destroy]
+  before_action :redirect_home_if_signed_in, only: [:index, :new, :create]
 
   def index
     # nothing to access here.
@@ -17,6 +19,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in!(@user)
       redirect_to user_url(@user)
     else
       flash.now[:errors] = @user.errors.full_messages

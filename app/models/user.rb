@@ -19,7 +19,7 @@
 class User < ActiveRecord::Base
   attr_reader :password
 
-  validates :username, :email, :password_digest, :session_token, presence: true
+  validates :email, :password_digest, :session_token, presence: true
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :avatar, attachment_size: { less_than: 2.megabytes }
