@@ -13,7 +13,6 @@
 
 class Comment < ActiveRecord::Base
   validates :user, :track, :timeline_position, presence: true
-  validates :timeline_position, { minimum: 0.0, maximum: 100.0}
   belongs_to :user
   belongs_to :track
 end
