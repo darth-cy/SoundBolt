@@ -14,7 +14,6 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   addSideBar: function(){
     var sideBarView = new Soundbolt.Views.SideBarView({ user: this.model });
     this.addComponent('.user-view-normal-master', sideBarView);
-    debugger;
   },
 
   addOwnTrackField: function(){

@@ -1,6 +1,6 @@
 Soundbolt.Views.SideBarView = Backbone.View.extend({
   template: JST['side_bar'],
-
+  tagName: 'section',
   className: 'user-view-normal-sidebar',
 
   initialize: function(options){
