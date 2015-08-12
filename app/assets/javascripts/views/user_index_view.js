@@ -1,6 +1,6 @@
 Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   template: JST['user_index'],
-  className: 'user-view-normal-master',
+  className: 'user-view-normal-master container-fluid',
 
   initialize: function(options){
     this.model = options.user;

@@ -1,14 +1,15 @@
 <!-- have user passed in -->
 
 <img class="user-sidebar-img" src="<%= currentUserAvatarUrl %>" alt="https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/missing.png" />
-<div class="sidebar-username"><%= user.get('username') %></div>
-<div class="sidebar-useremail"><%= user.get('email') %></div>
+<hr>
+<h1 class="sidebar-username"><%= user.get('username') %></h1>
+<p class="sidebar-useremail"><%= user.get('email') %></p>
 <hr>
 <div><%= user.get('description') %></div>
 
-<div class="sidebar-link"><a class="elegent-link-sidebar" href="#">My Own Tracks</a></div>
-<div class="sidebar-link"><a class="elegent-link-sidebar" href="#">My Streams</a></div>
-<div class="sidebar-link"><a class="elegent-link-sidebar" href="#">Create a Song</a></div>
-<div class="sidebar-link"><a class="elegent-link-sidebar" href="#">Explore</a></div>
+<a class="btn btn-default btn-lg btn-block" href="#">My Own Tracks</a></div>
+<a class="btn btn-default btn-lg btn-block" href="#">My Streams</a></div>
+<a class="btn btn-default btn-lg btn-block" href="#">Create a Song</a></div>
+<a class="btn btn-default btn-lg btn-block" href="#">Explore</a></div>
 
 <hr>

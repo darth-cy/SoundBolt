@@ -14,37 +14,15 @@
  *= require_self
  */
 
-// $violet: #7301a0;
-// $violetDark: #510170;
-// $violetDarker: #21002E;
-// $violetLight: #B401FA;
-//
-// $pink: #BB0079;
-// $pinkDark: #830055;
-// $pinkDarker: #350023;
-// $pinkLight: #FC00A4;
-//
-// $green: #A2E400;
-// $greenDark: #72A000;
-// $greenDarker: #2E4100;
-// $greenLight: #B5FE00;
-//
-// $yellow: #E3EF00;
-// $yellowDark: #9FA800;
-// $yellowDarker: #414400;
-// $yellowLight: #F2FF00;
-
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 body {
-  font-family: "Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+  // font-family: "Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
   background-color: black;
 }
 
 .title-navbar{
-  height: 80px;
   font-size: 36px;
 }
 
@@ -112,6 +90,10 @@ body {
   padding: 50px;
 }
 
+.sign-in-form > input{
+  text-align: center;
+}
+
 .sign-in-form .btn-primary{
   color: white;
   font-size: 24px;
@@ -140,4 +122,9 @@ body {
 
 .jumbotron{
   margin: 0;
+}
+
+// Tool Bar CSS
+
+.soundbolt-toolbar{
 }

@@ -6,12 +6,13 @@
   color: white;
   width: 45%;
   margin: 0 auto;
+  margin-top: 50px;
 }
 
 // User Show Page SideBar CSS
 
 .user-view-normal-master{
-  background-image: url("http://onwardstate.com/wp-content/uploads/2012/01/rave.jpg");
+  // background-image: url("http://onwardstate.com/wp-content/uploads/2012/01/rave.jpg");
   height: 2000px;
 }
 
@@ -29,33 +30,23 @@
 }
 
 .sidebar-username{
-  margin-left: 15px;
-  color: #808080;
-  font-size: 36px;
-  font-weight: bold;
+  margin-left: 20px;
+  font-weight: bolder;
 }
 
 .sidebar-useremail{
-  margin-left: 15px;
-  font-size: 16px;
-  color: #9FA800; //yellow dark
+  margin-left: 20px;
 }
 
 .user-sidebar-img{
   width: 250px;
+  height: 250px;
   margin: 20px;
   padding: 0px;
-  border-style: groove;
-  border-width: 5px;
-  border-color: #72A000; //greenDark
 }
 
 .sidebar-link{
   border-radius: 10px;
-  font-family: "Arial";
-  padding: 10px;
-  text-align: center;
-  background: #B401FA; //violetLight
   margin: 25px;
 }
 
