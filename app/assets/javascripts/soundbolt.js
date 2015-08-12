@@ -5,14 +5,15 @@ window.Soundbolt = {
   Routers: {},
   initialize: function() {
 
-    new Soundbolt.Routers.TrackRouter({
-      $playerEl: $("#soundbolt-player-master")
-    })
-
     new Soundbolt.Routers.Router({
       $rootEl: $("#soundbolt-content-master"),
     });
 
+    new Soundbolt.Routers.TrackRouter({
+      $rootEl: $("#soundbolt-content-master"),
+      $playerEl: $("#soundbolt-player-master")
+    })
+    
     Backbone.history.start();
   }
 };

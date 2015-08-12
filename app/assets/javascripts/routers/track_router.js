@@ -6,6 +6,7 @@ Soundbolt.Routers.TrackRouter = Backbone.Router.extend({
   },
 
   initialize: function(options){
+    this.$rootEl = options.$rootEl;
     this.$playerEl = options.$playerEl;
     this.renderInitial();
   },
@@ -28,7 +29,7 @@ Soundbolt.Routers.TrackRouter = Backbone.Router.extend({
   focusOnTrack: function(){
     var track = this._currentTrack;
 
-    var userFocus =
+    var userFocus = new Soundbolt.Views.UserFocus({ track: track });
   },
 
   exitFocus: function(){
