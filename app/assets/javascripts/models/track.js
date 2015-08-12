@@ -3,7 +3,7 @@ Soundbolt.Models.Track = Backbone.Model.extend({
 
   comments: function(){
     if(!this._comments){
-      this._comments = new Soundbolt.Collections.Comments({ track: this });
+      this._comments = new Soundbolt.Collections.Comments();
     }
     return this._comments;
   },
@@ -13,6 +13,6 @@ Soundbolt.Models.Track = Backbone.Model.extend({
       this.comments().set(response.comments);
       delete response.comments;
     }
-    return resposne;
+    return response;
   }
 })

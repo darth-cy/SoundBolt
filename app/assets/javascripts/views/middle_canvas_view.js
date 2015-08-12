@@ -7,7 +7,7 @@ Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
   },
 
   render: function(){
-    var content = this.template({ comments: comments });
+    var content = this.template({ comments: this.collection });
     this.$el.html(content);
     return this;
   }

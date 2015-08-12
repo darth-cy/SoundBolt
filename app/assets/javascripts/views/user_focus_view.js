@@ -31,7 +31,7 @@ Soundbolt.Views.UserFocus = Backbone.FusedView.extend({
 
   addCommentSection: function(){
     var comments = this.model.comments();
-    var commentSection = new Soundbolt.Views.commentSection({ comments: comments });
+    var commentSection = new Soundbolt.Views.CommentSection({ comments: comments });
     this.addComponent(commentSection);
   },
 

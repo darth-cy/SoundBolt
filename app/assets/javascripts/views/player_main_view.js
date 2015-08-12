@@ -9,12 +9,15 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
   initialize: function(options){
     if(options.track){
       this.model = options.track;
-      this.model.fetch();
+      if(this.model.id){
+        this.model.fetch();
+      }
     }else{
       this.model = new Soundbolt.Models.Track();
     }
 
     this.listenTo(this.model, 'change remove add reset', this.render.bind(this));
+    this.listenTo(this.model, 'switch', this.render.bind(this));
   },
 
   switchToFocus: function(){
