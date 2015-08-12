@@ -9,3 +9,17 @@
 <button type="button" class="btn btn-default btn-lg">
   Stop
 </button>
+
+<button type="button" class="btn btn-default btn-lg">
+  <% if (track.id) {%>
+    Currently Playing: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <strong><%= track.get('title') %></strong>
+  <%}else{  %>
+    Currently Playing: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nothing is playing.
+  <%} %>
+</button>
+
+  <!-- <h1><%= track.get('title') %></h1> -->
+
+<!-- <div class="soundbolt-player-master-content">
+  <p><%= track.get('description') %></p>
+</div> -->
