@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(:tracks).find(params[:id])
+    @user = User.includes(:tracks).includes(:streams).find(params[:id])
     render 'show'
   end
 

@@ -46,15 +46,21 @@ class User < ActiveRecord::Base
   )
 
   has_many(
-    :followed_users,
+    :followed_users, # NOTE: The current model is the following entity in this association.
     through: :followings_following,
     source: :followed_user
   )
 
   has_many(
-    :following_users,
+    :following_users, # NOTE: The current model is the followed entity in this association.
     through: :followings_followed,
     source: :following_user
+  )
+
+  has_many(
+    :streams,
+    through: :followed_users,
+    source: :tracks
   )
 
   def password=(password)

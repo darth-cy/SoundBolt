@@ -15,9 +15,11 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
     this.streams = this.model.streams();
 
     this.addSideBar();
-    this.addOwnTrackField();
+    this.displayOwnTracks();
 
     this.listenTo(this.model, 'sync', this._resetAssets.bind(this));
+
+
   },
 
   displayOwnTracks: function(){
@@ -54,7 +56,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
     this.$el.html(content);
 
     this.fusion();
-
+    
     return this;
   },
 
