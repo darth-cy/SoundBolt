@@ -5,5 +5,10 @@
 <h1 class="track-tab-header"><%= track.get('title') %></h1>
 <p class="track-tab-paragraph"> <%= track.get('description') %></p>
 
+<audio class="track-tab-audio" controls>
+  <source src="https://s3.amazonaws.com/soundbolt-appacademy-2015/music-streams/131+Battle+Maison.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 <canvas class="track-waveform">
 </canvas>
