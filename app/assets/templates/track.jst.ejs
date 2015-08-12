@@ -1,1 +1,7 @@
-<h1><%= track.get('title') %></h1>
+
+<img class="track-tab-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Simple_Music.svg/2000px-Simple_Music.svg.png" alt="" />
+<h1 class="track-tab-header"><%= track.get('title') %></h1>
+<p class="track-tab-paragraph"> <%= track.get('description') %></p>
+
+<canvas id="track-waveform">
+</canvas>

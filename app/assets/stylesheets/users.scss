@@ -11,13 +11,15 @@
 // User Show Page SideBar CSS
 
 .user-view-normal-sidebar{
+  border-radius: 5px;
   height: inherit;
   position: absolute;
   width: inherit;
-  background: white;
+  // background: white;
+  background: #FEFFE3; //external: yellowVeryLight
   top: 80px;
   left: 20px;
-  border: 10px solid black;
+  margin: 10px;
 }
 
 .sidebar-username{
@@ -60,4 +62,48 @@
 .elegent-link-sidebar:hover{
   color: #72A000; //greenDark
   text-decoration: none;
+}
+
+// User Show Page TrackField CSS
+
+.user-view-normal-trackfield{
+  position: absolute;
+  top: 80px;
+  left: 350px;
+  height: inherit;
+  width: inherit;
+}
+
+// User Show Page TrackTab CSS
+.track-tab-img{
+  position: absolute;
+  height: 75px;
+  width: 75px;
+  margin: 20px;
+  padding: 10px;
+  border: 3px solid black;
+}
+
+.track-tab-header{
+  margin-top: 25px;
+  margin-left: 125px;
+}
+
+.track-tab-paragraph{
+  margin-left: 125px;
+}
+
+.single-track-tab{
+  border-radius: 5px;
+  background: white;
+  padding: 20px;
+  width: 865px;
+  height: inherit;
+  margin: 15px;
+}
+
+#track-waveform{
+  margin-left: 120px;
+  width: 680px;
+  height: 75px;
 }

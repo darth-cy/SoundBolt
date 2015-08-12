@@ -11,5 +11,9 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
     var content = this.template({ track: this.model });
     this.$el.html(content);
     return this;
+  },
+
+  renderWaveForm: function(){
+
   }
 })
