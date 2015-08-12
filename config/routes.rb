@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:index, :show, :update, :create, :destroy] do
       resources :streams, only: [:index]
-      resources :tracks, only: [:index, :show, :new, :create]
+      resources :tracks, only: [:tracks]
     end
+    resources :tracks, only: [:index, :show, :new, :create]
   end
 end

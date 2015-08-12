@@ -8,6 +8,9 @@ window.Soundbolt = {
     new Soundbolt.Routers.Router({
       $rootEl: $("#soundbolt-content-master")
     });
+    new Soundbolt.Routers.TrackRouter({
+      $playerEl: $("#soundbolt-player-master")
+    })
     Backbone.history.start();
   }
 };
