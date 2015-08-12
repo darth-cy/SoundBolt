@@ -14,25 +14,25 @@
  *= require_self
  */
 
-$violet: #7301a0;
-$violetDark: #510170;
-$violetDarker: #21002E;
-$violetLight: #B401FA;
-
-$pink: #BB0079;
-$pinkDark: #830055;
-$pinkDarker: #350023;
-$pinkLight: #FC00A4;
-
-$green: #A2E400;
-$greenDark: #72A000;
-$greenDarker: #2E4100;
-$greenLight: #B5FE00;
-
-$yellow: #E3EF00;
-$yellowDark: #9FA800;
-$yellowDarker: #414400;
-$yellowLight: #F2FF00;
+// $violet: #7301a0;
+// $violetDark: #510170;
+// $violetDarker: #21002E;
+// $violetLight: #B401FA;
+//
+// $pink: #BB0079;
+// $pinkDark: #830055;
+// $pinkDarker: #350023;
+// $pinkLight: #FC00A4;
+//
+// $green: #A2E400;
+// $greenDark: #72A000;
+// $greenDarker: #2E4100;
+// $greenLight: #B5FE00;
+//
+// $yellow: #E3EF00;
+// $yellowDark: #9FA800;
+// $yellowDarker: #414400;
+// $yellowLight: #F2FF00;
 
 
 @import "bootstrap-sprockets";
@@ -44,7 +44,6 @@ body {
 }
 
 .title-navbar{
-  background: $violetLight;
   height: 80px;
   font-size: 36px;
 }
@@ -81,12 +80,13 @@ body {
 }
 
 .elegent-link:hover {
-  color: $yellowLight;
+  color: white;
   text-decoration: none;
 }
 
 .sign-in-jumbo{
-  background-image: url("https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/title-pic-1.jpg");
+  // background-image: url("https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/title-pic-1.jpg");
+  background-image: url("https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/title-pic-2.jpg");
 }
 
 .sign-in-jumbo-content{
@@ -113,7 +113,6 @@ body {
 }
 
 .sign-in-form .btn-primary{
-  background-color: $violetDark;
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -131,12 +130,12 @@ body {
 
 .info-jumbo-first {
   text-align: left;
-  background-image: url("https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/title-pic-2.jpg");
+  background: black;
 }
 
 .info-jumbo-second {
   text-align: right;
-  background-image: url("https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/title-pic-3.jpg");
+  background-image: url("https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/title-pic-1.jpg");
 }
 
 .jumbotron{
