@@ -23,11 +23,11 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
   switchFocus: function(){
     if(window.focused){
       window.focused = false;
-      Backbone.history.navigate("enterfocus", {trigger: true});
+      Backbone.history.navigate("exitfocus", {trigger: true});
       this.render().bind(this);
     }else{
       window.focused = true;
-      Backbone.history.navigate("exitfocus", {trigger: true});
+      Backbone.history.navigate("enterfocus", {trigger: true});
       this.render().bind(this);
     }
   },
