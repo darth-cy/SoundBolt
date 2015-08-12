@@ -21,17 +21,15 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   },
 
   displayOwnTracks: function(){
-    console.log("Displayed own tracks."); // TEST
     this.addOwnTrackField();
   },
 
   displayMyStreams: function(){
-    console.log("Displayed streams."); // TEST
     this.addStreamTrackField();
   },
 
   createTrack: function(){
-    console.log("New Song!"); // TEST
+
   },
 
   addSideBar: function(){

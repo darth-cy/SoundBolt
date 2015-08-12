@@ -2,6 +2,10 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
 
   template: JST['player_main'],
 
+  events:{
+    "click #focus-mode-switch": "switchToFocus"
+  },
+
   initialize: function(options){
     if(options.track){
       this.model = options.track;
@@ -11,6 +15,10 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
     }
 
     this.listenTo(this.model, 'change remove add reset', this.render.bind(this));
+  },
+
+  switchToFocus: function(){
+    Backbone.history.navigate("focus", {trigger: true})
   },
 
   render: function(){

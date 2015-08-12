@@ -1,14 +1,13 @@
 Soundbolt.Routers.TrackRouter = Backbone.Router.extend({
   routes: {
-    "trackswitch/:id": "switchTrack"
+    "trackswitch/:id": "switchTrack",
+    "trackfocus": "focusOnTrack",
+    "exitfocus": "exitFocus"
   },
 
   initialize: function(options){
     this.$playerEl = options.$playerEl;
-
     this.renderInitial();
-    console.log("player initialized.");
-    console.log(this.$playerEl);
   },
 
   renderInitial: function(){
@@ -17,16 +16,33 @@ Soundbolt.Routers.TrackRouter = Backbone.Router.extend({
   },
 
   switchTrack: function(id){
-    console.log("Handing switch track to " + id); // TEST: track router handles switch.
     var track = new Soundbolt.Models.Track({ id: id });
+
     track.fetch();
     var playerView = new Soundbolt.Views.PlayerMainView({ track: track });
+
     this._swap(playerView);
+    this._swapTrack(track);
+  },
+
+  focusOnTrack: function(){
+    var track = this._currentTrack;
+
+    var userFocus =
+  },
+
+  exitFocus: function(){
+
   },
 
   _swap: function(view){
     this._currentView && this._currentView.remove();
     this._currentView = view;
     this.$playerEl.html(view.render().$el);
+  },
+
+  _swapTrack: function(track){
+    this._currentTrack && this._currentTrack.remove();
+    this._currentTrack = track;
   }
 })

@@ -4,13 +4,15 @@ window.Soundbolt = {
   Views: {},
   Routers: {},
   initialize: function() {
-    console.log("Soundbolt namespace is initialize."); // TEST: initialize Soundbolt namespace
-    new Soundbolt.Routers.Router({
-      $rootEl: $("#soundbolt-content-master")
-    });
+
     new Soundbolt.Routers.TrackRouter({
       $playerEl: $("#soundbolt-player-master")
     })
+
+    new Soundbolt.Routers.Router({
+      $rootEl: $("#soundbolt-content-master"),
+    });
+
     Backbone.history.start();
   }
 };
