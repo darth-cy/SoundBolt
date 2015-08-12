@@ -1,9 +1,9 @@
 Soundbolt.Views.TrackView = Backbone.View.extend({
   template: JST['track'],
-  className: 'single-track-tab',
+  className: 'track-tab panel-body',
 
   events: {
-    "click button": "switchTrack"
+    "click .track-switch": "switchTrack"
   },
 
   initialize: function(options){
@@ -17,11 +17,7 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
     return this;
   },
 
-  renderWaveForm: function(){
-
-  },
-
   switchTrack: function(){
-    
+
   }
 })

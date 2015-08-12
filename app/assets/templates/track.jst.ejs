@@ -1,14 +1,8 @@
 
 <img class="track-tab-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Simple_Music.svg/2000px-Simple_Music.svg.png" alt="" />
-<img class="track-tab-play-button" src="http://d194m38p9c1s7c.cloudfront.net/files/7996/4498/music-player-buttons-screenshots-1.png" alt="#"/>
-<button class="track-tab-play-button track-switch"></button>
+
 <h1 class="track-tab-header"><%= track.get('title') %></h1>
+<a class="btn btn-warning" href="#">Play Track</a>
 <p class="track-tab-paragraph"> <%= track.get('description') %></p>
 
-<audio class="track-tab-audio" controls>
-  <!-- <source src="https://s3.amazonaws.com/soundbolt-appacademy-2015/music-streams/131+Battle+Maison.mp3" type="audio/mpeg"> -->
-  Your browser does not support the audio element.
-</audio>
-
-<canvas class="track-waveform">
-</canvas>
+<hr>
