@@ -16,9 +16,9 @@
   position: absolute;
   width: inherit;
   background: white;
-  top: 95px;
-  left: 20px;
-  margin: 10px;
+  margin-left: 50px;
+  margin-right: 20px;
+  margin-top: 10px;
   opacity: 0.95;
 }
 
@@ -57,9 +57,9 @@
 // User Show Page TrackField CSS
 
 .user-view-normal-trackfield{
+  margin-left: 20px;
+  margin-right: 20px;
   position: absolute;
-  top: 95px;
-  left: 375px;
   height: inherit;
   width: inherit;
 }

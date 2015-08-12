@@ -1,6 +1,6 @@
 Soundbolt.Views.TrackView = Backbone.View.extend({
   template: JST['track'],
-  className: 'track-tab panel-body',
+  className: 'track-tab panel-body container-fluid',
 
   events: {
     "click #track-switch": "switchTrack"

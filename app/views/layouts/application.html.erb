@@ -36,11 +36,11 @@
     <h1><%= flash[:errors] %></h1>
   <% end %>
 
-  <div id="soundbolt-content-master" class="row">
+  <div id="soundbolt-content-master">
     <%= yield %>
   </div>
 
-  <div class="navbar-buffer"></div>
+  <div class="navbar-foot-buffer"></div>
 
   <% if current_user %>
     <div class="soundbolt-toolbar navbar navbar-default navbar-fixed-bottom"

@@ -1,7 +1,7 @@
 Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   template: JST['tracks_field'],
   tagName: 'section',
-  className: 'user-view-normal-trackfield',
+  className: 'user-view-normal-trackfield col-md-6',
 
   initialize: function(options){
     this.collection = options.tracks;

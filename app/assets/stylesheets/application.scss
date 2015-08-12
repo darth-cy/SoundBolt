@@ -48,6 +48,12 @@ body {
 
 .navbar-buffer{
   height: 80px;
+  display: inline-block;
+  width: 100%;
+}
+
+.navbar-foot-buffer{
+  height: 100px;
   display: block;
   width: 100%;
 }
