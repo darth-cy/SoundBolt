@@ -19,7 +19,11 @@
 </button>
 
 <button type="button" class="btn btn-primary btn-lg" id="focus-mode-switch">
-  Focus Mode
+  <% if (window.focusedView) { %>
+    Exit Focus Mode
+  <% }else{ %>
+    Focus Mode
+  <% } %>
 </button>
 
   <!-- <h1><%= track.get('title') %></h1> -->

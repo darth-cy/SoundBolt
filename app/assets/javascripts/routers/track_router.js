@@ -28,12 +28,16 @@ Soundbolt.Routers.TrackRouter = Backbone.Router.extend({
 
   focusOnTrack: function(){
     var track = this._currentTrack;
+    window.focusedView = true;
 
     var userFocus = new Soundbolt.Views.UserFocus({ track: track });
+    this._swapFocus(userFocus);
   },
 
   exitFocus: function(){
-
+    window.focusedView = false;
+    this._currentFocus.remove();
+    this.$rootEl.html("");
   },
 
   _swap: function(view){
@@ -45,5 +49,11 @@ Soundbolt.Routers.TrackRouter = Backbone.Router.extend({
   _swapTrack: function(track){
     this._currentTrack && this._currentTrack.remove();
     this._currentTrack = track;
+  },
+
+  _swapFocus: function(view){
+    this._currentFocus && this._currentFocus.remove();
+    this._currentFocus = view;
+    this.$rootEl.html(view.render().$el);
   }
 })

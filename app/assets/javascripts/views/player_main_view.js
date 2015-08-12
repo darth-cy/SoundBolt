@@ -18,7 +18,7 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
   },
 
   switchToFocus: function(){
-    Backbone.history.navigate("focus", {trigger: true})
+    Backbone.history.navigate("trackfocus", {trigger: true})
   },
 
   render: function(){

@@ -10,6 +10,11 @@ Rails.application.routes.draw do
       resources :streams, only: [:index]
       resources :tracks, only: [:tracks]
     end
-    resources :tracks, only: [:index, :show, :new, :create]
+
+    resources :tracks, only: [:index, :show, :new, :create] do
+      resources :comments, only: [:index]
+    end
+
+    resources :comments
   end
 end

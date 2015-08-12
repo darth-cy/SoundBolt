@@ -10,10 +10,10 @@ window.Soundbolt = {
     });
 
     new Soundbolt.Routers.TrackRouter({
-      $rootEl: $("#soundbolt-content-master"),
+      $rootEl: $("#soundbolt-focus-master"),
       $playerEl: $("#soundbolt-player-master")
     })
-    
+
     Backbone.history.start();
   }
 };
