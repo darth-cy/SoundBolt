@@ -1,5 +1,6 @@
 Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
   template: JST['middle_canvas'],
+  className: 'user-view-focus-middle container-fluid',
 
   initialize: function(options){
     this.collection = options.comments;

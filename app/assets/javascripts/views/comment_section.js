@@ -1,5 +1,6 @@
 Soundbolt.Views.CommentSection = Backbone.View.extend({
   template: JST['comment_section'],
+  className: "user-view-focus-comment-section container-fluid",
 
   initialize: function(options){
     this.collection = options.comments;

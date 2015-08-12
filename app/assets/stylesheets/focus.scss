@@ -2,6 +2,30 @@
   position: absolute;
   top: 80px;
   width: 100%;
-  height: 100%;
+  height: 2000px;
   background: black;
+}
+
+.top-canvas {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 5px solid white;
+}
+
+.user-view-focus-top {
+  text-align: center;
+  position: relative;
+  border: 5px solid white;
+}
+
+.user-view-focus-middle {
+  text-align: center;
+  position: relative;
+  border: 5px solid white;
+}
+
+.user-view-focus-comment-section {
+  position: relative;
+  border: 5px solid white;
 }

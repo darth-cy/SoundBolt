@@ -1,5 +1,6 @@
 Soundbolt.Views.TopCanvas = Backbone.View.extend({
   template: JST['top_canvas'],
+  className: "user-view-focus-top container-fluid",
 
   initialize: function(options){
     this.model = options.track;
