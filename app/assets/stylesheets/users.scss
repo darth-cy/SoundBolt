@@ -10,16 +10,22 @@
 
 // User Show Page SideBar CSS
 
+.user-view-normal-master{
+  background-image: url("http://onwardstate.com/wp-content/uploads/2012/01/rave.jpg");
+  height: 2000px;
+}
+
 .user-view-normal-sidebar{
   border-radius: 5px;
   height: inherit;
   position: absolute;
   width: inherit;
   // background: white;
-  background: #FEFFE3; //external: yellowVeryLight
-  top: 80px;
+  background: white;
+  top: 95px;
   left: 20px;
   margin: 10px;
+  opacity: 0.95;
 }
 
 .sidebar-username{
@@ -84,7 +90,18 @@
   border: 3px solid black;
 }
 
+.track-tab-play-button{
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  margin: 20px;
+  right: 80px;
+}
+
 .track-tab-header{
+  font-size: 45px;
+  font-weight: bolder;
+  font-family: "Arial";
   margin-top: 25px;
   margin-left: 125px;
 }
@@ -95,15 +112,22 @@
 
 .single-track-tab{
   border-radius: 5px;
-  background: white;
+  // background: white;
+  background: #B5FE00; //greenLight
   padding: 20px;
   width: 865px;
-  height: inherit;
+  height: 250px;
   margin: 15px;
+  opacity: 0.9;
+  position: relative;
 }
 
-#track-waveform{
+.track-waveform{
   margin-left: 120px;
   width: 680px;
   height: 75px;
+}
+
+.track-switch{
+  opacity: 0;
 }

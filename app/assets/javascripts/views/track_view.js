@@ -2,6 +2,10 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
   template: JST['track'],
   className: 'single-track-tab',
 
+  events: {
+    "click button": "switchTrack"
+  },
+
   initialize: function(options){
     this.model = options.track;
     this.listenTo(this.model, 'sync', this.render().$el);
@@ -15,5 +19,9 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
 
   renderWaveForm: function(){
 
+  },
+
+  switchTrack: function(){
+    
   }
 })
