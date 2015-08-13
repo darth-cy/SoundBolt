@@ -18,14 +18,12 @@
 .user-view-focus-middle {
   text-align: center;
   position: relative;
-  border: 1px solid white;
 }
 
 // FOCUS COMMENTS
 .user-view-focus-comment-section {
   color: white;
   position: relative;
-  border: 1px solid white;
 }
 
 .user-view-focus-comment-section > h1 {
@@ -37,10 +35,14 @@
 }
 
 .comment-info-panel{
-  color: black;
+  border-radius: 5px;
+  color: white;
   border: 1px solid white;
 }
 
+.all-comment-table{
+  color: black;
+}
 
 
 
