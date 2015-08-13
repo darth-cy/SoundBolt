@@ -1,6 +1,6 @@
 (function(){
   if(typeof Snowballs === "undefined"){
-    window.SnowBalls = {};
+    // window.SnowBalls = {};
   }
 
   SnowBall = SnowBalls.SnowBall = function(xCord, yCord, radius, speed){
@@ -11,8 +11,10 @@
   }
 
   SnowBall.randomSnowBall = function(maxX, maxY, numSnowBalls){
+    var randomX = maxX * Math.random();
+    console.log(randomX);
     return new SnowBall(
-      maxX * Math.random(),
+      randomX,
       0,
       SnowBall.radius(maxX, maxY, numSnowBalls),
       SnowBall.speed(maxX, maxY, numSnowBalls)
@@ -20,17 +22,17 @@
   }
 
   SnowBall.radius = function(){
-    return 7 * Math.random();
+    return 5 * Math.random();
   }
 
   SnowBall.speed = function(maxX, maxY, numSnowBalls){
     rand = Math.random();
     if(rand <= 0.33){
-      return (maxY / 100);
+      return (maxY / 200);
     }else if(rand > 0.33 && rand < 0.66){
-      return (maxY / 150);
+      return (maxY / 300);
     }else{
-      return (maxY/ 200);
+      return (maxY/ 500);
     }
   }
 

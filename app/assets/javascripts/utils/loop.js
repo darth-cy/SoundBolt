@@ -23,8 +23,6 @@
 
     colors = ["red", "blue", "white", "yellow", "green"];
     ctx.fillStyle = colors[Math.floor(Math.random() * 4)];
-    ctx.font = "italic "+60+"pt Arial ";
-    ctx.fillText("Rainbow Snow!!", 350,350);
   }
 
   SnowLoop.prototype.move = function(){
@@ -35,7 +33,7 @@
   }
 
   SnowLoop.prototype.createSnow = function(numSnowBalls){
-    loop = this;
+    var loop = this;
     for(var i = 0; i < numSnowBalls; i++){
       this.snowballs.push(
         SnowBall.randomSnowBall(loop.xDim, loop.yDim, SnowLoop.density)
@@ -54,13 +52,17 @@
     loop.snowballs = newSnowBalls;
   }
 
+  SnowLoop.prototype.destroy = function(){
+    clearInterval(this._interval);
+  }
+
   SnowLoop.prototype.start = function (canvasEl) {
     // get a 2d canvas drawing context. The canvas API lets us call
     // a `getContext` method on a canvas DOM element.
     var ctx = canvasEl.getContext("2d");
 
     // render at 60 FPS
-    window.setInterval((function () {
+    this._interval = window.setInterval((function () {
       this.createSnow(SnowLoop.density);
       this.deleteSnow();
       this.move();

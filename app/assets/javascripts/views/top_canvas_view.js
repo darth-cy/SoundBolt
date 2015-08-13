@@ -5,14 +5,19 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
   initialize: function(options){
     this.model = options.track;
     this.listenTo(this.model, 'sync', this.render.bind(this));
+    
     this._drawingSchedule = undefined;
-    this._seekingSechdule = setInterval(this.seekAndDraw.bind(this), 1000);
+    this._seekingSechdule = setInterval(this.seekAndDraw.bind(this), 10);
   },
 
   render: function(){
     var content = this.template({ track: this.model });
     this.$el.html(content);
     return this;
+  },
+
+  remove: function(){
+    this._drawingSchedule.destroy();
   },
 
   seekAndDraw: function(){
@@ -35,20 +40,12 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
     console.log("drawing!");
 
     this._drawingSchedule = new SnowLoop(
-      canvasEl.offsetWidth,
-      canvasEl.offsetHeight
+      300,
+      300
+
+      // canvasEl.offsetWidth,
+      // canvasEl.offsetHeight
     )
-    debugger;
-
     this._drawingSchedule.start(canvasEl);
-
-    // var ctx = canvasEl.getContext("2d");
-    //
-    // ctx.clearRect(0, 0, canvasEl.offsetWidth, canvasEl.offsetHeight);
-    // ctx.fillStyle = "#FF0000";
-    // ctx.fillRect(0, 0, canvasEl.offsetWidth, canvasEl.offsetHeight);
-
-    // var game = new Asteroids.Game();
-    // new Asteroids.GameView(game, ctx).start();
   }
 })
