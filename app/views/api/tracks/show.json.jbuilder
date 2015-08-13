@@ -1,4 +1,4 @@
-json.(@track, :id, :user_id, :title, :description)
+json.(@track, :id, :user_id, :title, :description, :trackfile_url)
 
 json.comments @track.comments do |comment|
   json.id comment.id
