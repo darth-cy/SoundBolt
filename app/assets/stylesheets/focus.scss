@@ -1,3 +1,4 @@
+// FOCUS MASTER
 .user-view-focus-master{
   position: absolute;
   top: 80px;
@@ -6,26 +7,61 @@
   background: black;
 }
 
-.top-canvas {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  border: 5px solid white;
-}
-
+// FOCUS TOP
 .user-view-focus-top {
   text-align: center;
   position: relative;
-  border: 5px solid white;
+  border: 1px solid white;
 }
 
+// FOCUS MIDDLE
 .user-view-focus-middle {
   text-align: center;
   position: relative;
-  border: 5px solid white;
+  border: 1px solid white;
 }
 
+// FOCUS COMMENTS
 .user-view-focus-comment-section {
+  color: white;
   position: relative;
-  border: 5px solid white;
+  border: 1px solid white;
 }
+
+.user-view-focus-comment-section > h1 {
+  text-align: center;
+}
+
+#new-comment-button{
+  display: inline-block;
+}
+
+.comment-info-panel{
+  color: black;
+  border: 1px solid white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

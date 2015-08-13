@@ -5,4 +5,5 @@ json.comments @track.comments do |comment|
   json.user_id comment.user_id
   json.content comment.content
   json.timeline_position comment.timeline_position
+  json.updated_at comment.updated_at
 end
