@@ -19,7 +19,7 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
       this.model = new Soundbolt.Models.Track();
     }
 
-    this.progressSyncSchedule = setTimeout(this.updateTime.bind(this), 1000);
+    this.progressSyncSchedule = setInterval(this.updateTime.bind(this), 1000);
 
     this.listenTo(this.model, 'change remove add reset', this.render.bind(this));
     this.listenTo(this.model, 'switch', this.render.bind(this));
@@ -29,11 +29,11 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
     if(window.focused){
       window.focused = false;
       Backbone.history.navigate("exitfocus", {trigger: true});
-      this.render().bind(this);
+      // this.render().bind(this);
     }else{
       window.focused = true;
       Backbone.history.navigate("enterfocus", {trigger: true});
-      this.render().bind(this);
+      // this.render().bind(this);
     }
   },
 

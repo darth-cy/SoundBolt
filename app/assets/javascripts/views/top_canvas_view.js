@@ -7,12 +7,13 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
     this.listenTo(this.model, 'sync', this.render.bind(this));
 
     this._drawingSchedule = undefined;
-    this._seekingSechdule = setInterval(this.seekAndDraw.bind(this), 10);
   },
 
   render: function(){
     var content = this.template({ track: this.model });
     this.$el.html(content);
+
+    this._seekingSechdule = setInterval(this.seekAndDraw.bind(this), 10);
     return this;
   },
 
@@ -37,12 +38,10 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
   draw: function(canvasEl){
     // BUG: CANVAS ZOOM
 
-    // canvasEl.height = window.innerHeight;
-    // canvasEl.width = window.innerWidth;
     console.log("drawing!");
 
     this._drawingSchedule = new SnowLoop(
-      300,
+      300,  // WARNING: HARD CODED CANVAS SIZE.
       300
 
       // canvasEl.offsetWidth,
