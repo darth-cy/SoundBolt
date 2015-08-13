@@ -10,6 +10,23 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
   render: function(){
     var content = this.template({ track: this.model });
     this.$el.html(content);
+    setInterval(this.draw, 5000);
     return this;
+  },
+
+  draw: function(){
+    var canvasEl = document.getElementById("focus-top-canvas");
+
+    if(!canvasEl){ return; }
+    console.log("drawing!");
+
+    var ctx = canvasEl.getContext("2d");
+
+    ctx.clearRect(0, 0, canvasEl.offsetWidth, canvasEl.offsetHeight);
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(0, 0, canvasEl.offsetWidth, canvasEl.offsetHeight);
+
+    // var game = new Asteroids.Game();
+    // new Asteroids.GameView(game, ctx).start();
   }
 })

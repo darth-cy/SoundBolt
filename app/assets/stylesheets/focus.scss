@@ -9,8 +9,15 @@
 
 // FOCUS TOP
 .user-view-focus-top {
+  position: absolute;
   text-align: center;
-  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+#focus-top-canvas {
+  height: 100%;
+  width: 100%;
 }
 
 // FOCUS MIDDLE
