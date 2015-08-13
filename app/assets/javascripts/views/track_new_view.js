@@ -10,5 +10,20 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
 
   },
 
+  render: function(){
+    var content = this.template();
+    this.$el.html(content);
+    return this;
+  },
+
+  createTrack: function(event){
+    event.preventDefault();
+    var thisView = this;
+
+    $form = this.$el.find(".new-track-form");
+    var data = $form.serializeJSON();
+
+  }
+
 
 })
