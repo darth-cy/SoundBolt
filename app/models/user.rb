@@ -2,18 +2,14 @@
 #
 # Table name: users
 #
-#  id                  :integer          not null, primary key
-#  username            :string           not null
-#  email               :string           not null
-#  description         :string           not null
-#  password_digest     :string           not null
-#  session_token       :string           not null
-#  created_at          :datetime         not null
-#  updated_at          :datetime         not null
-#  avatar_file_name    :string
-#  avatar_content_type :string
-#  avatar_file_size    :integer
-#  avatar_updated_at   :datetime
+#  id              :integer          not null, primary key
+#  username        :string
+#  email           :string           not null
+#  description     :string
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
 #
 
 class User < ActiveRecord::Base
@@ -22,14 +18,16 @@ class User < ActiveRecord::Base
   validates :email, :password_digest, :session_token, presence: true
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
-  validates :avatar, attachment_size: { less_than: 2.megabytes }
 
-  has_attached_file :avatar, styles: { thumb: '100x100>', square: '200x200#' }, storage: :s3
+  # validates :avatar, attachment_size: { less_than: 2.megabytes }
+  # has_attached_file :avatar, styles: { thumb: '100x100>', square: '200x200#' }, storage: :s3
+  # validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
   after_initialize :ensure_session_token
-  validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   has_many :tracks
   has_many :albums
   has_many :comments
+  has_one :image, as: :imageable
 
   has_many(
     :followings_followed, # NOTE: The current model is followed entity in this association.
