@@ -10,12 +10,14 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
   render: function(){
     var content = this.template({ track: this.model });
     this.$el.html(content);
-    setInterval(this.draw, 5000);
+    
+    setInterval(this.draw, 2000);
     return this;
   },
 
   draw: function(){
     var canvasEl = document.getElementById("focus-top-canvas");
+    console.log("seeking canvas!");
 
     if(!canvasEl){ return; }
     console.log("drawing!");

@@ -50,8 +50,8 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
     // var audioMaster = document.getElementById("player-master-audio");
     // audioMaster.addEventListener("timeupdate", thisController.updateTime, false);
 
-    var syncSchedule = setInterval(thisController.updateTime, 1000);
-    this._swapSyncSchedule(syncSchedule);
+    // var syncSchedule = setInterval(thisController.updateTime, 1000);
+    // this._swapSyncSchedule(syncSchedule); // WARNING: COMMENTED OUT FOR LESS PROCESS.
 
     return this;
   },
