@@ -7,11 +7,11 @@ class CreateTracks < ActiveRecord::Migration
       t.text :description
 
       t.string :image_url
+      t.string :trackfile_url
 
       t.timestamps null: false
     end
 
-    add_attachment :tracks, :trackfile
     add_index :tracks, :user_id
   end
 end

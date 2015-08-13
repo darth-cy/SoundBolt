@@ -1,37 +1,31 @@
-<form class="new-track-form">
+<div class="container new-track-form-field">
+  <form class="new-track-form form-group">
 
-  <h3>Make a New Track</h3>
 
-  <br>
+    <!-- t.integer  "user_id"
+    t.string   "image_url" -->
 
-  <label for="title_field">Title</label>
-  <input type="text" name="user[email]"
-         class="form-control" id="email_field">
+    <h1>Make a New Track</h1>
 
-  <br>
+    <br>
 
-  <label for="password_field">Password</label>
-  <input type="password" name="user[password]"
-         class="form-control" id="password_field">
+    <label for="title_field">Title</label>
+    <input type="text" name="track[title]"
+           class="form-control" id="title_field">
 
-  <br>
+    <br>
 
-  <label for="password_confirm_field">Confirm Password</label>
-  <input type="password" name="user[confirm]"
-        class="form-control" id="password_confirm_field">
+    <label for="description_field">Description</label>
+    <input type="text" name="track[description]"
+          class="form-control" id="description_field">
 
-  <hr>
+    <br>
 
-  <label for="username_field">Choose A Username</label>
-  <input type="text" name="user[username]"
-        class="form-control" id="username_field">
+    <label for="upload-trackfile-button">Choose a Trackfile &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <button id="upload-trackfile-button">upload</button>
 
-  <br>
+    <hr>
 
-  <label for="avatar_field">Upload a Profile Picture</label>
-  <%= file_field(:user, :avatar) %>
-
-  <br>
-
-  <input class="btn btn-primary" type="submit" value="Submit">
-</form>
+    <input class="btn btn-primary" type="submit" value="Submit">
+  </form>
+</div>

@@ -47,17 +47,14 @@ ActiveRecord::Schema.define(version: 20150811025638) do
   add_index "followings", ["following_user_id"], name: "index_followings_on_following_user_id", using: :btree
 
   create_table "tracks", force: :cascade do |t|
-    t.integer  "user_id",                null: false
+    t.integer  "user_id",       null: false
     t.integer  "album_id"
-    t.string   "title",                  null: false
+    t.string   "title",         null: false
     t.text     "description"
     t.string   "image_url"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "trackfile_file_name"
-    t.string   "trackfile_content_type"
-    t.integer  "trackfile_file_size"
-    t.datetime "trackfile_updated_at"
+    t.string   "trackfile_url"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   add_index "tracks", ["user_id"], name: "index_tracks_on_user_id", using: :btree

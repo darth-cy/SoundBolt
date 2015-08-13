@@ -21,7 +21,7 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
 
     this.progressSyncSchedule = setInterval(this.updateTime.bind(this), 1000);
 
-    this.listenTo(this.model, 'change remove add reset', this.render.bind(this));
+    this.listenTo(this.model, 'change reset', this.render.bind(this));
     this.listenTo(this.model, 'switch', this.render.bind(this));
   },
 

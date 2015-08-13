@@ -29,7 +29,8 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   },
 
   createTrack: function(){
-
+    var trackNewView = new Soundbolt.Views.TrackNewView();
+    this._swapTrackField(trackNewView);
   },
 
   addSideBar: function(){
