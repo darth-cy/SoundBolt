@@ -11,7 +11,6 @@
 .user-view-focus-top {
   text-align: center;
   position: relative;
-  border: 1px solid white;
 }
 
 // FOCUS MIDDLE
@@ -42,6 +41,10 @@
 
 .all-comment-table{
   color: black;
+}
+
+.all-comment-table > thead {
+  color: white;
 }
 
 
