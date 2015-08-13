@@ -20,6 +20,6 @@ class Track < ActiveRecord::Base
   has_many :comments
   belongs_to :user
   belongs_to :album
-  has_one :image, as: :imageable
+  # has_one :image, as: :imageable
   # has_attached_file :trackfile, storage: :s3
 end

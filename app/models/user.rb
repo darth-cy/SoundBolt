@@ -27,7 +27,6 @@ class User < ActiveRecord::Base
   has_many :tracks
   has_many :albums
   has_many :comments
-  has_one :image, as: :imageable
 
   has_many(
     :followings_followed, # NOTE: The current model is followed entity in this association.
