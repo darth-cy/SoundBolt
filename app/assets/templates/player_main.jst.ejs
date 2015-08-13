@@ -1,14 +1,14 @@
-<button type="button" class="btn btn-default btn-lg">
+<button type="button" id="audio-pause-button" class="btn btn-default btn-lg">
   Pause
 </button>
 
-<button type="button" class="btn btn-default btn-lg">
+<button type="button" id="audio-play-button" class="btn btn-default btn-lg">
   Play
 </button>
 
-<button type="button" class="btn btn-default btn-lg">
+<!-- <button type="button" class="btn btn-default btn-lg">
   Stop
-</button>
+</button> -->
 
 <button type="button" class="btn btn-default btn-lg">
   <% if (track.id) {%>
@@ -17,6 +17,14 @@
     Currently Playing: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nothing is playing.
   <%} %>
 </button>
+
+<audio id="player-master-audio" controls="controls">
+  <source src="https://s3.amazonaws.com/soundbolt-appacademy-2015/music-streams/10.+Trancemission+-+Radioactive.mp3" type="audio/mpeg"/>
+</audio>
+
+<div class="player-master-progress" id="audio-seeking-control">
+  <div id="player-master-inner-progress"></div>
+</div>
 
 <button type="button" class="btn btn-primary btn-lg" id="focus-mode-switch">
   <% if (window.focused) { %>
