@@ -14,6 +14,8 @@
   SnowLoop.prototype.render = function(ctx){
     ctx.clearRect(0, 0, this.xDim, this.yDim);
 
+    // ctx.scale(0.5, 0.5); // WARNING: Scale the canvas
+
     ctx.fillStyle = "black";
     ctx.fillRect(0,0,this.xDim,this.yDim);
 

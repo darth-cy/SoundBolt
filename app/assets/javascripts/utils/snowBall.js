@@ -12,7 +12,6 @@
 
   SnowBall.randomSnowBall = function(maxX, maxY, numSnowBalls){
     var randomX = maxX * Math.random();
-    console.log(randomX);
     return new SnowBall(
       randomX,
       0,
