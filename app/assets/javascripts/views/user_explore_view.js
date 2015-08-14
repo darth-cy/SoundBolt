@@ -31,7 +31,13 @@ Soundbolt.Views.UserExplore = Backbone.FusedView.extend({
     this.collection.each(function(user){
       if(user.id === thisField.model.id) { return 0; };
 
-      var userView = new Soundbolt.Views.UserTab({ user: user });
+      // console.log(user.follower_ids.indexOf(thisField.model.id) !== -1)
+
+      var userView = new Soundbolt.Views.UserTab({
+        currentUser: thisField.model,
+        user: user
+      });
+
       thisField.addComponent(userView);
     })
   }

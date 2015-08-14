@@ -24,6 +24,14 @@ Soundbolt.Models.User = Backbone.Model.extend({
 
     if(response.followings_followed){
       this.followers_count = response.followings_followed.length;
+
+      this.follower_ids = [];
+      var follower_ids = this.follower_ids
+      response.followings_followed.forEach(function(f){
+        follower_ids.push(f.following_id);
+      })
+      debugger;
+
       delete followings_followed;
     }
 
