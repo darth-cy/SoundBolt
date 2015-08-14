@@ -9,8 +9,10 @@
   <% if(user.escape('description').length < 1){ %>
     This user didn't add a description.
   <% }else{ %>
-    <%= user.get('description') %>
+    <%= user.escape('description') %>
   <% } %>
 </p>
 
 <hr>
+
+<div class="field-tab-subinfo-tags">Followers: <%= user.followers_count %></div>

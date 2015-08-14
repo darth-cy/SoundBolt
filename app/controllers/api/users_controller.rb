@@ -1,12 +1,12 @@
 class Api::UsersController < ApplicationController
 
   def index
-    @users = User.includes(:tracks).all
+    @users = User.includes(:tracks).includes(:followings_followed).all
     render 'index'
   end
 
   def show
-    @user = User.includes(:tracks).includes(:streams).find(params[:id])
+    @user = User.includes(:tracks).includes(:streams).includes(:followings_followed).find(params[:id])
     render 'show'
   end
 
