@@ -1,3 +1,3 @@
 Soundbolt.Models.Following = Backbone.Model.extend({
-  urlRoot: ""
+  urlRoot: "/api/followings"
 })

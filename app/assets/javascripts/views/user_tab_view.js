@@ -30,20 +30,23 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
   // RAZYNOIR-MAJOR: Follow user functionality not available.
   followUser: function(event){
     event.preventDefault();
-    user_followed_id: this.model.id;
-    user_following_id: this.currentUser.id;
+    var thisView = this;
 
     var newFollowing = new Soundbolt.Models.Following();
     newFollowing.set({
-      user_followed_id: user_followed_id,
-      user_following_id: user_following_id,
+      user_followed_id: this.model.id,
+      user_following_id: this.currentUser.id,
     })
 
     newFollowing.save({}, {
       success: function(){
-        this.model.fetch();
+        thisView.model.fetch({
+          success: function(){
+            thisView.render();
+          }
+        });
       }
-    })
+    });
 
   },
 
@@ -54,6 +57,21 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
 
   unfollowUser: function(event){
     event.preventDefault();
+    var thisView = this;
 
+    var followingToDelete = this.model.followings().where({
+      user_followed_id: this.model.id,
+      user_following_id: this.currentUser.id
+    })[0];
+
+    followingToDelete.destroy({
+      success: function(){
+        thisView.model.fetch({
+          success: function(){
+            thisView.render();
+          }
+        });
+      }
+    });
   }
 })

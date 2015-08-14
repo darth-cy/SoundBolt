@@ -18,19 +18,28 @@ Soundbolt.Models.User = Backbone.Model.extend({
     return this._streams;
   },
 
+  followings: function(){
+    if(!this._followings){
+      this._followings = new Soundbolt.Collections.Followings({ user: this });
+    }
+    return this._followings;
+  },
+
   // RAZYNOIR-INCOMPLETE: parse method doesn't go deep enough.
   parse: function(response){
     this.set(response);
 
     if(response.followings_followed){
-      this.followers_count = response.followings_followed.length;
+      this.followings().set(response.followings_followed);
 
+      // this.followers_count = response.followings_followed.length;
+      //
       this.follower_ids = [];
-      var follower_ids = this.follower_ids
+      var follower_ids = this.follower_ids;
       response.followings_followed.forEach(function(f){
         follower_ids.push(f.following_id);
       })
-      debugger;
+      // debugger;
 
       delete followings_followed;
     }
