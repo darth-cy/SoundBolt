@@ -36,6 +36,6 @@ class Api::FollowingsController < ApplicationController
 
   private
   def following_params
-    params.require(:following).permit(:user_followed_id, :user_following_id)
+    params.require(:following).permit(:followed_user_id, :following_user_id)
   end
 end

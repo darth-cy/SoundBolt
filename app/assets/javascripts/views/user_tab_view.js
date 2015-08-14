@@ -4,9 +4,9 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
 
   // RAZYNOIR-INCOMPLETE: Following functionalities and see info medal not implemented.
   events: {
-    "click btn-primary": "followUser",
-    "click btn-warning": "seeInfoUser",
-    "click btn-danger": "unfollowUser"
+    "click .btn-primary": "followUser",
+    "click .btn-warning": "seeInfoUser",
+    "click .btn-danger": "unfollowUser"
   },
 
   initialize: function(options){
@@ -30,21 +30,19 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
   // RAZYNOIR-MAJOR: Follow user functionality not available.
   followUser: function(event){
     event.preventDefault();
+    debugger;
     var thisView = this;
 
     var newFollowing = new Soundbolt.Models.Following();
     newFollowing.set({
-      user_followed_id: this.model.id,
-      user_following_id: this.currentUser.id,
+      followed_user_id: this.model.id,
+      following_user_id: this.currentUser.id,
     })
 
     newFollowing.save({}, {
       success: function(){
-        thisView.model.fetch({
-          success: function(){
-            thisView.render();
-          }
-        });
+        thisView.model.fetch();
+        thisView.currentUser.fetch();
       }
     });
 
@@ -57,20 +55,18 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
 
   unfollowUser: function(event){
     event.preventDefault();
+    debugger;
     var thisView = this;
 
     var followingToDelete = this.model.followings().where({
-      user_followed_id: this.model.id,
-      user_following_id: this.currentUser.id
+      followed_id: this.model.id,
+      following_id: this.currentUser.id
     })[0];
 
     followingToDelete.destroy({
       success: function(){
-        thisView.model.fetch({
-          success: function(){
-            thisView.render();
-          }
-        });
+        thisView.model.fetch();
+        thisView.currentUser.fetch();
       }
     });
   }

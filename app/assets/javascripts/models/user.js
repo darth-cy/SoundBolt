@@ -32,7 +32,8 @@ Soundbolt.Models.User = Backbone.Model.extend({
     if(response.followings_followed){
       this.followings().set(response.followings_followed);
 
-      // this.followers_count = response.followings_followed.length;
+      // RAZYNOIR-WARNING: Mild follower count variable not wrapped in Backbone.
+      this.followers_count = response.followings_followed.length;
       //
       this.follower_ids = [];
       var follower_ids = this.follower_ids;

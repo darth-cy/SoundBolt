@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
 
     resources :comments
-    resources :followings, only: [:index, :show, :create, :update]
+    resources :followings, only: [:index, :show, :create, :update, :destroy]
 
   end
 end
