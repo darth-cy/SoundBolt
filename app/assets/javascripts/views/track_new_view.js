@@ -6,7 +6,7 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
 
   // RAZYNOIR-INCOMPLETE: Form event not listening.
   events: {
-    // "submit form": "createTrack"
+    "submit form": "createTrack"
   },
 
   // initialize: function(options){
@@ -21,6 +21,10 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
 
   createTrack: function(event){
     event.preventDefault();
+
+    // RAZYNOIR-TEST: Skip form processing for new track.
+    return 0;
+
     var thisView = this;
 
     $form = this.$el.find(".new-track-form");

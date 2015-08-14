@@ -4,6 +4,7 @@ Soundbolt.Views.UserExplore = Backbone.FusedView.extend({
 
   initialize: function(options){
     this.collection = options.users;
+    this.model = options.user;
 
     this.addUsers();
 
@@ -28,6 +29,8 @@ Soundbolt.Views.UserExplore = Backbone.FusedView.extend({
     thisField.emptyComponents();
 
     this.collection.each(function(user){
+      if(user.id === thisField.model.id) { return 0; };
+
       var userView = new Soundbolt.Views.UserTab({ user: user });
       thisField.addComponent(userView);
     })

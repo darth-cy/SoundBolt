@@ -38,7 +38,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
     var allUsers = new Soundbolt.Collections.Users();
     allUsers.fetch();
 
-    var exploreView = new Soundbolt.Views.UserExplore({ users: allUsers });
+    var exploreView = new Soundbolt.Views.UserExplore({ users: allUsers, user: this.model });
     this._swapTrackField(exploreView);
   },
 
