@@ -5,7 +5,8 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   events: {
     "click a#display-own-tracks": "displayOwnTracks",
     "click a#display-my-streams": "displayMyStreams",
-    "click a#create-a-track": "createTrack"
+    "click a#create-a-track": "createTrack",
+    "click a#explore-artists": "exploreUsers"
   },
 
   initialize: function(options){
@@ -46,6 +47,14 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   addStreamTrackField: function(){
     var tracksFieldView = new Soundbolt.Views.TracksFieldView({ tracks: this.streams });
     this._swapTrackField(tracksFieldView);
+  },
+
+  exploreUsers: function(){
+    var allUsers = new Soundbolt.Collections.Users();
+    allUsers.fetch();
+
+    var exploreView = new Soundbolt.Views.UserExplore({ users: allUsers });
+    this._swapTrackField(exploreView);
   },
 
   render: function(){

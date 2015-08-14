@@ -1,8 +1,8 @@
 class Api::UsersController < ApplicationController
 
   def index
-    @users = User.all
-    render json: @users
+    @users = User.includes(:tracks).all
+    render 'index'
   end
 
   def show
