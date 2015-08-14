@@ -7,7 +7,7 @@ class Api::TracksController < ApplicationController
   end
 
   def show
-    @track = Track.includes(comments: :user).find(params[:id])
+    @track = Track.includes(:user).includes(comments: :user).find(params[:id])
     render 'show'
   end
 
@@ -22,6 +22,7 @@ class Api::TracksController < ApplicationController
   private
 
   def track_params
-    params.require(:track).permit(:title, :description, :trackfile)
+    # RAZYNOIR-INCOMPLETE: File upload not available.
+    params.require(:track).permit(:title, :description)
   end
 end

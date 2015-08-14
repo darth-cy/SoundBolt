@@ -4,8 +4,12 @@ Soundbolt.Collections.Streams = Backbone.Collection.extend({
   },
 
   initialize: function(options){
-    this.user = options.user
+    this.user = options.user;
   },
 
-  model: Soundbolt.Models.Track
+  model: Soundbolt.Models.Track,
+
+  parse: function(response){
+    this.set(response);
+  }
 })

@@ -7,5 +7,9 @@ Soundbolt.Collections.Tracks = Backbone.Collection.extend({
     this.user = options.user;
   },
 
-  model: Soundbolt.Models.Track
+  model: Soundbolt.Models.Track,
+
+  parse: function(response){
+    this.set(response);
+  }
 })

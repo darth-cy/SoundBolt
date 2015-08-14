@@ -25,7 +25,6 @@ Soundbolt.Models.User = Backbone.Model.extend({
     return this._followings;
   },
 
-  // RAZYNOIR-INCOMPLETE: parse method doesn't go deep enough.
   parse: function(response){
     this.set(response);
 
@@ -46,12 +45,12 @@ Soundbolt.Models.User = Backbone.Model.extend({
     }
 
     if(response.tracks){
-      this.tracks().set(response.tracks);
+      this.tracks().parse(response.tracks);
       delete response.tracks;
     }
 
     if(response.streams){
-      this.streams().set(response.streams);
+      this.streams().parse(response.streams);
       delete response.streams;
     }
     return response;

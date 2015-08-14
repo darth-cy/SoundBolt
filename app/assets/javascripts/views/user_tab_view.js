@@ -2,7 +2,6 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
   template: JST['user_tab'],
   className: 'track-tab panel-body container-fluid',
 
-  // RAZYNOIR-INCOMPLETE: Following functionalities and see info medal not implemented.
   events: {
     "click .btn-primary": "followUser",
     "click .btn-warning": "seeInfoUser",
@@ -26,11 +25,9 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
     return this;
   },
 
-  // RAZYNOIR-INCOMPLETE: Following function and SeeInfo function not implemented.
-  // RAZYNOIR-MAJOR: Follow user functionality not available.
+  // RAZYNOIR-INCOMPLETE: SeeInfo function not implemented.
   followUser: function(event){
     event.preventDefault();
-    debugger;
     var thisView = this;
 
     var newFollowing = new Soundbolt.Models.Following();
@@ -55,7 +52,6 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
 
   unfollowUser: function(event){
     event.preventDefault();
-    debugger;
     var thisView = this;
 
     var followingToDelete = this.model.followings().where({

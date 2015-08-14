@@ -5,5 +5,9 @@ Soundbolt.Collections.Comments = Backbone.Collection.extend({
 
   },
 
-  model: Soundbolt.Models.Comment
+  model: Soundbolt.Models.Comment,
+
+  parse: function(response){
+    this.set(response);
+  }
 })

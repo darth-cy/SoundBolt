@@ -9,6 +9,9 @@ end
 json.tracks @user.tracks do |track|
   json.id track.id
   json.user_id track.user_id
+
+  json.username track.user.username
+
   json.title track.title
   json.description track.description
 end
@@ -16,6 +19,9 @@ end
 json.streams @user.streams do |stream|
   json.id stream.id
   json.user_id stream.user_id
+
+  json.username stream.user.username
+
   json.title stream.title
   json.description stream.description
 end
