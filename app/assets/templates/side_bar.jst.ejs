@@ -1,12 +1,12 @@
 <!-- have user passed in -->
 
 
-<img class="user-sidebar-img" src="https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/missing.png" alt="https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/missing.png" />
+<img class="user-sidebar-img" src="https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/Icosahedron.gif" alt="image can't be found :(("/>
 <hr>
-<h1 class="sidebar-username"><%= user.get('username') %></h1>
-<p class="sidebar-useremail"><%= user.get('email') %></p>
+<h1 class="sidebar-username"><%= user.escape('username') %></h1>
+<p class="sidebar-useremail"><%= user.escape('email') %></p>
 <hr>
-<div><%= user.get('description') %></div>
+<div><%= user.escape('description') %></div>
 
 <a class="btn btn-default btn-lg btn-block" id="display-own-tracks" href="#">My Own Tracks</a></div>
 <a class="btn btn-default btn-lg btn-block" id="display-my-streams" href="#">My Streams</a></div>

@@ -2,6 +2,12 @@
 
 <h1 class="track-tab-header"><%= user.get('username') %></h1>
 <a class="btn btn-primary" id="follow-user" href="#">Add to My Stream</a>
-<p class="track-tab-paragraph"> <%= user.get('description') %></p>
+<p class="track-tab-paragraph">
+  <% if(user.escape('description').length < 1){ %>
+    This user didn't add a description.
+  <% }else{ %>
+    <%= user.get('description') %>
+  <% } %>
+</p>
 
 <hr>
