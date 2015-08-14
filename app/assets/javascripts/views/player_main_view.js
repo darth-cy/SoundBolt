@@ -29,29 +29,20 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
     if(window.focused){
       window.focused = false;
       Backbone.history.navigate("exitfocus", {trigger: true});
-      // this.render().bind(this);
     }else{
       window.focused = true;
       Backbone.history.navigate("enterfocus", {trigger: true});
-      // this.render().bind(this);
     }
   },
 
   remove: function(){
-    clearInterval(this._syncSchedule);
+    clearInterval(this.progressSyncSchedule);
   },
 
   render: function(){
     var thisController = this;
-
     var content = this.template({ track: this.model });
     this.$el.html(content);
-
-    // var audioMaster = document.getElementById("player-master-audio");
-    // audioMaster.addEventListener("timeupdate", thisController.updateTime, false);
-
-    // var syncSchedule = setInterval(thisController.updateTime, 1000);
-    // this._swapSyncSchedule(syncSchedule); // WARNING: COMMENTED OUT FOR LESS PROCESS.
 
     return this;
   },
