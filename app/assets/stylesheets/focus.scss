@@ -26,6 +26,27 @@
   position: relative;
 }
 
+.user-view-focus-middle-info{
+  padding: 20px;
+  background: black;
+  color: white;
+}
+
+.user-view-focus-middle-showzone{
+  color: white;
+  margin: 0 auto;
+  display: block;
+  background: black;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  width: 1200px;
+  height: 325px;
+  opacity: 0.8;
+}
+
+
+
 // FOCUS COMMENTS
 .user-view-focus-comment-section {
   color: white;

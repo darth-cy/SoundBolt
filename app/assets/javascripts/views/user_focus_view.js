@@ -10,6 +10,8 @@ Soundbolt.Views.UserFocus = Backbone.FusedView.extend({
   initialize: function(options){
     this.model = options.track;
 
+    this.audioMaster = document.getElementById("player-master-audio");
+
     this.addTopCanvas();
     this.addMiddleCanvas();
     this.addCommentSection();
@@ -24,8 +26,14 @@ Soundbolt.Views.UserFocus = Backbone.FusedView.extend({
   },
 
   addMiddleCanvas: function(){
+    var audioMaster = this.audioMaster;
+    var track = this.model;
     var comments = this.model.comments();
-    var middleCanvas = new Soundbolt.Views.MiddleCanvas({ comments: comments });
+    var middleCanvas = new Soundbolt.Views.MiddleCanvas({
+       track: track,
+       comments: comments,
+       audioMaster: audioMaster
+     });
     this.addComponent(middleCanvas);
   },
 
