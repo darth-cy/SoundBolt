@@ -65,6 +65,9 @@
 
     // render at 60 FPS
     this._interval = window.setInterval((function () {
+
+      // RAZYNOIR-TEST: Output to test repeated drawing schedule.
+      console.log("Top Canvas Drawing!")
       this.createSnow(SnowLoop.density);
       this.deleteSnow();
       this.move();

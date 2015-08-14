@@ -11,6 +11,8 @@ Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
     this.listenTo(this.collection, 'sync', this.render.bind(this));
   },
 
+  // RAZYNOIR-INCOMPLETE: Middle canvas drawing not implemented.
+  // RAZYNOIR-MAJOR: Middle canvas rendering not implemented.
   render: function(){
     var content = this.template({
        comments: this.collection,

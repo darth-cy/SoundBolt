@@ -26,7 +26,11 @@ Soundbolt.Views.CommentSection = Backbone.View.extend({
 
     data.comment["user_id"] = window.currentUserId;
     data.comment["track_id"] = window.currentTrackId;
-    data.comment["timeline_position"] = 50.0; // WARNING: HARD CODED NON DYNAMIC TIMELINE TRACK
+
+    // RAZYNOIR-WARNING: Hard Coded non-dynamic timeline tracking.
+    // RAZYNOIR-INCOMPLETE: Track tracing incomplete.
+    // RAZYNOIR-MAJOR: Timeline utility not implemented. 
+    data.comment["timeline_position"] = 50.0;
 
     var newComment = new Soundbolt.Models.Comment();
 

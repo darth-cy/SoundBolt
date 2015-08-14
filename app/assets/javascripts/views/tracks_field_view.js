@@ -16,6 +16,7 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
     this.render();
   },
 
+  // RAZYNOIR: Internally used. Not exposed.
   addTracks: function(){
     var thisField = this;
     thisField.emptyComponents();

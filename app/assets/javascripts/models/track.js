@@ -8,6 +8,7 @@ Soundbolt.Models.Track = Backbone.Model.extend({
     return this._comments;
   },
 
+  // RAZYNOIR-INCOMPLETE: parse method doesn't go deep enough.
   parse: function(response){
     if(response.comments){
       this.comments().set(response.comments);

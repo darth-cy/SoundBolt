@@ -18,6 +18,7 @@ Soundbolt.Models.User = Backbone.Model.extend({
     return this._streams;
   },
 
+  // RAZYNOIR-INCOMPLETE: parse method doesn't go deep enough.
   parse: function(response){
     if(response.tracks){
       this.tracks().set(response.tracks);

@@ -34,6 +34,16 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
     this._swapTrackField(trackNewView);
   },
 
+  exploreUsers: function(){
+    var allUsers = new Soundbolt.Collections.Users();
+    allUsers.fetch();
+
+    var exploreView = new Soundbolt.Views.UserExplore({ users: allUsers });
+    this._swapTrackField(exploreView);
+  },
+
+
+  // RAZYNOIR: Internally used function. Not exposed.
   addSideBar: function(){
     var sideBarView = new Soundbolt.Views.SideBarView({ user: this.model });
     this.addComponent(sideBarView);
@@ -43,20 +53,12 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
     var tracksFieldView = new Soundbolt.Views.TracksFieldView({ tracks: this.tracks });
     this._swapTrackField(tracksFieldView);
   },
-
   addStreamTrackField: function(){
     var tracksFieldView = new Soundbolt.Views.TracksFieldView({ tracks: this.streams });
     this._swapTrackField(tracksFieldView);
   },
 
-  exploreUsers: function(){
-    var allUsers = new Soundbolt.Collections.Users();
-    allUsers.fetch();
-
-    var exploreView = new Soundbolt.Views.UserExplore({ users: allUsers });
-    this._swapTrackField(exploreView);
-  },
-
+  // RAZYNOIR: Purely utility functions.
   render: function(){
     var content = this.template()
     var newDiv = $('<div>').html(content).addClass("container"); // WARNING: UNCONVENTIONAL RENDERING.
@@ -67,11 +69,13 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
     return this;
   },
 
+  // RAZYNOIR: Update user tracks and streams.
   _resetAssets: function(){
     this.tracks = this.model.tracks();
     this.streams = this.model.streams();
   },
 
+  // RAZYNOIR: Only swap the trackField, not rerendering the whole view.
   _swapTrackField: function(trackField){
     this._trackField && this._trackField.remove();
     this._trackField = trackField;

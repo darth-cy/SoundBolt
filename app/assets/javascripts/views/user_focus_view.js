@@ -29,11 +29,13 @@ Soundbolt.Views.UserFocus = Backbone.FusedView.extend({
     var audioMaster = this.audioMaster;
     var track = this.model;
     var comments = this.model.comments();
+
     var middleCanvas = new Soundbolt.Views.MiddleCanvas({
        track: track,
        comments: comments,
        audioMaster: audioMaster
      });
+     
     this.addComponent(middleCanvas);
   },
 

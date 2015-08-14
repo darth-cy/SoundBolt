@@ -28,7 +28,7 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
         this.draw(canvasEl);
         clearInterval(this._seekingSchedule);
       }else{
-        return;
+        return 0;
       }
     }else{
       clearInterval(this._seekingSchedule);
@@ -36,12 +36,13 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
   },
 
   draw: function(canvasEl){
-    // BUG: CANVAS ZOOM
+    // RAZYNOIR-BUG: CANVAS ZOOM
 
     console.log("drawing!");
-
+s
+    // RAZYNOIR-WARNING: Hard-coded canvas size. Canvas size not dynamic.
     this._drawingSchedule = new SnowLoop(
-      300,  // WARNING: HARD CODED CANVAS SIZE.
+      300,
       300
 
       // canvasEl.offsetWidth,

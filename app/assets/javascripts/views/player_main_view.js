@@ -10,11 +10,11 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
   },
 
   initialize: function(options){
-    if(options.track){
+    if(options.track && options.track.id){
       this.model = options.track;
-      if(this.model.id){
-        this.model.fetch();
-      }
+      // if(this.model.id){
+      this.model.fetch();
+      // }
     }else{
       this.model = new Soundbolt.Models.Track();
     }
@@ -51,6 +51,7 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
     var audioMaster = document.getElementById("player-master-audio");
     var progress_header = document.getElementById('player-master-inner-progress');
 
+    // RAZYNOIR-TEST: Output syncSchedule for audioMaster.
     if(!audioMaster || !progress_header){ console.log("not found"); return; };
 
     console.log("sync progress!");
