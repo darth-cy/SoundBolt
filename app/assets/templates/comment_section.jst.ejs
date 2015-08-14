@@ -34,6 +34,7 @@
 
     <thead>
       <tr>
+        <th>Username</th>
         <th>Content</th>
         <th>Timeline</th>
         <th>Posted on</th>
@@ -43,6 +44,7 @@
     <tbody>
       <% comments.each(function(comment){ %>
         <tr class="active">
+          <td><%= comment.username %></td>
           <td><%= comment.get('content') %></td>
           <td><%= comment.get('timeline_position') %></td>
           <td><%= comment.get('updated_at') %></td>

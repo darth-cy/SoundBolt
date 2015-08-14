@@ -18,8 +18,6 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
   },
 
   switchTrack: function(){
-    // RAZYNOIR-TEST: Player Button fires event.
-    console.log("switched track.")
     Backbone.history.navigate("trackswitch/" + this.model.id, { trigger: true });
   }
 })

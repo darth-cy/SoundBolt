@@ -8,6 +8,10 @@ Soundbolt.Models.Track = Backbone.Model.extend({
     return this._comments;
   },
 
+  // username: function(){
+  //   return this._username;
+  // },
+
   // RAZYNOIR-INCOMPLETE: parse method doesn't go deep enough.
   parse: function(response){
     this.set(response);
@@ -17,11 +21,10 @@ Soundbolt.Models.Track = Backbone.Model.extend({
       delete response.comments;
     }
 
-    debugger;
-    if(response.username){
-      this.username = response.username;
-      delete response.username;
-    }
+    // if(response.username){
+    //   this.username = response.username;
+    //   delete response.username;
+    // }
 
     return response;
   }
