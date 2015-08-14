@@ -44,10 +44,10 @@
     <tbody>
       <% comments.each(function(comment){ %>
         <tr class="active">
-          <td><%= comment.username %></td>
-          <td><%= comment.get('content') %></td>
-          <td><%= comment.get('timeline_position') %></td>
-          <td><%= comment.get('updated_at') %></td>
+          <td><%= comment.escape('username') %></td>
+          <td><%= comment.escape('content') %></td>
+          <td><%= comment.escape('timeline_position') %></td>
+          <td><%= comment.escape('updated_at') %></td>
         </tr>
       <%  }) %>
     </tbody>

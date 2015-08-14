@@ -1,6 +1,6 @@
 Soundbolt.Models.Comment = Backbone.Model.extend({
   urlRoot: "/api/comments",
-  // 
+  //
   // username: function(){
   //   var thisComment = this;
   //   if(!this._username){
@@ -16,10 +16,13 @@ Soundbolt.Models.Comment = Backbone.Model.extend({
 
   // RAZYNOIR-INCOMPLETE: parse method doesn't go deep enough.
   parse: function(response){
-    if(response.username){
-      this.username = response.username;
-      delete response.username;
-    }
+    this.set(response);
+
+    // if(response.username){
+    //   this.username = response.username;
+    //   delete response.username;
+    // }
+
     return response;
   }
 })
