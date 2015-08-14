@@ -2,7 +2,7 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
 
   template: JST['track_new'],
 
-  className: "col-md-6 user-view-normal-trackfield",
+  className: "user-view-normal-trackfield col-md-6",
 
   events: {
     "submit form": "createTrack"
