@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 
+  <!-- RAZYNOIR: Configure Cloudinary options. Caution. -->
   <script type="text/javascript" charset="utf-8">
     window.CLOUDINARY_OPTIONS = {
       cloud_name: "<%=ENV['CLOUD_NAME']%>",
@@ -22,10 +23,9 @@
         <div class="title-elements"><a href="<%= root_url %>" class="elegent-link"><strong>SoundBolt</strong></a></div>
       </div>
 
-      <!-- <img src="http://netdna.webdesignerdepot.com/uploads/2012/10/9_weather-app-thunder.jpg" alt="#"
-            style="width: 120px; height: 79px; margin-left: 100px;"/> -->
-
       <div class="nav navbar-nav navbar-right">
+
+        <!-- RAZYNOIR: Title elements customized styling. -->
         <div class="title-elements title-small"><a href="#" class="elegent-link">About</a></div>
         <div class="title-elements title-small"><a href="#" class="elegent-link">Support</a></div>
 
@@ -35,25 +35,39 @@
           <div class="title-elements title-small"><a href="<%= new_user_url %>" class="elegent-link">Sign Up</a></div>
         <% end %>
       </div>
-    </div>
+
+    </div> <!-- RAZYNOIR: Title container close. -->
   </nav>
+
 
   <div class="navbar-buffer"></div>
 
+
+  <!-- RAZYNOIR-INCOMPLETE: Flash errors styling pending. -->
   <% if flash[:errors] %>
     <h1><%= flash[:errors] %></h1>
   <% end %>
 
+  <!-- RAZYNOIR: The main content goes here. -->
   <div id="soundbolt-content-master">
+
+    <!-- CONTENT-START -->
+
     <%= yield %>
+
+    <!-- CONTENT-END -->
+
   </div>
 
+  <!-- RAZYNOIR: The focus overlay goes here. -->
   <div id="soundbolt-focus-master">
   </div>
 
 
   <% if current_user %>
     <div class="navbar-foot-buffer"></div>
+
+    <!-- RAZYNOIR: The bottom playbar goes here. -->
     <div class="soundbolt-toolbar navbar navbar-default navbar-fixed-bottom"
          id="soundbolt-player-master">
     </div>
