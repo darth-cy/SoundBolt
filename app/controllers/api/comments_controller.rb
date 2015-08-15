@@ -13,7 +13,8 @@ class Api::CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      render json: @comment
+      @user = User.find(@comment.user_id)
+      render 'create'
     else
       render json: @comment.errors.full_messages, status: :unprocessable_entity
     end

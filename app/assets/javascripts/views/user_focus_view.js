@@ -35,13 +35,19 @@ Soundbolt.Views.UserFocus = Backbone.FusedView.extend({
        comments: comments,
        audioMaster: audioMaster
      });
-     
+
     this.addComponent(middleCanvas);
   },
 
   addCommentSection: function(){
+    var audioMaster = this.audioMaster;
     var comments = this.model.comments();
-    var commentSection = new Soundbolt.Views.CommentSection({ comments: comments });
+
+    var commentSection = new Soundbolt.Views.CommentSection({
+      comments: comments,
+      audioMaster: audioMaster
+    });
+    
     this.addComponent(commentSection);
   },
 

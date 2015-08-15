@@ -22,6 +22,10 @@
   opacity: 0.95;
 }
 
+.user-view-normal-sidebar:hover {
+  box-shadow: 0 0 25px #0ff;
+}
+
 .sidebar-username{
   margin-left: 20px;
   font-weight: bolder;
@@ -33,10 +37,11 @@
 
 .user-sidebar-img{
   // position: static;
-  width: 250px;
-  height: 250px;
+  float: none;
+  // width: 250px;
+  // height: 250px;
   margin: 0 auto;
-  padding: 0px;
+  // padding: 0px;
 }
 
 .sidebar-link{
@@ -108,6 +113,10 @@
   width: 800px;
   // height: 175px;
   margin: 10px;
+}
+
+.track-tab:hover{
+  box-shadow: 0 0 25px #0ff;
 }
 
 .track-tab-waveform{

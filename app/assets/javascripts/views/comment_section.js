@@ -8,11 +8,16 @@ Soundbolt.Views.CommentSection = Backbone.View.extend({
 
   initialize: function(options){
     this.collection = options.comments;
+    this.audioMaster = options.audioMaster;
+
     this.listenTo(this.collection, 'sync add change', this.render.bind(this));
   },
 
   render: function(){
-    var content = this.template({ comments: this.collection });
+    var content = this.template({
+      comments: this.collection,
+      audioMaster: this.audioMaster
+    });
     this.$el.html(content);
     return this;
   },
@@ -26,17 +31,18 @@ Soundbolt.Views.CommentSection = Backbone.View.extend({
 
     data.comment["user_id"] = window.currentUserId;
     data.comment["track_id"] = window.currentTrackId;
+    data.comment["timeline_position"] = Number(this.audioMaster.currentTime.toFixed(1));
 
     // RAZYNOIR-WARNING: Hard Coded non-dynamic timeline tracking.
     // RAZYNOIR-INCOMPLETE: Track tracing incomplete.
-    // RAZYNOIR-MAJOR: Timeline utility not implemented. 
-    data.comment["timeline_position"] = 50.0;
+    // RAZYNOIR-MAJOR: Timeline utility not implemented.
+    // data.comment["timeline_position"] = 50.0;
 
     var newComment = new Soundbolt.Models.Comment();
 
     newComment.save(data.comment, {
-      success: function(){
-        thisView.collection.add(newComment);
+      success: function(model){
+        thisView.collection.add(model);
       }
     })
   }
