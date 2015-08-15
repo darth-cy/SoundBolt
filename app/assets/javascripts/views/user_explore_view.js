@@ -1,6 +1,6 @@
 Soundbolt.Views.UserExplore = Backbone.FusedView.extend({
   template: JST['user_explore'],
-  className: "user-view-normal-trackfield col-md-6",
+  className: "user-view-normal-trackfield col-md-8",
 
   initialize: function(options){
     this.collection = options.users;
