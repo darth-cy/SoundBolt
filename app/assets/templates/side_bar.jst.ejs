@@ -1,7 +1,7 @@
 <!-- have user passed in -->
 
 <div class="container-fluid">
-  <img class="user-sidebar-img" src="https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/Icosahedron.gif" alt="image can't be found :(("/>
+  <img class="user-sidebar-img" src="<%= user.escape('image_url') %>" alt="image can't be found :(("/>
 </div>
 
 <hr>

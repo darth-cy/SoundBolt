@@ -1,4 +1,4 @@
-json.(@user, :id, :username, :email, :description)
+json.(@user, :id, :username, :email, :description, :image_url)
 
 json.followings_followed @user.followings_followed do |following_followed|
   json.id following_followed.id

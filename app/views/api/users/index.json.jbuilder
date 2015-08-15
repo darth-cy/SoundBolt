@@ -4,6 +4,7 @@ json.array! @users do |user|
   json.username user.username
   json.email user.email
   json.description user.description
+  json.image_url user.image_url
 
   json.followings_followed user.followings_followed do |following_followed|
     json.id following_followed.id

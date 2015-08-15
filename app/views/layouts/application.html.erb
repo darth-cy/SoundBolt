@@ -6,13 +6,7 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 
-  <!-- RAZYNOIR: Configure Cloudinary options. Caution. -->
-  <script type="text/javascript" charset="utf-8">
-    window.CLOUDINARY_OPTIONS = {
-      cloud_name: "<%=ENV['CLOUD_NAME']%>",
-      upload_preset: "<%= ENV['UPLOAD_PRESET'] %>"
-    };
-  </script>
+  <!-- RAZYNOIR: Use Filepicker -->
   <script type="text/javascript" src="//api.filepicker.io/v2/filepicker.js"></script>
   <script>
     filepicker.setKey("ADEuemHr8QhKL2J02GXF7z");
