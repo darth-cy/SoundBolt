@@ -9,9 +9,9 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
     "submit form": "createTrack"
   },
 
-  // initialize: function(options){
-  //
-  // },
+  initialize: function(options){
+    this.model = options.user;
+  },
 
   render: function(){
     var content = this.template();
@@ -22,25 +22,21 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
   createTrack: function(event){
     event.preventDefault();
 
-    // RAZYNOIR-TEST: Skip form processing for new track.
-    return 0;
-
     var thisView = this;
 
     $form = this.$el.find(".new-track-form");
     var data = $form.serializeJSON();
 
+    var newTrack = new Soundbolt.Models.Track();
+
+    newTrack.save(data.track, {
+      success: function(){
+        thisView.model.fetch();
+        $(document.getElementById('display-own-tracks')).trigger('click');
+      }
+    })
+
     // RAZYNOIR-INCOMPLETE: File upload system broken as hell.
     // RAZYNOIR-MAJOR: Track creation not available.
-
-    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
-      var data = result[0];
-      image.set({url: data.url, thumb_url: data.thumbnail_url});
-      image.save({}, {
-        success: function(){
-          CloudinaryDemo.Collections.images.add(image);
-        }
-      });
-    });
   }
 })

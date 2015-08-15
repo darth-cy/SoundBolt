@@ -1,35 +1,46 @@
 <div class="track-tab panel-body container-fluid new-track-form-field">
   <form class="new-track-form form-group">
 
-    <h1>Make a New Track (This doesn't work)</h1>
+    <h1>Make a New Track</h1>
 
     <br>
 
     <label for="title_field">Title</label>
     <input type="text" name="track[title]"
-           class="form-control input-lg" id="title_field">
+           class="form-control" id="title_field">
 
     <br>
 
     <label for="description_field">Description</label>
-    <input type="text" name="track[description]"
-          class="form-control input-lg" id="description_field">
+    <textarea name="track[description]"
+          class="form-control" id="description_field"></textarea>
 
     <br>
+    <hr>
 
-    <label for="upload-trackfile-button">Choose a Trackfile &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <button id="upload-trackfile-button" class="btn btn-defualt">upload</button>
-
-    <input type="filepicker" name="user[image_url]" data-fp-button-text="Choose Profile Picture"
+    <label for="upload-cover-field">Upload a Track Cover &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="filepicker" name="track[image_url]" data-fp-button-text="Select"
            data-fp-mimetype="image/*" data-fp-services="COMPUTER, CONVERT" data-fp-crop-force="true"
-           data-fp-crop-ratio="1">
+           data-fp-crop-ratio="1" id="upload-cover-field">
 
-    <input type="filepicker" name="user[image_url]" data-fp-button-text="Choose Profile Picture"
-          data-fp-mimetype="image/*" data-fp-services="COMPUTER, CONVERT" data-fp-crop-force="true"
-          data-fp-crop-ratio="1">
+    <br>
+    <hr>
+
+    <label for="upload-track-field">Upload a Track File &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="filepicker" name="track[trackfile_url]" data-fp-button-text="Select"
+           id="upload-track-field" data-fp-services="COMPUTER">
 
     <hr>
 
     <input class="btn btn-primary" type="submit" value="Submit">
   </form>
+
+  <script>
+    var trackElement = document.getElementById('upload-track-field');
+    var coverElement = document.getElementById('upload-cover-field');
+
+    filepicker.constructWidget(trackElement);
+    filepicker.constructWidget(coverElement);
+  </script>
+
 </div>
