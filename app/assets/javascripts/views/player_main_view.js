@@ -12,9 +12,7 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
   initialize: function(options){
     if(options.track && options.track.id){
       this.model = options.track;
-      // if(this.model.id){
       this.model.fetch();
-      // }
     }else{
       this.model = new Soundbolt.Models.Track();
     }
@@ -40,8 +38,12 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
   },
 
   render: function(){
-    var thisController = this;
-    var content = this.template({ track: this.model });
+    // var thisController = this;
+    if(window.currentTrackId){
+      var content = this.template({ track: this.model });
+    }else{
+      var content = ""
+    }
     this.$el.html(content);
 
     return this;

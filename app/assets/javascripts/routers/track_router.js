@@ -19,9 +19,10 @@ Soundbolt.Routers.TrackRouter = Backbone.Router.extend({
   },
 
   switchTrack: function(id){
+    window.currentTrackId = id;
+    
     var track = new Soundbolt.Models.Track({ id: id });
     track.fetch();
-
     this._swapTrack(track);
 
     var playerView = new Soundbolt.Views.PlayerMainView({ track: this.currentTrack() });

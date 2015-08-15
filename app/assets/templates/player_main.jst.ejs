@@ -1,41 +1,43 @@
-<button type="button" id="audio-pause-button" class="btn btn-default btn-lg">
-  Pause
-</button>
+<div class="soundbolt-toolbar navbar navbar-default navbar-fixed-bottom">
+  <button type="button" id="audio-pause-button" class="btn btn-default btn-lg">
+    Pause
+  </button>
 
-<button type="button" id="audio-play-button" class="btn btn-default btn-lg">
-  Play
-</button>
+  <button type="button" id="audio-play-button" class="btn btn-default btn-lg">
+    Play
+  </button>
 
-<!-- <button type="button" class="btn btn-default btn-lg">
-  Stop
-</button> -->
+  <!-- <button type="button" class="btn btn-default btn-lg">
+    Stop
+  </button> -->
 
-<button type="button" class="btn btn-default btn-lg">
-  <% if (track.id) {%>
-    Currently Playing: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <strong><%= track.get('title') %></strong>
-  <%}else{  %>
-    Currently Playing: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nothing is playing.
-  <%} %>
-</button>
+  <button type="button" class="btn btn-default btn-lg">
+    <% if (track.id) {%>
+      Currently Playing: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <strong><%= track.get('title') %></strong>
+    <%}else{  %>
+      Currently Playing: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nothing is playing.
+    <%} %>
+  </button>
 
-<audio id="player-master-audio" controls="controls" autoplay>
-  <source id="audio-master-source" src="<%= track.get('trackfile_url') %>" type="audio/mpeg"/>
-</audio>
+  <audio id="player-master-audio" controls="controls" autoplay>
+    <source id="audio-master-source" src="<%= track.get('trackfile_url') %>" type="audio/mpeg"/>
+  </audio>
 
-<div class="player-master-progress" id="audio-seeking-control">
-  <div id="player-master-inner-progress"></div>
+  <div class="player-master-progress" id="audio-seeking-control">
+    <div id="player-master-inner-progress"></div>
+  </div>
+
+  <button type="button" class="btn btn-primary btn-lg" id="focus-mode-switch">
+    <!-- <% if (window.focused) { %>
+      Exit Focus Mode
+    <% }else{ %> -->
+      Toggle Focus
+    <!-- <% } %> -->
+  </button>
+
+    <!-- <h1><%= track.get('title') %></h1> -->
+
+  <!-- <div class="soundbolt-player-master-content">
+    <p><%= track.get('description') %></p>
+  </div> -->
 </div>
-
-<button type="button" class="btn btn-primary btn-lg" id="focus-mode-switch">
-  <!-- <% if (window.focused) { %>
-    Exit Focus Mode
-  <% }else{ %> -->
-    Toggle Focus
-  <!-- <% } %> -->
-</button>
-
-  <!-- <h1><%= track.get('title') %></h1> -->
-
-<!-- <div class="soundbolt-player-master-content">
-  <p><%= track.get('description') %></p>
-</div> -->
