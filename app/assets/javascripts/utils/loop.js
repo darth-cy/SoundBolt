@@ -9,7 +9,7 @@
     this.snowballs = [];
   }
 
-  SnowLoop.density = 1;
+  SnowLoop.density = 2;
 
   SnowLoop.prototype.render = function(ctx){
     ctx.clearRect(0, 0, this.xDim, this.yDim);
@@ -65,13 +65,10 @@
 
     // render at 60 FPS
     this._interval = window.setInterval((function () {
-
-      // RAZYNOIR-TEST: Output to test repeated drawing schedule.
-      console.log("Top Canvas Drawing!")
       this.createSnow(SnowLoop.density);
       this.deleteSnow();
       this.move();
       this.render(ctx);
-    }).bind(this), 1000 / 60);
+    }).bind(this), 1000 / 30);
   };
 })();
