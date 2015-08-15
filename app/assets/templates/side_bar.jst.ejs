@@ -5,10 +5,33 @@
 </div>
 
 <hr>
-<h1 class="sidebar-username"><%= user.escape('username') %></h1>
-<p class="sidebar-useremail"><%= user.escape('email') %></p>
+<div class="sidebar-userinfo">
+  <h1 class="sidebar-username"><%= user.escape('username') %></h1>
+  <p class="sidebar-useremail"><%= user.escape('email') %></p>
+  <div class='sidebar-userbio'>
+    <% if(user.escape('description').length > 0){ %>
+      <%= user.escape('description') %>
+    <% }else{ %>
+      <%= "Add a bio to your profile! :)" %>
+    <% } %>
+  </div>
+</div>
 <hr>
-<div><%= user.escape('description') %></div>
+
+<div class="sidebar-datafield row">
+  <div class="col-md-4 sidebar-data">
+    20<br>Followers
+  </div>
+  <div class="col-md-4 sidebar-data">
+    20<br>Following
+  </div>
+  <div class="col-md-4 sidebar-data">
+    20<br>Tracks
+  </div>
+</div>
+
+
+<hr>
 
 <a class="btn btn-default btn-lg btn-block" id="display-own-tracks" href="#">My Own Tracks</a></div>
 <a class="btn btn-default btn-lg btn-block" id="display-my-streams" href="#">My Streams</a></div>

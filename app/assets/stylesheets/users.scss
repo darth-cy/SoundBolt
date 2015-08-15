@@ -10,8 +10,10 @@
 }
 
 // User Show Page SideBar CSS
-.row{
+.user-view-normal-master.row{
   text-align: center;
+  padding-left: 25px;
+  padding-right: 0px;
 }
 
 .user-view-normal-sidebar{
@@ -19,14 +21,36 @@
   position: absolute;
   width: inherit;
   background: white;
-  margin-left: 50px;
-  margin-right: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-top: 10px;
   opacity: 0.95;
 }
 
+.user-view-normal-sidebar .container-fluid{
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .user-view-normal-sidebar:hover {
   box-shadow: 0 0 25px #0ff;
+}
+
+.sidebar-datafield > .sidebar-data:first-child{
+  border-right: 1px dotted #808080;
+}
+
+.sidebar-datafield > .sidebar-data:last-child{
+  border-left: 1px dotted #808080;
+}
+
+.sidebar-data{
+  padding: 5px;
+  font-weight: bold;
+  font-size: 24px;
 }
 
 .sidebar-username{
@@ -49,6 +73,13 @@
   // padding: 0px;
 }
 
+.sidebar-userbio{
+  text-align: left;
+  border: 1px solid #808080;
+  border-style: dotted;
+  padding: 20px;
+}
+
 .sidebar-link{
   border-radius: 10px;
   margin: 25px;
@@ -68,23 +99,80 @@
 // User Show Page TrackField CSS
 
 .user-view-normal-trackfield{
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
   position: absolute;
   height: inherit;
   width: inherit;
 }
 
-// User Show Page TrackTab CSS
-.track-tab-img{
-  top: 40px;
-  left: 40px;
-  position: absolute;
-  height: 75px;
-  width: 75px;
+.user-view-normal-trackfield > .container-fluid{
+  width: 90%;
 }
 
-.field-tab-subinfo-tags{
+// User Show Page TrackTab CSS
+
+.track-tab{
+  position: relative;
+  background: white;
+  text-align: left;
+  width: inherit;
+  height: inherit;
+  margin-bottom: 10px;
+}
+
+.track-tab-image-holder{
+  padding: 10px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  height: 105;
+  width: 105;
+}
+
+.track-tab-buffer{
+  height: 120px;
+}
+
+.track-tab-img{
+  display: block;
+  height: 85px;
+  width: 85px;
+}
+
+.track-tab-title-holder{
+  position: absolute;
+  top: 47px;
+}
+
+.track-tab-header{
+  font-weight: bolder;
+  margin-left: 125px;
+}
+
+.track-tab-marquee{
+  width: 65%;
+  margin-left: 130px;
+}
+
+.track-tab > .btn{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.track-tab:hover{
+  box-shadow: 0 0 25px #0ff;
+}
+
+.track-switch{
+  opacity: 0;
+}
+
+.track-field-subinfo-tags{
   display: inline-block;
   width: 150px;
   height: 30px;
@@ -94,44 +182,6 @@
   margin: 10px;
   padding: 5px;
   text-align: center;
-}
-
-.track-tab-header{
-  font-weight: bolder;
-  margin-left: 125px;
-}
-
-.track-tab-paragraph{
-  margin-left: 125px;
-}
-
-.track-tab > .btn{
-  position: absolute;
-  right: 50px;
-  top: 40px;
-}
-
-.track-tab{
-  position: relative;
-  background: white;
-  height: inherit;
-  width: 800px;
-  // height: 175px;
-  margin: 10px;
-}
-
-.track-tab:hover{
-  box-shadow: 0 0 25px #0ff;
-}
-
-.track-tab-waveform{
-  border: 1px solid black;
-  width: 680px;
-  height: 75px;
-}
-
-.track-switch{
-  opacity: 0;
 }
 
 // USER SHOW NEW TRACK CSS

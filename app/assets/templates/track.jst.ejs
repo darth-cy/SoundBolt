@@ -1,9 +1,16 @@
+<div class="track-tab-image-holder">
+  <img class="track-tab-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Simple_Music.svg/2000px-Simple_Music.svg.png" alt="" />
+</div>
 
-<img class="track-tab-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Simple_Music.svg/2000px-Simple_Music.svg.png" alt="" />
+<div class="track-tab-title-holder">
+  <h1 class="track-tab-header"><%= track.get('title') %> &nbsp;&nbsp; <small>by: <%= track.escape('username') %></small></h1>
+</div>
 
-<h1 class="track-tab-header"><%= track.get('title') %> &nbsp;&nbsp; <small>by: <%= track.escape('username') %></small></h1>
-<a class="btn btn-warning" id="track-switch" href="#">Play Track</a>
-<marquee behavior="scroll" direction="left"> <%= track.escape('description') %></marquee>
+<div class="track-tab-buffer"></div>
+
+<marquee class="track-tab-marquee" behavior="scroll" direction="left"> <%= track.escape('description') %></marquee>
 <!-- <p class="track-tab-paragraph"> <% track.get('description') %></p> -->
+
+<a class="btn btn-warning" id="track-switch" href="#">Play Track</a>
 
 <hr>
