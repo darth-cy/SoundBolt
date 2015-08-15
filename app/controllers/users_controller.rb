@@ -18,13 +18,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    if user_params[:confirm] != user_params[:password]
-      flash.error[:errors] = ["Password confirm doesn't match."]
-      render :new
-    end
-
     @user = User.new(user_params)
-    if @user.save
+
+    if user_params[:confirm] != user_params[:password]
+      flash[:errors] = ["Password confirm doesn't match."]
+      render :new
+    elsif @user.save
       log_in!(@user)
       redirect_to user_url(@user)
     else

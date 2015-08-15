@@ -9,7 +9,7 @@
 
     <label for="email_field">Email</label>
     <input type="text" name="user[email]"
-           class="form-control" id="email_field">
+           class="form-control" id="email_field" value="<%= @user.email %>">
 
     <br>
 
@@ -27,7 +27,11 @@
 
     <label for="username_field">Choose A Username</label>
     <input type="text" name="user[username]"
-          class="form-control" id="username_field">
+          class="form-control" id="username_field" value="<%= @user.username %>">
+
+    <br>
+
+    <input type="filepicker" name="user[image_url]">
 
     <br>
 
