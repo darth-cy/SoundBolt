@@ -124,6 +124,15 @@
   margin-bottom: 10px;
 }
 
+.track-tab:hover{
+  box-shadow: 0 0 30px #0ff;
+}
+
+.track-tab > hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .track-tab-image-holder{
   padding: 10px;
   position: absolute;
@@ -158,15 +167,10 @@
   margin-left: 130px;
 }
 
-.track-tab > .btn{
+#track-switch{
   position: absolute;
   right: 20px;
   top: 20px;
-  transition: border 1s;
-}
-
-.track-tab:hover{
-  box-shadow: 0 0 30px #0ff;
 }
 
 .track-field-subinfo-tags{
@@ -193,5 +197,19 @@
 
 // USER EXPLORE CSS
 #see-user-info{
-  right: 225px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+#unfollow-user{
+  position: absolute;
+  right: 110px;
+  top: 20px;
+}
+
+#follow-user{
+  position: absolute;
+  right: 110px;
+  top: 20px;
 }

@@ -1,6 +1,6 @@
 Soundbolt.Views.UserTab = Backbone.View.extend({
   template: JST['user_tab'],
-  className: 'track-tab panel-body container-fluid',
+  className: 'track-tab container-fluid',
 
   events: {
     "click .btn-primary": "followUser",

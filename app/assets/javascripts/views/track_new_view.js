@@ -2,7 +2,7 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
 
   template: JST['track_new'],
 
-  className: "user-view-normal-trackfield col-md-6",
+  className: "user-view-normal-trackfield col-md-8",
 
   // RAZYNOIR-INCOMPLETE: Form event not listening.
   events: {

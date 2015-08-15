@@ -1,15 +1,21 @@
-<img class="track-tab-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Simple_Music.svg/2000px-Simple_Music.svg.png" alt="" />
 
-<h1 class="track-tab-header"><%= user.get('username') %></h1>
+<div class="track-tab-image-holder">
+  <img class="track-tab-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Simple_Music.svg/2000px-Simple_Music.svg.png" alt="" />
+</div>
 
+<div class="track-tab-title-holder">
+  <h1 class="track-tab-header"><%= user.get('username') %></h1>
+</div>
 
-<p class="track-tab-paragraph">
+<div class="track-tab-buffer"></div>
+
+<marquee class="track-tab-marquee">
   <% if(user.escape('description').length < 1){ %>
     This user didn't add a description.
   <% }else{ %>
     <%= user.escape('description') %>
   <% } %>
-</p>
+</marquee>
 
 <% if(user.follower_ids.indexOf(currentUser.id) !== -1){ %>
   <a class="btn btn-danger" id="unfollow-user" href="#">Remove from Stream</a>
@@ -17,7 +23,7 @@
   <a class="btn btn-primary" id="follow-user" href="#">Add to My Stream</a>
 <% } %>
 
-<a class="btn btn-warning" id="see-user-info" href="#">See Info</a>
+<a class="btn btn-warning" id="track-switch" href="#">See Info</a>
 
 <hr>
 
