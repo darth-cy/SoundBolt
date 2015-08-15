@@ -14,7 +14,7 @@ class Api::TracksController < ApplicationController
   def create
     @track = Track.new(track_params)
     @track.user_id = current_user.id
-    
+
     if @track.save
       render json: @track
     else
@@ -25,7 +25,6 @@ class Api::TracksController < ApplicationController
   private
 
   def track_params
-    # RAZYNOIR-INCOMPLETE: File upload not available.
     params.require(:track).permit(:title, :description, :trackfile_url, :image_url)
   end
 end

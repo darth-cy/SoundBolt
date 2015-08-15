@@ -3,8 +3,7 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
   template: JST['track_new'],
 
   className: "user-view-normal-trackfield col-md-8",
-
-  // RAZYNOIR-INCOMPLETE: Form event not listening.
+  
   events: {
     "submit form": "createTrack"
   },
@@ -35,8 +34,5 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
         $(document.getElementById('display-own-tracks')).trigger('click');
       }
     })
-
-    // RAZYNOIR-INCOMPLETE: File upload system broken as hell.
-    // RAZYNOIR-MAJOR: Track creation not available.
   }
 })
