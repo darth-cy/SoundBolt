@@ -16,25 +16,29 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
     this.streams = this.model.streams();
 
     this.addSideBar();
-    this.displayOwnTracks();
+    this.addOwnTrackField();
 
     this.listenTo(this.model, 'sync change remove', this._resetAssets.bind(this));
   },
 
-  displayOwnTracks: function(){
+  displayOwnTracks: function(event){
+    event.preventDefault();
     this.addOwnTrackField();
   },
 
-  displayMyStreams: function(){
+  displayMyStreams: function(event){
+    event.preventDefault();
     this.addStreamTrackField();
   },
 
-  createTrack: function(){
+  createTrack: function(event){
+    event.preventDefault();
     var trackNewView = new Soundbolt.Views.TrackNewView({ user: this.model });
     this._swapTrackField(trackNewView);
   },
 
-  exploreUsers: function(){
+  exploreUsers: function(event){
+    event.preventDefault();
     var allUsers = new Soundbolt.Collections.Users();
     allUsers.fetch();
 
