@@ -53,10 +53,8 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
     var audioMaster = document.getElementById("player-master-audio");
     var progress_header = document.getElementById('player-master-inner-progress');
 
-    // RAZYNOIR-TEST: Output syncSchedule for audioMaster.
-    if(!audioMaster || !progress_header){ console.log("not found"); return; };
+    if(!audioMaster || !progress_header){ return; };
 
-    console.log("sync progress!");
     var $progress_header = $(progress_header);
     var playPercent = 100 * (audioMaster.currentTime / audioMaster.duration);
     $progress_header.css("margin-left", playPercent + "%");

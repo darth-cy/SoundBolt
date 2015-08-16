@@ -6,6 +6,12 @@ json.followings_followed @user.followings_followed do |following_followed|
   json.following_id following_followed.following_user_id
 end
 
+json.followings_following @user.followings_following do |following_following|
+  json.id following_following.id
+  json.followed_id following_following.followed_user_id
+  json.following_id following_following.following_user_id
+end
+
 json.tracks @user.tracks do |track|
   json.id track.id
   json.user_id track.user_id

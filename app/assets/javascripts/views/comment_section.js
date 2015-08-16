@@ -10,6 +10,8 @@ Soundbolt.Views.CommentSection = Backbone.View.extend({
     this.collection = options.comments;
     this.audioMaster = options.audioMaster;
 
+    this.synSchedule = undefined;
+
     this.listenTo(this.collection, 'sync add change', this.render.bind(this));
   },
 
@@ -19,7 +21,25 @@ Soundbolt.Views.CommentSection = Backbone.View.extend({
       audioMaster: this.audioMaster
     });
     this.$el.html(content);
+    this.newSyncSchedule();
     return this;
+  },
+
+  remove: function(){
+    debugger;
+    clearInterval(this.syncSchedule);
+  },
+
+  newSyncSchedule: function(){
+    if(this.syncSchedule){
+      clearInterval(this.syncSchedule);
+    }
+    this.syncSchedule = setInterval(this.updateInfo.bind(this), 1000);
+  },
+
+  updateInfo: function(){
+    var $commentPanel = $(document.getElementById('comment-info-panel'));
+    $commentPanel.html(JST['comment_info']({ audioMaster: this.audioMaster }))
   },
 
   createComment: function(event){
@@ -32,11 +52,6 @@ Soundbolt.Views.CommentSection = Backbone.View.extend({
     data.comment["user_id"] = window.currentUserId;
     data.comment["track_id"] = window.currentTrackId;
     data.comment["timeline_position"] = Number(this.audioMaster.currentTime.toFixed(1));
-
-    // RAZYNOIR-WARNING: Hard Coded non-dynamic timeline tracking.
-    // RAZYNOIR-INCOMPLETE: Track tracing incomplete.
-    // RAZYNOIR-MAJOR: Timeline utility not implemented.
-    // data.comment["timeline_position"] = 50.0;
 
     var newComment = new Soundbolt.Models.Comment();
 

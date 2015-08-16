@@ -25,6 +25,13 @@ Soundbolt.Models.User = Backbone.Model.extend({
     return this._followings;
   },
 
+  followeds: function(){
+    if(!this._followeds){
+      this._followeds = new Soundbolt.Collections.Followings({ user: this });
+    }
+    return this._followeds;
+  },
+
   parse: function(response){
     this.set(response);
 
@@ -39,13 +46,27 @@ Soundbolt.Models.User = Backbone.Model.extend({
       response.followings_followed.forEach(function(f){
         follower_ids.push(f.following_id);
       })
-      // debugger;
+      // debugger;this is something
 
       delete followings_followed;
     }
 
+    if(response.followings_following){
+      this.followeds().set(response.followings_following);
+      this.followeds_count = response.followings_following.length;
+
+      this.followed_id = [];
+      var followed_ids = this.follower_ids;
+      response.followings_following.forEach(function(f){
+        followed_ids.push(f.following_id);
+      })
+
+      delete followings_following;
+    }
+
     if(response.tracks){
       this.tracks().parse(response.tracks);
+      this.track_count = response.tracks.length;
       delete response.tracks;
     }
 
