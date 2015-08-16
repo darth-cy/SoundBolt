@@ -14,6 +14,8 @@ json.tracks @user.tracks do |track|
 
   json.title track.title
   json.description track.description
+  json.trackfile_url track.trackfile_url
+  json.image_url track.image_url
 end
 
 json.streams @user.streams do |stream|
@@ -24,4 +26,6 @@ json.streams @user.streams do |stream|
 
   json.title stream.title
   json.description stream.description
+  json.trackfile_url stream.trackfile_url
+  json.image_url stream.image_url
 end

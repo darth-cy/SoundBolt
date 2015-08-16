@@ -1,4 +1,4 @@
-json.(@track, :id, :user_id, :title, :description, :trackfile_url)
+json.(@track, :id, :user_id, :title, :description, :trackfile_url, :image_url)
 
 json.username @track.user.username
 
