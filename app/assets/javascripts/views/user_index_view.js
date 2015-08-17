@@ -16,7 +16,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
     this.streams = this.model.streams();
 
     this.addSideBar();
-    this.addOwnTrackField();
+    this.addStreamTrackField();
 
     this.listenTo(this.model, 'sync change remove', this._resetAssets.bind(this));
   },
