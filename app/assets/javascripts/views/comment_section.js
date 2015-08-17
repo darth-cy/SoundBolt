@@ -26,7 +26,6 @@ Soundbolt.Views.CommentSection = Backbone.View.extend({
   },
 
   remove: function(){
-    debugger;
     clearInterval(this.syncSchedule);
   },
 

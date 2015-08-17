@@ -1,5 +1,6 @@
 Soundbolt.Graphics.drawMusicBlock = function(context, startX, startY, width, height){
-  context.fillRect(startX, startY - height, startX + width, startY);
+  context.fillStyle = "#C0C0C0";
+  context.fillRect(startX, startY - height, width, height);
 };
 
 Soundbolt.Graphics.drawMusicWave = function(context, data, startX, startY, blockWidth){
@@ -10,10 +11,14 @@ Soundbolt.Graphics.drawMusicWave = function(context, data, startX, startY, block
 };
 
 Soundbolt.Graphics.drawWaveForm = function(audioMaster, canvasEl){
-  dataPoints = Math.floor(audioMaster.length());
+  if(!audioMaster || !canvasEl){ return  0; }
+
+  dataPoints = 20;
   data = Array.apply(null, Array(dataPoints)).map(function(){
-      return Math.random() * 10;
+      return Math.floor(Math.random() * 20) + 1;
   });
+
   var ctx = canvasEl.getContext('2d');
-  Soundbolt.Graphics.drawMusicWave(ctx, datam, 100, 100, 10);
+  ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+  Soundbolt.Graphics.drawMusicWave(ctx, data, 10, 100, 5);
 };

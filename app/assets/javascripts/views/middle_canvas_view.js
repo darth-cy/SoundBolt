@@ -19,6 +19,25 @@ Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
        track: this.model
      });
     this.$el.html(content);
+    this.newSyncSchedule();
     return this;
+  },
+
+  remove: function(){
+    if(this._syncSchedule){
+      clearInterval(this._syncSchedule);
+    }
+  },
+
+  newSyncSchedule: function(){
+    if(this._syncSchedule){
+      clearInterval(this._syncSchedule);
+    }
+    this._syncSchedule = setInterval(this.updateWaveForm.bind(this), 1000);
+  },
+
+  updateWaveForm: function(){
+    var middleCanvas = document.getElementById('focus-middle-canvas');
+    Soundbolt.Graphics.drawWaveForm(this.audioMaster, middleCanvas);
   }
 })

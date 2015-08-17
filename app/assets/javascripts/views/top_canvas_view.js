@@ -13,12 +13,16 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
     var content = this.template({ track: this.model });
     this.$el.html(content);
 
-    this._seekingSechdule = setInterval(this.seekAndDraw.bind(this), 10);
+    // RAZYNOIR-TEST:
+    // RAZYNOIR-WARNING:
+    // this._seekingSechdule = setInterval(this.seekAndDraw.bind(this), 10);
     return this;
   },
 
   remove: function(){
-    this._drawingSchedule.destroy();
+    if(this._drawingSchedule){
+      this._drawingSchedule.destroy();
+    }
   },
 
   seekAndDraw: function(){
