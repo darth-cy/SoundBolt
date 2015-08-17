@@ -53,17 +53,13 @@
   </div>
 </div>
 
-<!--  s3_uploader callback_url: "model_url", callback_param: "model[image_url]", id: "s3-uploader" do
-   file_field_tag :file, multiple: true, data: { url: "s3_uploader_url" }
- end  -->
-
  <script>
   var demoButton = document.getElementById("user-demo-button");
   demoButton.addEventListener("click", function(event){
     event.preventDefault();
     var usernameField = document.getElementById("username_field");
     var userpassField = document.getElementById("password_field");
-    usernameField.value = "guest@gmail.com";
-    userpassField.value = "guest123";
+    usernameField.value = "demo@gmail.com";
+    userpassField.value = "demo123";
   })
  </script>

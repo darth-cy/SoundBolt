@@ -3,7 +3,7 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
   template: JST['track_new'],
 
   className: "user-view-normal-trackfield col-md-8",
-  
+
   events: {
     "submit form": "createTrack"
   },
@@ -26,6 +26,9 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
     $form = this.$el.find(".new-track-form");
     var data = $form.serializeJSON();
 
+    if(document.getElementById('use-profile-check').checked){
+      data.track["image_url"] = thisView.model.escape('image_url');
+    };
     var newTrack = new Soundbolt.Models.Track();
 
     newTrack.save(data.track, {
