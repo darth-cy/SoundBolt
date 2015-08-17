@@ -34,10 +34,9 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
 
     var thisView = this;
 
-    var deleteTrack = new Soundbolt.Models.Track({ id: this.model.id });
-    deleteTrack.destroy({
+    thisView.model.destroy({
       success: function(){
-        thisView.collection.fetch();
+        thisView.collection.remove(thisView.model);
       }
     });
   }
