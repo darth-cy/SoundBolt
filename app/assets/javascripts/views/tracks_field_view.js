@@ -33,7 +33,6 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   },
 
   render: function(){
-    RAZYNOIR:
     if(this.collection.length === 0){
       var content = JST['no_track']();
     }else{

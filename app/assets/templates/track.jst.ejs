@@ -18,10 +18,12 @@
 
 <hr>
 
-<% if(track.genres().length < 1){ %>
-  <div class="track-field-subinfo-tags" style="background-color: black;">No Genre</div>
-<% }else{ %>
-  <% track.genres().each(function(genre){ %>
-    <div class="track-field-subinfo-tags" style="background-color: <%= genre.genre_color %>;"><%= genre.name %></div>
-  <% }) %>
+<% if(track.get('genres')){ %>
+  <% if(track.get('genres').length < 1){ %>
+    <div class="track-field-subinfo-tags" style="background-color: black;">No Genre</div>
+  <% }else{ %>
+    <% track.get('genres').forEach(function(genre){ %>
+      <div class="track-field-subinfo-tags" style="background-color: <%= genre.genre_color %>;"><%= genre.name %></div>
+    <% }) %>
+  <% } %>
 <% } %>
