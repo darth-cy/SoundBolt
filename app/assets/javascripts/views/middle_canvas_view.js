@@ -33,7 +33,7 @@ Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
     if(this._syncSchedule){
       clearInterval(this._syncSchedule);
     }
-    this._syncSchedule = setInterval(this.updateWaveForm.bind(this), 1000);
+    this._syncSchedule = setInterval(this.updateWaveForm.bind(this), 500);
   },
 
   updateWaveForm: function(){

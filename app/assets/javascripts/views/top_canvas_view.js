@@ -15,7 +15,7 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
 
     // RAZYNOIR-TEST:
     // RAZYNOIR-WARNING:
-    // this._seekingSechdule = setInterval(this.seekAndDraw.bind(this), 10);
+    this._seekingSechdule = setInterval(this.seekAndDraw.bind(this), 10);
     return this;
   },
 

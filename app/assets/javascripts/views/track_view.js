@@ -17,7 +17,8 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
     return this;
   },
 
-  switchTrack: function(){
+  switchTrack: function(event){
+    event.preventDefault();
     Backbone.history.navigate("trackswitch/" + this.model.id, { trigger: true });
   }
 })

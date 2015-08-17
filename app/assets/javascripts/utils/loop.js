@@ -9,7 +9,7 @@
     this.snowballs = [];
   }
 
-  SnowLoop.density = 2;
+  SnowLoop.density = 1;
 
   SnowLoop.prototype.render = function(ctx){
     ctx.clearRect(0, 0, this.xDim, this.yDim);
@@ -69,6 +69,6 @@
       this.deleteSnow();
       this.move();
       this.render(ctx);
-    }).bind(this), 1000 / 30);
+    }).bind(this), 1000 / 80);
   };
 })();
