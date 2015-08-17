@@ -1,4 +1,4 @@
 Soundbolt.Collections.Genres = Backbone.Collection.extend({
-  urlRoot: "/api/genres",
+  url: "/api/genres",
   model: Soundbolt.Models.Genre
 })

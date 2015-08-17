@@ -14,6 +14,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
 
     this.tracks = this.model.tracks();
     this.streams = this.model.streams();
+    this.genres = options.allGenres;
 
     this.addSideBar();
     this.addStreamTrackField();

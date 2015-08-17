@@ -35,7 +35,19 @@ Following.create!(following_user_id: 5, followed_user_id: 3)
 Following.create!(following_user_id: 5, followed_user_id: 4)
 Following.create!(following_user_id: 5, followed_user_id: 2)
 
+
+Genre.create!(name: "Classics", genre_color: "purple");
+Genre.create!(name: "Indie", genre_color: "crimson");
+Genre.create!(name: "Jazz", genre_color: "navy");
+Genre.create!(name: "Hip-Hop", genre_color: "orange");
+Genre.create!(name: "Electro", genre_color: "orange");
+Genre.create!(name: "Punk", genre_color: "brown");
+Genre.create!(name: "Remix", genre_color: "purple");
+Genre.create!(name: "OST", genre_color: "purple");
+Genre.create!(name: "Ambiance", genre_color: "blue");
+
 # Seed prototypes
 # Track.create!(user_id: , title: "", description: "", image_url: "", trackfile_url: "")
 # User.create!(username: "", password: "", email: "", description: "", image_url: "")
 # Following.create!(following_user_id: , followed_uer_id: )
+# Genre.create!(name: "", genre_color: "");
