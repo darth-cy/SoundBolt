@@ -12,3 +12,8 @@ json.comments @track.comments do |comment|
   json.timeline_position comment.timeline_position
   json.updated_at comment.updated_at
 end
+
+json.genres @track.genres do |genre|
+  json.name genre.name
+  json.genre_color genre.genre_color
+end

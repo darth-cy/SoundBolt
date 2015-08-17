@@ -22,6 +22,11 @@ json.tracks @user.tracks do |track|
   json.description track.description
   json.trackfile_url track.trackfile_url
   json.image_url track.image_url
+
+  json.genres track.genres do |genre|
+    json.name genre.name
+    json.genre_color genre.genre_color
+  end
 end
 
 json.streams @user.streams do |stream|
@@ -34,4 +39,9 @@ json.streams @user.streams do |stream|
   json.description stream.description
   json.trackfile_url stream.trackfile_url
   json.image_url stream.image_url
+
+  json.genres stream.genres do |genre|
+    json.name genre.name
+    json.genre_color genre.genre_color
+  end
 end

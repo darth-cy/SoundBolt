@@ -8,9 +8,12 @@ Soundbolt.Models.Track = Backbone.Model.extend({
     return this._comments;
   },
 
-  // username: function(){
-  //   return this._username;
-  // },
+  genres: function(){
+    if(!this._genres){
+      this._genres = new Soundbolt.Collections.Genres();
+    }
+    return this._genres;
+  },
 
   // RAZYNOIR-INCOMPLETE: parse method doesn't go deep enough.
   parse: function(response){
@@ -21,10 +24,10 @@ Soundbolt.Models.Track = Backbone.Model.extend({
       delete response.comments;
     }
 
-    // if(response.username){
-    //   this.username = response.username;
-    //   delete response.username;
-    // }
+    if(reponse.genres){
+      this.genres().parse(response.genres);
+      delete response.genres;
+    }
 
     return response;
   }

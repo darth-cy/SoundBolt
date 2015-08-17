@@ -18,8 +18,10 @@
 
 <hr>
 
-<div class="">
-
-<div class="track-field-subinfo-tags" style="background-color: brown;">Jazz</div>
-<div class="track-field-subinfo-tags" style="background-color: purple;">Ambiance</div>
-<div class="track-field-subinfo-tags" style="background-color: navy;">Classics</div>
+<% if(track.genres().length < 1){ %>
+  <div class="track-field-subinfo-tags" style="background-color: black;">No Genre</div>
+<% }else{ %>
+  <% track.genres().each(function(genre){ %>
+    <div class="track-field-subinfo-tags" style="background-color: <%= genre.genre_color %>;"><%= genre.name %></div>
+  <% }) %>
+<% } %>

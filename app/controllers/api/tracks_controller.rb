@@ -7,7 +7,7 @@ class Api::TracksController < ApplicationController
   end
 
   def show
-    @track = Track.includes(:user).includes(comments: :user).find(params[:id])
+    @track = Track.includes(:user).includes(comments: :user).includes(:genres).find(params[:id])
     render 'show'
   end
 
