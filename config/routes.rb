@@ -18,5 +18,8 @@ Rails.application.routes.draw do
     resources :comments
     resources :followings, only: [:index, :show, :create, :update, :destroy]
 
+    resources :chategorizations, only: [:show, :create, :destroy]
+    resources :genres, only: [:index, :show, :create, :destroy]
+
   end
 end
