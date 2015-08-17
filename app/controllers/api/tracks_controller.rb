@@ -1,7 +1,7 @@
 class Api::TracksController < ApplicationController
 
   def index
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @tracks = @user.tracks
     render json: @tracks
   end
@@ -20,6 +20,12 @@ class Api::TracksController < ApplicationController
     else
       render json: @track.errors.full_messages, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @track = Track.find(params[:id]);
+    @track.destroy
+    render json: @track
   end
 
   private

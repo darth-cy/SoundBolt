@@ -54,12 +54,18 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   },
 
   addOwnTrackField: function(){
-    var tracksFieldView = new Soundbolt.Views.TracksFieldView({ tracks: this.tracks });
+    var tracksFieldView = new Soundbolt.Views.TracksFieldView({
+      tracks: this.tracks,
+      own: true
+    });
     this._swapTrackField(tracksFieldView);
   },
 
   addStreamTrackField: function(){
-    var tracksFieldView = new Soundbolt.Views.TracksFieldView({ tracks: this.streams });
+    var tracksFieldView = new Soundbolt.Views.TracksFieldView({
+      tracks: this.streams,
+      own: false
+    });
     this._swapTrackField(tracksFieldView);
   },
 

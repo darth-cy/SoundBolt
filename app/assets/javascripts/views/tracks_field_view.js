@@ -5,6 +5,7 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
 
   initialize: function(options){
     this.collection = options.tracks;
+    this.own = options.own;
 
     this.addTracks();
 
@@ -22,7 +23,11 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
     thisField.emptyComponents();
 
     this.collection.each(function(track){
-      var trackView = new Soundbolt.Views.TrackView({ track: track });
+      var trackView = new Soundbolt.Views.TrackView({
+        tracks: thisField.collection,
+        track: track,
+        own: thisField.own
+      });
       thisField.addComponent(trackView);
     })
   },
