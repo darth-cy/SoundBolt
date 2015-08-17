@@ -3,7 +3,7 @@ class Api::TracksController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @tracks = @user.tracks
-    render 'index'
+    render json: @tracks
   end
 
   def show
