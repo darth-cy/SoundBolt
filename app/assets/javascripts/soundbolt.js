@@ -3,6 +3,8 @@ window.Soundbolt = {
   Collections: {},
   Views: {},
   Routers: {},
+  Graphics: {},
+  
   initialize: function() {
 
     new Soundbolt.Routers.Router({
