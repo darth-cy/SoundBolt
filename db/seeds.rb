@@ -26,7 +26,6 @@ User.create!(username: "JeffSpeed68", password: "stefan123", email: "stefanKart@
   Following.create!(following_user_id: 2, followed_user_id: 5)
 Track.create!(user_id: 2 , title: "Jass Walker", description: "Experimental neo jazz track with light instrumental adaption. Flew into New York on Sunday night and felt doing some light things.", image_url: "https://www.filepicker.io/api/file/2clUGSL7SNOXzZ7uJuAV/convert?crop=0,0,93,93", trackfile_url: "https://www.filepicker.io/api/file/sPkApkaDS6nFvZOSoDDG")
   Chategorization.create!(track_id: 1, genre_id: 4)
-
 Track.create!(user_id: 2, title: "Letting it Go", description: "Back on San Francisco's main street. One of my good friend thought we might do a road trip themed album and this is the first single that we came up with.", image_url: "https://www.filepicker.io/api/file/2clUGSL7SNOXzZ7uJuAV/convert?crop=0,0,93,93", trackfile_url: "https://www.filepicker.io/api/file/RDn4zhQIRKeJWXszfQh7")
   Chategorization.create!(track_id: 2, genre_id: 1)
   Chategorization.create!(track_id: 2, genre_id: 5)

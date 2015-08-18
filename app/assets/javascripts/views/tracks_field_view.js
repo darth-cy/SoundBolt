@@ -55,37 +55,74 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
     var searchBar = $("#search-field-master");
     var content = JST['filter_tab']({ tagName: tagName, tagColor: tagColor });
     searchBar.append(content);
+
+    this.filter();
   },
 
   dismissTag: function(event){
     event.preventDefault();
     var tag = $(event.currentTarget);
     tag.remove();
+
+    this.filter();
   },
 
-  filter: function(e){
-    if(e){
-      e.preventDefault();
+  getTagCriteria: function(){
+    var tags = $('.dismissable');
+    var tagNameString = [];
+    for(var i = 0; i < tags.length; i++){
+      tagNameString.push($(tags[i]).html().trim());
     }
+    tagNameString = tagNameString.join(",");
+    return tagNameString;
+  },
+
+  tagFilter: function(collection, tagNames){
+    if(tagNames.length < 1){ return collection; }
+
+    var filteredCollection = new Soundbolt.Collections.Tracks({ user: 0 });
+
+    collection.each(function(track){
+      var genres = track.get("genres");
+      for(var i = 0; i < genres.length; i++){
+        if(tagNames.indexOf(genres[i].name) !== -1){
+          filteredCollection.add(track);
+        }
+      }
+    })
+
+    filteredCollection.shift();
+
+    return filteredCollection;
+  },
+
+  filter: function(){
     var nameCriteria = $("#search-name-field").val();
+    nameCriteria = nameCriteria.toLowerCase();
+    
+    var tagNameString = this.getTagCriteria();
 
     if(nameCriteria.length === 0){
       var filteredCollection = this.collection;
-      this.addTracks(filteredCollection);
-      this.fusion();
-      return 0;
+    }else{
+      var filteredCollection = new Soundbolt.Collections.Tracks({ user: 0 });
+      this.collection.each(function(track){
+        if(track.escape('title').toLowerCase().indexOf(nameCriteria) !== -1 ||
+           track.escape('username').toLowerCase().indexOf(nameCriteria) !== -1){
+          filteredCollection.add(track);
+        }
+      });
+      filteredCollection.shift();
     }
+
+    filteredCollection = this.tagFilter(filteredCollection, tagNameString);
+
+    this.addTracks(filteredCollection);
+    this.fusion();
+    return 0;
 
     nameCriteria = nameCriteria.toLowerCase();
 
-    var filteredCollection = new Soundbolt.Collections.Tracks({ user: this.model });
-    this.collection.each(function(track){
-      if(track.escape('title').toLowerCase().indexOf(nameCriteria) !== -1 ||
-         track.escape('username').toLowerCase().indexOf(nameCriteria) !== -1){
-        filteredCollection.add(track);
-      }
-    });
-    filteredCollection.shift();
 
     this.addTracks(filteredCollection);
     this.fusion();
