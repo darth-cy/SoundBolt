@@ -4,7 +4,7 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   className: 'user-view-normal-trackfield col-md-8',
 
   events: {
-
+    "keyup #search-name-field": "filterName"
   },
 
   initialize: function(options){
@@ -18,17 +18,22 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   },
 
   updateRender: function(){
-    this.model.fetch();
+    // this.model.fetch();
     this.addTracks();
     this.render();
   },
 
-  // RAZYNOIR: Internally used. Not exposed.
-  addTracks: function(){
+  addTracks: function(filteredTracks){
     var thisField = this;
     thisField.emptyComponents();
 
-    this.collection.each(function(track){
+    if(filteredTracks){
+      var tracks = filteredTracks;
+    }else{
+      var tracks = this.collection;
+    }
+
+    tracks.each(function(track){
       var trackView = new Soundbolt.Views.TrackView({
         tracks: thisField.collection,
         track: track,
@@ -36,6 +41,31 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
       });
       thisField.addComponent(trackView);
     })
+  },
+
+  filterName: function(){
+    var nameCriteria = $("#search-name-field").val();
+
+    if(nameCriteria.length === 0){
+      var filteredCollection = this.collection;
+      this.addTracks(filteredCollection);
+      this.fusion();
+      return 0;
+    }
+
+    nameCriteria = nameCriteria.toLowerCase();
+
+    var filteredCollection = new Soundbolt.Collections.Tracks({ user: this.model });
+    this.collection.each(function(track){
+      if(track.escape('title').toLowerCase().indexOf(nameCriteria) !== -1 ||
+         track.escape('username').toLowerCase().indexOf(nameCriteria) !== -1){
+        filteredCollection.add(track);
+      }
+    });
+    filteredCollection.shift();
+
+    this.addTracks(filteredCollection);
+    this.fusion();
   },
 
   render: function(){
