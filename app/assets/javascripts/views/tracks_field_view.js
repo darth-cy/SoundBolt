@@ -49,6 +49,8 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
     event.preventDefault();
     var tag = $(event.currentTarget);
 
+    $("#click-filter-tab-notice").css("display", "none");
+
     var tagName = tag.html();
 
     if(this.getTagArray().indexOf(tagName) !== -1){ return 0; }
@@ -66,6 +68,10 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
     event.preventDefault();
     var tag = $(event.currentTarget);
     tag.remove();
+
+    if(this.getTagArray().length < 1){
+      $("#click-filter-tab-notice").css("display", "inline");
+    }
 
     this.filter();
   },
