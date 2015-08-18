@@ -50,6 +50,9 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
     var tag = $(event.currentTarget);
 
     var tagName = tag.html();
+
+    if(this.getTagArray().indexOf(tagName) !== -1){ return 0; }
+
     var tagColor = tag.css('background-color');
 
     var searchBar = $("#search-field-master");
