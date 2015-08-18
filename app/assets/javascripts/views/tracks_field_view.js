@@ -37,6 +37,7 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
 
     tracks.each(function(track){
       var trackView = new Soundbolt.Views.TrackView({
+        user: thisField.model,
         tracks: thisField.collection,
         track: track,
         own: thisField.own

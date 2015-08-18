@@ -9,6 +9,7 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
 
   initialize: function(options){
     this.collection = options.tracks;
+    this.user = options.user;
 
     this.model = options.track;
     this.own = options.own;
@@ -40,6 +41,7 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
     thisView.model.destroy({
       success: function(){
         thisView.collection.remove(thisView.model);
+        thisView.user.fetch();
       }
     });
   }
