@@ -8,6 +8,7 @@ Soundbolt.Views.TrackEditView = Backbone.View.extend({
   },
 
   initialize: function(options){
+    this.collection = options.tracks;
     this.model = options.user;
     this.track = options.track;
 
@@ -41,10 +42,10 @@ Soundbolt.Views.TrackEditView = Backbone.View.extend({
       data.track['image_url'] = thisView.model.escape('image_url');
     };
 
-    this.track.save(data.track, {
-      success: function(){
-        thisView.track.fetch();
-        // thisView.model.fetch();
+    thisView.track.save(data.track, {
+      wait: true,
+      success: function(model){
+        thisView.collection.add(model);
         $(document.getElementById('display-own-tracks')).trigger('click');
       },
 

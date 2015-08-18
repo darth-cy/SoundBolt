@@ -40,8 +40,8 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
     var newTrack = new Soundbolt.Models.Track();
 
     newTrack.save(data.track, {
+      wait: true,
       success: function(model){
-        debugger;
         thisView.collection.add(model);
         model.fetch();
         $(document.getElementById('display-own-tracks')).trigger('click');

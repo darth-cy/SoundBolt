@@ -56,6 +56,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
     var track = this.tracks.getOrFetch(track_id);
     // var track = new Soundbolt.Models.Track({ id: track_id });
     var editView = new Soundbolt.Views.TrackEditView({
+      tracks: this.tracks,
       track: track,
       user: this.model,
     })
