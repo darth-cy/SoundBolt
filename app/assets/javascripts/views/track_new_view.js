@@ -9,6 +9,7 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
   },
 
   initialize: function(options){
+    this.collection = options.tracks;
     this.model = options.user;
     this.genres = new Soundbolt.Collections.Genres();
     this.genres.fetch();
@@ -43,8 +44,9 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
     var newTrack = new Soundbolt.Models.Track();
 
     newTrack.save(data.track, {
-      success: function(){
-        thisView.model.fetch();
+      success: function(model){
+        thisView.collection.add(model);
+        // thisView.model.fetch();
         $(document.getElementById('display-own-tracks')).trigger('click');
       },
 
