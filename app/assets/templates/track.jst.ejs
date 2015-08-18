@@ -24,7 +24,7 @@
     <div class="track-field-subinfo-tags" style="background-color: black;">No Genre</div>
   <% }else{ %>
     <% track.get('genres').forEach(function(genre){ %>
-      <button class="track-field-subinfo-tags" style="background-color: <%= genre.genre_color %>;"><%= genre.name %></button>
+      <button class="filterable track-field-subinfo-tags" style="background-color: <%= genre.genre_color %>;"><%= genre.name %></button>
     <% }) %>
   <% } %>
 <% } %>

@@ -4,7 +4,8 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   className: 'user-view-normal-trackfield col-md-8',
 
   events: {
-    "keyup #search-name-field": "filterName"
+    "keyup #search-name-field": "filter",
+    "click .filterable": "addFilter",
   },
 
   initialize: function(options){
@@ -43,7 +44,22 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
     })
   },
 
-  filterName: function(){
+  addFilter: function(event){
+    event.preventDefault();
+    var tag = $(event.currentTarget);
+
+    var tagName = tag.html();
+    var tagColor = tag.css('background-color');
+
+    var searchBar = $("#search-field-master");
+    var content = JST['filter_tab']({ tagName: tagName, tagColor: tagColor });
+    searchBar.append(content);
+  },
+
+  filter: function(e){
+    if(e){
+      e.preventDefault();
+    }
     var nameCriteria = $("#search-name-field").val();
 
     if(nameCriteria.length === 0){
