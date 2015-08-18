@@ -67,28 +67,35 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
     this.filter();
   },
 
-  getTagCriteria: function(){
+  getTagArray: function(){
     var tags = $('.dismissable');
-    var tagNameString = [];
+    var tagNameArray = [];
     for(var i = 0; i < tags.length; i++){
-      tagNameString.push($(tags[i]).html().trim());
+      tagNameArray.push($(tags[i]).html().trim());
     }
-    tagNameString = tagNameString.join(",");
-    return tagNameString;
+    return tagNameArray;
   },
 
-  tagFilter: function(collection, tagNames){
-    if(tagNames.length < 1){ return collection; }
+  tagFilter: function(collection, tagArray){
+    if(tagArray.length < 1){ return collection; }
 
     var filteredCollection = new Soundbolt.Collections.Tracks({ user: 0 });
 
     collection.each(function(track){
-      var genres = track.get("genres");
-      for(var i = 0; i < genres.length; i++){
-        if(tagNames.indexOf(genres[i].name) !== -1){
-          filteredCollection.add(track);
+      trackGenreString = [];
+      track.get('genres').forEach(function(genre){
+        trackGenreString.push(genre.name);
+      })
+
+      trackGenreString = trackGenreString.join(",");
+
+      for(var i = 0; i < tagArray.length; i++){
+        if(trackGenreString.indexOf(tagArray[i]) === -1){
+          return 0;
         }
       }
+      filteredCollection.add(track);
+      return 0;
     })
 
     filteredCollection.shift();
@@ -99,8 +106,8 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   filter: function(){
     var nameCriteria = $("#search-name-field").val();
     nameCriteria = nameCriteria.toLowerCase();
-    
-    var tagNameString = this.getTagCriteria();
+
+    var tagNameArray = this.getTagArray();
 
     if(nameCriteria.length === 0){
       var filteredCollection = this.collection;
@@ -115,17 +122,11 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
       filteredCollection.shift();
     }
 
-    filteredCollection = this.tagFilter(filteredCollection, tagNameString);
+    filteredCollection = this.tagFilter(filteredCollection, tagNameArray);
 
     this.addTracks(filteredCollection);
     this.fusion();
     return 0;
-
-    nameCriteria = nameCriteria.toLowerCase();
-
-
-    this.addTracks(filteredCollection);
-    this.fusion();
   },
 
   render: function(){
