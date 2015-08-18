@@ -16,8 +16,13 @@ class Api::TracksController < ApplicationController
     @track = Track.new(track_params)
     @track.user_id = current_user.id
 
-    if @track.save && @track.update(genre_ids: params[:genre_ids])
-      render json: @track
+    if @track.save
+      if @track.update(genre_ids: params[:genre_ids])
+        render json: @track
+      else
+        @track.destroy
+        render json: @track.errors.full_messages, status: :unprocessable_entity
+      end
     else
       flash.now[:errors] = @track.errors.full_messages
       render json: @track.errors.full_messages, status: :unprocessable_entity
