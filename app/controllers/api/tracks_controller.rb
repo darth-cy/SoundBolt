@@ -29,6 +29,21 @@ class Api::TracksController < ApplicationController
     end
   end
 
+  def update
+    @track = Track.find(params[:id])
+    @track.user_id = current_user.id
+
+    if @track.update(track_params)
+      if @track.update(genre_ids: params[:genre_ids])
+        render json: @track
+      else
+        render json: @track.errors.full_messages, status: :unprocessable_entity
+      end
+    else
+      render json: @track.errors.full_messages, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @track = Track.find(params[:id]);
     @track.destroy
