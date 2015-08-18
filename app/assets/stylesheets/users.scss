@@ -246,19 +246,24 @@
 }
 
 // USER SEARCH BAR CSS
+.search-name-holder{
+  display: inline;
+}
+
 #search-field-master{
   background-color: black;
   color: white;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  // height: 50px;
   border-radius: 50px;
   box-shadow: 0 0 10px #0ff;
 }
 
 #search-name-field{
   display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 180px;
-  height: 10px;
+  height: 30px;
   border-radius: 50px;
   color: black;
 }

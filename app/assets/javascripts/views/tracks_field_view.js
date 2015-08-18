@@ -6,6 +6,7 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   events: {
     "keyup #search-name-field": "filter",
     "click .filterable": "addFilter",
+    "click .dismissable": "dismissTag"
   },
 
   initialize: function(options){
@@ -54,6 +55,12 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
     var searchBar = $("#search-field-master");
     var content = JST['filter_tab']({ tagName: tagName, tagColor: tagColor });
     searchBar.append(content);
+  },
+
+  dismissTag: function(event){
+    event.preventDefault();
+    var tag = $(event.currentTarget);
+    tag.remove();
   },
 
   filter: function(e){
