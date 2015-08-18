@@ -1,65 +1,62 @@
 <div id="form-error-field">
 </div>
 
-<div class="track-tab panel-body container-fluid new-track-form-field">
+<div class="track-tab panel-body container-fluid edit-track-form-field">
+
   <form class="new-track-form form-group">
 
-    <h1>Make a New Track</h1>
+    <h1>Edit Track:  &nbsp;&nbsp; <%= track.escape('title') %></h1>
 
     <br>
 
     <label for="title_field">Title</label>
+
     <input type="text" name="track[title]"
-           class="form-control" id="title_field">
+           class="form-control" id="title_field" value="<%= track.escape('title') %>">
 
     <br>
 
     <label for="description_field">Description</label>
     <textarea name="track[description]"
-          class="form-control" id="description_field"></textarea>
+              class="form-control" id="description_field"><%= track.escape('description') %></textarea>
 
     <br>
 
     <hr>
 
-    <label for="upload-cover-field">Upload a Track Cover &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <label for="upload-cover-field">Change Track Cover  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
     <input type="filepicker" name="track[image_url]" data-fp-button-text="Select"
            data-fp-mimetype="image/*" data-fp-services="COMPUTER, CONVERT" data-fp-crop-force="true"
            data-fp-crop-ratio="1" id="upload-cover-field">
 
     <label for="user-profile-picture-check">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Use my profile picture</label>
-    <input type="checkbox" id="use-profile-check">
+    <input type="checkbox" id="user-profile-check"
+    <% if(track.escape('image_url') === user.escape('image_url')){ %>
+      checked
+    <% } %>>
 
     <br>
     <hr>
-
-    <label for="upload-track-field">Upload a Track File &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <input type="filepicker" name="track[trackfile_url]" data-fp-button-text="Select"
-           id="upload-track-field" data-fp-services="COMPUTER">
-
-    <hr>
-
-    <label for="genre-picking-field">Select Genres (max 3)</label>
-    <br>
 
     <div class="genre-picking-field">
       <% genres.each(function(genre){ %>
         <div class="track-field-subinfo-tags" style="background-color: <%= genre.escape('genre_color') %>;">
           <label for="<%= genre.escape('name') %>"><%= genre.escape('name') %></label>
-          <input type="checkbox" name="track[genre_ids][]" id="<%= genre.escape('name') %>" value=<%= genre.id %>>
+          <input type="checkbox" name="track[genre_ids][]" id="<%= genre.escape('name') %>" value=<%= genre.id %>
+          <% if(track.genre_ids().indexOf(genre.id) !== -1){ %>
+            checked
+          <% } %>>
         </div>
       <% }) %>
     </div>
+
     <hr>
 
     <input class="btn btn-primary" type="submit" value="Submit">
   </form>
 
   <script>
-    var trackElement = document.getElementById('upload-track-field');
     var coverElement = document.getElementById('upload-cover-field');
-
-    filepicker.constructWidget(trackElement);
     filepicker.constructWidget(coverElement);
   </script>
 </div>

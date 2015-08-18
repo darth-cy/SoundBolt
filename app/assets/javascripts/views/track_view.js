@@ -21,6 +21,9 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
       own: this.own
     });
     this.$el.html(content);
+
+    this.$el.find('#track-edit').data('track_id', this.model.id);
+
     return this;
   },
 

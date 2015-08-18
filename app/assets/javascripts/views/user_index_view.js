@@ -6,7 +6,8 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
     "click a#display-own-tracks": "displayOwnTracks",
     "click a#display-my-streams": "displayMyStreams",
     "click a#create-a-track": "createTrack",
-    "click a#explore-artists": "exploreUsers"
+    "click a#explore-artists": "exploreUsers",
+    "click a#track-edit": "editTrack"
   },
 
   initialize: function(options){
@@ -46,6 +47,17 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
     this._swapTrackField(exploreView);
   },
 
+  editTrack: function(event){
+    event.preventDefault();
+    var track_id = $(event.currentTarget).data('track_id');
+    var track = new Soundbolt.Models.Track({ id: track_id });
+    var editView = new Soundbolt.Views.TrackEditView({
+      track: track,
+      user: this.model,
+    })
+    track.fetch();
+    this._swapTrackField(editView);
+  },
 
   // RAZYNOIR: Internally used function. Not exposed.
   addSideBar: function(){

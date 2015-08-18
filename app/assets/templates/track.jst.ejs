@@ -11,6 +11,7 @@
 <marquee class="track-tab-marquee" behavior="scroll" direction="left"> <%= track.escape('description') %></marquee>
 
 <% if(own){ %>
+  <a class="btn btn-danger" id="track-edit" href="#">Edit Track</a>
   <a class="btn btn-danger" id="track-delete" href="#">Delete Track</a>
 <% } %>
 

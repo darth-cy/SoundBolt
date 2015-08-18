@@ -15,8 +15,17 @@ Soundbolt.Models.Track = Backbone.Model.extend({
     return this._genres;
   },
 
+  genre_ids: function(){
+    if(!this._genre_ids){
+      this._genre_ids = [];
+    }
+    return this._genre_ids;
+  },
+
   // RAZYNOIR-INCOMPLETE: parse method doesn't go deep enough.
   parse: function(response){
+    var thisModel = this;
+
     this.set(response);
 
     if(response.comments){
@@ -25,6 +34,9 @@ Soundbolt.Models.Track = Backbone.Model.extend({
     }
 
     if(response.genres){
+      response.genres.forEach(function(genre){
+        thisModel.genre_ids().push(genre.id);
+      });
       this.genres().parse(response.genres);
       delete response.genres;
     }
