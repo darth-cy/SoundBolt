@@ -3,6 +3,10 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   tagName: 'section',
   className: 'user-view-normal-trackfield col-md-8',
 
+  events: {
+
+  },
+
   initialize: function(options){
     this.model = options.user;
     this.collection = options.tracks;
@@ -37,11 +41,13 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   render: function(){
     if(this.collection.length === 0){
       var content = JST['no_track']();
+      this.$el.html(content);
     }else{
+      var searchBar = JST['search_bar']();
       var content = this.template({ tracks: this.collection });
+      this.$el.html(searchBar + content);
     }
 
-    this.$el.html(content);
     this.fusion();
 
     return this;

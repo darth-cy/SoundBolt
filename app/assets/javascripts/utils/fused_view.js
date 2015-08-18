@@ -22,6 +22,10 @@ Backbone.FusedView = Backbone.View.extend({
   },
 
   emptyComponents: function(){
+    this._subComponents().each(function(comp){
+      comp.remove();
+    })
+
     this._allComponents = {};
     return _(this._allComponents);
   },

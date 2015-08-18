@@ -63,14 +63,12 @@
 }
 
 .user-sidebar-img{
-  // position: static;
   float: none;
   width: 250px;
   height: 250px;
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 10px;
-  // padding: 0px;
 }
 
 .sidebar-userbio{
@@ -167,22 +165,20 @@
   margin-left: 130px;
 }
 
-#track-switch{
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-
 .track-field-subinfo-tags{
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+
   display: inline-block;
-  width: 130px;
-  height: 30px;
+  vertical-align: middle;
+  width: 100px;
+  height: 28px;
   background: black;
   color: white;
-  font-weight: bold;
   margin: 10px;
   margin-left: 5px;
-  margin-right: 5px;
+  margin-right: 0px;
   padding: 5px;
   text-align: center;
 }
@@ -216,22 +212,53 @@
   top: 20px;
 }
 
+#track-switch{
+  position: absolute;
+  width: 80px;
+  right: 20px;
+  top: 20px;
+}
+
 #track-delete{
   position: absolute;
-  right: 130px;
+  width: 80px;
+  right: 110px;
   top: 20px;
 }
 
 #track-edit{
   position: absolute;
-  right: 215px;
+  width: 80px;
+  right: 200px;
   top: 20px;
   background-color: darkgreen;
-  border: none;
+  border: 1px solid darkgreen;
+}
+
+#track-edit:hover {
+  background-color: #004600;
 }
 
 // USER BIO FORM CSS
 .user-bioform {
   width: 100%;
   margin: 0px auto;
+}
+
+// USER SEARCH BAR CSS
+#search-field-master{
+  background-color: black;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 50px;
+  box-shadow: 0 0 10px #0ff;
+}
+
+#search-name-field{
+  display: inline-block;
+  width: 180px;
+  height: 10px;
+  border-radius: 50px;
+  color: black;
 }

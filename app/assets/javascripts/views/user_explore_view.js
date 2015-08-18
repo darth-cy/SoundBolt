@@ -17,8 +17,9 @@ Soundbolt.Views.UserExplore = Backbone.FusedView.extend({
   },
 
   render: function(){
+    var searchBar = JST['search_bar']();
     var content = this.template({ users: this.collection });
-    this.$el.html(content);
+    this.$el.html(searchBar + content);
     this.fusion();
 
     return this;

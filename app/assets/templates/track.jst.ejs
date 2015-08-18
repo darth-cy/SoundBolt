@@ -15,7 +15,7 @@
   <a class="btn btn-danger" id="track-delete" href="#">Delete</a>
 <% } %>
 
-<a class="btn btn-warning" id="track-switch" href="#">Play Track</a>
+<a class="btn btn-warning" id="track-switch" href="#">Play</a>
 
 <hr>
 
@@ -24,7 +24,7 @@
     <div class="track-field-subinfo-tags" style="background-color: black;">No Genre</div>
   <% }else{ %>
     <% track.get('genres').forEach(function(genre){ %>
-      <div class="track-field-subinfo-tags" style="background-color: <%= genre.genre_color %>;"><%= genre.name %></div>
+      <button class="track-field-subinfo-tags" style="background-color: <%= genre.genre_color %>;"><%= genre.name %></button>
     <% }) %>
   <% } %>
 <% } %>
