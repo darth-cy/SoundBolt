@@ -8,7 +8,6 @@ class Api::TracksController < ApplicationController
 
   def show
     @track = Track.includes(:user).includes(comments: :user).includes(:genres).find(params[:id])
-
     render 'show'
   end
 
@@ -18,7 +17,8 @@ class Api::TracksController < ApplicationController
 
     if @track.save
       if @track.update(genre_ids: params[:genre_ids])
-        render json: @track
+        @track = Track.includes(:user).includes(:genres).find(@track.id)
+        render 'create'
       else
         @track.destroy
         render json: @track.errors.full_messages, status: :unprocessable_entity
@@ -33,12 +33,9 @@ class Api::TracksController < ApplicationController
     @track = Track.find(params[:id])
     @track.user_id = current_user.id
 
-    if @track.update(track_params)
-      if @track.update(genre_ids: params[:genre_ids])
-        render json: @track
-      else
-        render json: @track.errors.full_messages, status: :unprocessable_entity
-      end
+    if @track.update(track_params.merge({genre_ids: params[:genre_ids]}))
+      @track = Track.includes(:user).includes(comments: :user).includes(:genres).find(params[:id])
+      render 'create'
     else
       render json: @track.errors.full_messages, status: :unprocessable_entity
     end

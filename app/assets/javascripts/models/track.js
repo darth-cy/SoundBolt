@@ -32,8 +32,7 @@ Soundbolt.Models.Track = Backbone.Model.extend({
       this.comments().parse(response.comments);
       delete response.comments;
     }
-
-    debugger;
+    
     if(response.genres){
       response.genres.forEach(function(genre){
         thisModel.genre_ids().push(genre.id);

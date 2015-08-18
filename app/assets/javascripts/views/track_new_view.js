@@ -34,10 +34,6 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
     $form = this.$el.find(".new-track-form");
     var data = $form.serializeJSON();
 
-    // if(data["genre_ids"]){
-    //   data.track["genre_ids"] = data["genre_ids"];
-    // }
-
     if(document.getElementById('use-profile-check').checked){
       data.track["image_url"] = thisView.model.escape('image_url');
     };
@@ -45,8 +41,9 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
 
     newTrack.save(data.track, {
       success: function(model){
+        debugger;
         thisView.collection.add(model);
-        thisView.model.fetch();
+        model.fetch();
         $(document.getElementById('display-own-tracks')).trigger('click');
       },
 
