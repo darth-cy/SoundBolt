@@ -21,19 +21,19 @@
   <nav class="navbar navbar-default navbar-fixed-top title-navbar">
     <div class="container title-container">
       <div class="navbar-header">
-        <div class="title-elements"><a href="<%= root_url %>" class="elegent-link"><strong>SoundBolt</strong></a></div>
+        <div class="title-elements"><a href="<%= root_url %>" class="elegant-link"><strong>SoundBolt</strong></a></div>
       </div>
 
       <div class="nav navbar-nav navbar-right">
 
         <!-- RAZYNOIR: Title elements customized styling. -->
-        <div class="title-elements title-small"><a href="#" class="elegent-link">About</a></div>
-        <div class="title-elements title-small"><a href="#" class="elegent-link">Support</a></div>
+        <div class="title-elements title-small"><a href="#" class="elegant-link">About</a></div>
+        <div class="title-elements title-small"><a href="#" class="elegant-link">Support</a></div>
 
         <% if current_user %>
-          <div class="title-elements title-small"><a rel="nofollow" data-method="delete" href="<%= session_url %>" class="elegent-link">Sign Out</a></div>
+          <div class="title-elements title-small"><a rel="nofollow" data-method="delete" href="<%= session_url %>" class="elegant-link">Sign Out</a></div>
         <% else %>
-          <div class="title-elements title-small"><a href="<%= new_user_url %>" class="elegent-link">Sign Up</a></div>
+          <div class="title-elements title-small"><a href="<%= new_user_url %>" class="elegant-link">Sign Up</a></div>
         <% end %>
       </div>
 

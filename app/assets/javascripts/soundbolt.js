@@ -4,7 +4,8 @@ window.Soundbolt = {
   Views: {},
   Routers: {},
   Graphics: {},
-  
+  Utilities: {},
+
   initialize: function() {
 
     new Soundbolt.Routers.Router({

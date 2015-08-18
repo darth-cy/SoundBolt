@@ -4,7 +4,6 @@
 #
 #  id            :integer          not null, primary key
 #  user_id       :integer          not null
-#  album_id      :integer
 #  title         :string           not null
 #  description   :text
 #  image_url     :string
@@ -14,7 +13,11 @@
 #
 
 class Track < ActiveRecord::Base
-  validates :user, :title, presence: true
+  validates :user, :title, :description, presence: true
+  validates :image_url, presence: { message: " should be present." }
+  # RAZYNOIR-TEST: removed trackfile validation to speed up tests.
+  # validates :trackfile_url, presence: { message: " should be provided." }
+  validates :chategorizations, length: { maximum: 3, message: " can't exceed 3 items." }
   has_many :comments
   belongs_to :user
   belongs_to :album

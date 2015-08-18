@@ -14,7 +14,6 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
 
     this.tracks = this.model.tracks();
     this.streams = this.model.streams();
-    this.genres = options.allGenres;
 
     this.addSideBar();
     this.addStreamTrackField();
@@ -56,6 +55,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
 
   addOwnTrackField: function(){
     var tracksFieldView = new Soundbolt.Views.TracksFieldView({
+      user: this.model,
       tracks: this.tracks,
       own: true
     });
@@ -64,6 +64,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
 
   addStreamTrackField: function(){
     var tracksFieldView = new Soundbolt.Views.TracksFieldView({
+      user: this.model,
       tracks: this.streams,
       own: false
     });

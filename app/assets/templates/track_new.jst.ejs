@@ -1,3 +1,6 @@
+<div id="form-error-field">
+</div>
+
 <div class="track-tab panel-body container-fluid new-track-form-field">
   <form class="new-track-form form-group">
 
@@ -16,6 +19,7 @@
           class="form-control" id="description_field"></textarea>
 
     <br>
+
     <hr>
 
     <label for="upload-cover-field">Upload a Track Cover &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
@@ -33,6 +37,19 @@
     <input type="filepicker" name="track[trackfile_url]" data-fp-button-text="Select"
            id="upload-track-field" data-fp-services="COMPUTER">
 
+    <hr>
+
+    <label for="genre-picking-field">Select Genres (max 3)</label>
+    <br>
+
+    <div class="genre-picking-field">
+      <% genres.each(function(genre){ %>
+        <div class="track-field-subinfo-tags" style="background-color: <%= genre.escape('genre_color') %>;">
+          <label for="<%= genre.escape('name') %>"><%= genre.escape('name') %></label>
+          <input type="checkbox" name="track[genre_ids][]" id="<%= genre.escape('name') %>" value=<%= genre.id %>>
+        </div>
+      <% }) %>
+    </div>
     <hr>
 
     <input class="btn btn-primary" type="submit" value="Submit">

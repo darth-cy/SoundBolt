@@ -4,6 +4,7 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   className: 'user-view-normal-trackfield col-md-8',
 
   initialize: function(options){
+    this.model = options.user;
     this.collection = options.tracks;
     this.own = options.own;
 
@@ -13,6 +14,7 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   },
 
   updateRender: function(){
+    this.model.fetch();
     this.addTracks();
     this.render();
   },

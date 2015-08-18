@@ -24,6 +24,7 @@ json.tracks @user.tracks do |track|
   json.image_url track.image_url
 
   json.genres track.genres do |genre|
+    json.id genre.id
     json.name genre.name
     json.genre_color genre.genre_color
   end
@@ -41,6 +42,7 @@ json.streams @user.streams do |stream|
   json.image_url stream.image_url
 
   json.genres stream.genres do |genre|
+    json.id genre.id
     json.name genre.name
     json.genre_color genre.genre_color
   end

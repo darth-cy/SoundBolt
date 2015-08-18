@@ -8,6 +8,7 @@ class Api::TracksController < ApplicationController
 
   def show
     @track = Track.includes(:user).includes(comments: :user).includes(:genres).find(params[:id])
+
     render 'show'
   end
 
@@ -15,9 +16,10 @@ class Api::TracksController < ApplicationController
     @track = Track.new(track_params)
     @track.user_id = current_user.id
 
-    if @track.save
+    if @track.save && @track.update(genre_ids: params[:genre_ids])
       render json: @track
     else
+      flash.now[:errors] = @track.errors.full_messages
       render json: @track.errors.full_messages, status: :unprocessable_entity
     end
   end
@@ -31,6 +33,6 @@ class Api::TracksController < ApplicationController
   private
 
   def track_params
-    params.require(:track).permit(:title, :description, :trackfile_url, :image_url)
+    params.require(:track).permit(:title, :description, :trackfile_url, :image_url, genre_ids: [])
   end
 end

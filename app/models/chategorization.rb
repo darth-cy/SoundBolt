@@ -10,7 +10,7 @@
 #
 
 class Chategorization < ActiveRecord::Base
-  validates :track, :genre, presence: true
+  validates :track_id, :genre_id, presence: true
 
   belongs_to :track
   belongs_to :genre
