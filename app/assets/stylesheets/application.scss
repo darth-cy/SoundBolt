@@ -28,6 +28,18 @@ body {
   position: relative;
 }
 
+.about-info-holder{
+  color: white;
+  padding-top: 100px;
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-info-holder > p {
+  font-size: 18px;
+}
+
 #soundbolt-player-master{
   z-index: 999;
 }

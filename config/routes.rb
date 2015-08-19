@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root to: "static_pages#index"
-  resources :static_pages
+
+  get 'about', to: "static_pages#about"
+  get 'support', to: "static_pages#support"
+
+  resources :static_pages, only: [:index, :about, :support]
 
   resources :users
   resource :session, only: [:create, :destroy]
