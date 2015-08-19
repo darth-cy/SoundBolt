@@ -8,7 +8,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
     "click a#display-my-streams": "displayMyStreams",
     "click a#create-a-track": "createTrack",
     "click a#explore-artists": "exploreUsers",
-    "click a#track-edit": "editTrack"
+    "click a#track-edit": "editTrack",
   },
 
   initialize: function(options){
@@ -38,7 +38,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
 
   createTrack: function(event){
     // event.preventDefault();
-    var trackNewView = new Soundsbolt.Views.TrackNewView({
+    var trackNewView = new Soundbolt.Views.TrackNewView({
       user: this.model,
       tracks: this.tracks
     });
