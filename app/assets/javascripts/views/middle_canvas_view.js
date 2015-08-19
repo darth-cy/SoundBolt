@@ -16,11 +16,10 @@ Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
   },
 
   seekAudio: function(){
-    console.log("triggering");
     var audioMaster = document.getElementById("player-master-audio");
     var canvasControl = document.getElementById('focus-middle-canvas');
 
-    if(!audioMaster || !canvasControl){ console.log("not found"); return 0; };
+    if(!audioMaster || !canvasControl){ return 0; };
 
     var newMargLeft = event.pageX - canvasControl.offsetLeft - 30;
     var clickPercent = (newMargLeft - 40) / (canvasControl.offsetWidth - 60);

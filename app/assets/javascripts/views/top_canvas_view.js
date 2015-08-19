@@ -13,8 +13,7 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
     var content = this.template({ track: this.model });
     this.$el.html(content);
 
-    // RAZYNOIR-TEST:
-    // RAZYNOIR-WARNING:
+    // RAZYNOIR-WARNING: Rendering Frame too high.
     this._seekingSechdule = setInterval(this.seekAndDraw.bind(this), 10);
     return this;
   },
@@ -41,8 +40,6 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
 
   draw: function(canvasEl){
     // RAZYNOIR-BUG: CANVAS ZOOM
-
-    console.log("drawing!");
 
     // RAZYNOIR-WARNING: Hard-coded canvas size. Canvas size not dynamic.
     this._drawingSchedule = new SnowLoop(

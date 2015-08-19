@@ -17,6 +17,8 @@ Soundbolt.Views.UserExplore = Backbone.FusedView.extend({
   },
 
   render: function(){
+    // RAZYNOIR-INCOMPLETE: User searching functionality not implemented.
+
     // var searchBar = JST['search_bar']();
     var content = this.template({ users: this.collection });
     // this.$el.html(searchBar + content);
@@ -32,8 +34,6 @@ Soundbolt.Views.UserExplore = Backbone.FusedView.extend({
 
     this.collection.each(function(user){
       if(user.id === thisField.model.id) { return 0; };
-
-      // console.log(user.follower_ids.indexOf(thisField.model.id) !== -1)
 
       var userView = new Soundbolt.Views.UserTab({
         currentUser: thisField.model,

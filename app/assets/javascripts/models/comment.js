@@ -14,7 +14,6 @@ Soundbolt.Models.Comment = Backbone.Model.extend({
   //   return this._username;
   // },
 
-  // RAZYNOIR-INCOMPLETE: parse method doesn't go deep enough.
   parse: function(response){
     this.set(response);
 

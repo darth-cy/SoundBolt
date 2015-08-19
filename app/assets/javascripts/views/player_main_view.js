@@ -80,7 +80,7 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
     var seekControl = document.getElementById('audio-seeking-control');
     var progress_header = document.getElementById('player-master-inner-progress');
 
-    if(!audioMaster || !progress_header || !seekControl){ console.log("not found"); return; };
+    if(!audioMaster || !progress_header || !seekControl){ return 0; };
 
     var $progressHeader = $(progress_header);
 
