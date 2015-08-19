@@ -17,7 +17,7 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
       this.model = new Soundbolt.Models.Track();
     }
 
-    this.progressSyncSchedule = setInterval(this.updateTime.bind(this), 1000);
+    this.progressSyncSchedule = setInterval(this.updateTime.bind(this), 500);
 
     this.listenTo(this.model, 'change reset', this.render.bind(this));
     this.listenTo(this.model, 'switch', this.render.bind(this));
@@ -53,7 +53,7 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
     var audioMaster = document.getElementById("player-master-audio");
     var progress_header = document.getElementById('player-master-inner-progress');
 
-    if(!audioMaster || !progress_header){ return; };
+    if(!audioMaster || !progress_header){ return 0; };
 
     var $progress_header = $(progress_header);
     var playPercent = 100 * (audioMaster.currentTime / audioMaster.duration);
