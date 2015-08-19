@@ -1,8 +1,8 @@
 # SoundBolt
 
-[Heroku link][heroku]
+[http://soundbolt.co][main]
 
-[heroku]: http://soundbolt.herokuapp.com
+[main]: http://soundbolt.co
 
 ## Minimum Viable Product
 SoundBolt is a clone of SoundCloud built on Rails and Backbone. Users can:
