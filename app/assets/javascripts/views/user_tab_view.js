@@ -5,7 +5,8 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
   events: {
     "click .btn-primary": "followUser",
     "click .btn-warning": "seeInfoUser",
-    "click .btn-danger": "unfollowUser"
+    "click .btn-danger": "unfollowUser",
+    "click .user-tab-username": "seeInfoUser"
   },
 
   initialize: function(options){
