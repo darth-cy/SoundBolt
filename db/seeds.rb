@@ -6,15 +6,23 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Genre.create!(name: "Classics", genre_color: "purple");
-Genre.create!(name: "Indie", genre_color: "crimson");
-Genre.create!(name: "Jazz", genre_color: "navy");
-Genre.create!(name: "Hip-Hop", genre_color: "orange");
-Genre.create!(name: "Electro", genre_color: "green");
-Genre.create!(name: "Punk", genre_color: "brown");
-Genre.create!(name: "Remix", genre_color: "purple");
+Genre.create!(name: "Ambiance", genre_color: "blue");
+Genre.create!(name: "Jazz", genre_color: "royalblue");
+Genre.create!(name: "Urban", genre_color: "lightslategrey");
+Genre.create!(name: "Remix", genre_color: "orangered");
+Genre.create!(name: "Pop", genre_color: "lightseagreen");
+
 Genre.create!(name: "OST", genre_color: "purple");
-Genre.create!(name: "Ambiance", genre_color: "blue"); # 9
+Genre.create!(name: "New Age", genre_color: "teal");
+Genre.create!(name: "Latin", genre_color: "seagreen");
+Genre.create!(name: "Country", genre_color: "maroon");
+Genre.create!(name: "Rock", genre_color: "mediumvioletred");
+
+Genre.create!(name: "Vocal", genre_color: "olive");
+Genre.create!(name: "Electro", genre_color: "gold");
+Genre.create!(name: "Classics", genre_color: "crimson");
+Genre.create!(name: "Blue", genre_color: "navy");
+Genre.create!(name: "Punk", genre_color: "darkmagenta"); #15
 
 User.create!(username: "Demony", password: "demo123", email: "demo@soundbolt.co", description: "Demony is Soundbolt's demo wizard that allows guest users to experience the features of this site. Sign up for an account to view full features!", image_url: "https://www.filepicker.io/api/file/ASwd6wBST4a5C2o1S4Jt/convert?crop=0,0,4987,4987")
   Following.create!(following_user_id: 1, followed_user_id: 3)
