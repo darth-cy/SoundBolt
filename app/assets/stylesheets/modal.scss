@@ -16,7 +16,7 @@
 .user-info-popout-panel{
   margin: 0 auto;
   margin-top: 100px; // RAZYNOIR-INCOMPLETE: not dynamic top distance.
-  height: 700px;
+  height: inherit;
   width: 600px;
   background-color: white;
   opacity: 1;
@@ -50,7 +50,7 @@
   padding-top: 15px;
   font-weight: bold;
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .modal-stats > .modal-stat-item:first-child{
@@ -59,6 +59,26 @@
 
 .modal-stats > .modal-stat-item:last-child{
   border-left: 1px dotted black;
+}
+
+#modal-track-table{
+  border-top: 3px solid black;
+}
+
+#modal-track-switch{
+  font-size: 14px;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: inherit;
+  width: inherit;
+  border: 0px;
+}
+
+#modal-close-button{
+  position: absolute;
+  left: 15px;
+  top: 15px;
 }
 
 
