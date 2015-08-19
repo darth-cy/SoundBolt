@@ -2,6 +2,10 @@ Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
   template: JST['middle_canvas'],
   className: 'user-view-focus-middle container-fluid',
 
+  events: {
+    "click #focus-middle-canvas": "seekAudio"
+  },
+
   initialize: function(options){
     this.model = options.track;
     this.collection = options.comments;
@@ -11,8 +15,18 @@ Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
     this.listenTo(this.collection, 'sync', this.render.bind(this));
   },
 
-  // RAZYNOIR-INCOMPLETE: Middle canvas drawing not implemented.
-  // RAZYNOIR-MAJOR: Middle canvas rendering not implemented.
+  seekAudio: function(){
+    console.log("triggering");
+    var audioMaster = document.getElementById("player-master-audio");
+    var canvasControl = document.getElementById('focus-middle-canvas');
+
+    if(!audioMaster || !canvasControl){ console.log("not found"); return 0; };
+
+    var newMargLeft = event.pageX - canvasControl.offsetLeft - 30;
+    var clickPercent = (newMargLeft - 40) / (canvasControl.offsetWidth - 60);
+    audioMaster.currentTime = audioMaster.duration * clickPercent;
+  },
+
   render: function(){
     var content = this.template({
        comments: this.collection,

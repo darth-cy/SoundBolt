@@ -57,6 +57,7 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
 
     var $progress_header = $(progress_header);
     var playPercent = 100 * (audioMaster.currentTime / audioMaster.duration);
+    if(playPercent > 93){ playPercent = 93; }
     $progress_header.css("margin-left", playPercent + "%");
   },
 
