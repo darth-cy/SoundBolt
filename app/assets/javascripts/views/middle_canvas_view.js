@@ -23,7 +23,7 @@ Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
 
     var newMargLeft = event.pageX - canvasControl.offsetLeft - 30;
     // RAZYNOIR-WARNING: hard-coded margin left offset with 113.
-    var clickPercent = (newMargLeft - 113) / (canvasControl.offsetWidth - 60);
+    var clickPercent = (newMargLeft) / (canvasControl.offsetWidth - 60);
     audioMaster.currentTime = audioMaster.duration * clickPercent;
   },
 
