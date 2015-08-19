@@ -3,12 +3,12 @@
 </div>
 
 <div class="track-tab-title-holder">
-  <h1 class="track-tab-header"><%= track.get('title') %> &nbsp;&nbsp; <small>by: <%= track.escape('username') %></small></h1>
+  <h1 class="track-tab-header"><a href="#" class="clickable"><%= track.get('title') %></a> &nbsp;&nbsp; <small>by: <a href="#" class="clickable"><%= track.escape('username') %></a></small></h1>
 </div>
 
 <div class="track-tab-buffer"></div>
 
-<marquee class="track-tab-marquee" behavior="scroll" direction="left"> <%= track.escape('description') %></marquee>
+<marquee class="track-tab-marquee" behavior="scroll" direction="left"><%= track.escape('description') %></marquee>
 
 <% if(own){ %>
   <a class="btn btn-danger" id="track-edit" href="#">Edit</a>

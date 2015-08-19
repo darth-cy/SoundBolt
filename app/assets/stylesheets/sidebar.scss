@@ -1,0 +1,18 @@
+.clickable{
+  color: black;
+}
+
+.clickable:hover{
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+.clickable:visited,
+.clickable:active,
+.clickable:link,
+.clickable:focus,
+{
+  color: black;
+  text-decoration: none;
+}

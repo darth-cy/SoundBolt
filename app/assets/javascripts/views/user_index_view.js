@@ -23,17 +23,17 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   },
 
   displayOwnTracks: function(event){
-    event.preventDefault();
+    // event.preventDefault();
     this.addOwnTrackField();
   },
 
   displayMyStreams: function(event){
-    event.preventDefault();
+    // event.preventDefault();
     this.addStreamTrackField();
   },
 
   createTrack: function(event){
-    event.preventDefault();
+    // event.preventDefault();
     var trackNewView = new Soundbolt.Views.TrackNewView({
       user: this.model,
       tracks: this.tracks
@@ -42,7 +42,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   },
 
   exploreUsers: function(event){
-    event.preventDefault();
+    // event.preventDefault();
     var allUsers = new Soundbolt.Collections.Users();
     allUsers.fetch();
 
@@ -51,7 +51,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   },
 
   editTrack: function(event){
-    event.preventDefault();
+    // event.preventDefault();
     var track_id = $(event.currentTarget).data('track_id');
     var track = this.tracks.getOrFetch(track_id);
     // var track = new Soundbolt.Models.Track({ id: track_id });
