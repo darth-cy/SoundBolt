@@ -4,7 +4,16 @@
       <div class="user-info-popout-panel">
 
         <div class="user-modal-stuff-container">
-          <a class="btn btn-primary" id="modal-follow-user" href="#">Add to My Stream</a>
+
+
+
+          <% if(user.follower_ids.indexOf(currentUser.id) !== -1){ %>
+            <a class="btn btn-danger" id="modal-unfollow-user" href="#">Remove from Stream</a>
+          <% }else{ %>
+            <a class="btn btn-primary" id="modal-follow-user" href="#">Add to My Stream</a>
+          <% } %>
+
+
           <button class='btn' id="modal-close-button" href="#">X Close</button>
 
           <img src="<%= user.escape('image_url') %>" class="user-modal-img" alt="avatar not found :(" />

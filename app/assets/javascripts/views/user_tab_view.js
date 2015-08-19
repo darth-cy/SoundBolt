@@ -49,6 +49,7 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
     event.preventDefault();
     var modalField = $("#soundbolt-modal-field-master");
     var modalView = new Soundbolt.Views.UserModal({
+      currentUser: this.currentUser,
       user: this.model
     })
     modalField.html(modalView.render().$el);
