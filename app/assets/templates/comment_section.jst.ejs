@@ -20,7 +20,7 @@
 
       <div class="col-md-5" id="comment-info-panel">
       </div>
-      
+
     </div>
   </div>
 
@@ -44,7 +44,9 @@
           <td><%= comment.escape('username') %></td>
           <td><%= comment.escape('content') %></td>
           <td><%= comment.escape('timeline_position') + "s" %></td>
-          <td><%= comment.escape('updated_at') %></td>
+
+          <% var d = new Date(comment.escape('updated_at')); %>
+          <td><%= d.getMonth() + "/" + d.getDate() + "/"+ d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes()%></td>
         </tr>
       <%  }) %>
     </tbody>
