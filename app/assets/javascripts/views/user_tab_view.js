@@ -47,7 +47,11 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
 
   seeInfoUser: function(event){
     event.preventDefault();
-
+    var modalField = $("#soundbolt-modal-field-master");
+    var modalView = new Soundbolt.Views.UserModal({
+      user: this.model
+    })
+    modalField.html(modalView.render().$el);
   },
 
   unfollowUser: function(event){

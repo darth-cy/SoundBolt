@@ -8,18 +8,18 @@
           <button class='btn' id="modal-close-button" href="#">X Close</button>
 
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Simple_Music.svg/2000px-Simple_Music.svg.png" class="user-modal-img" alt="avatar not found :(" />
-          <h1>Artist Name</h1>
-          <p>Here is some descriptions on the user modal</p>
+          <h1><%= user.escape('username') %></h1>
+          <p><%= user.escape('description') %></p>
 
           <div class="row modal-stats">
             <div class="modal-stat-item col-md-4">
-              23<br>Followers
+              <%= user.followers_count %><br>Followers
             </div>
             <div class="modal-stat-item col-md-4">
-              10<br>Followings
+              <%= user.followeds_count %><br>Followings
             </div>
             <div class="modal-stat-item col-md-4">
-              5<br>Tracks
+              <%= user.track_count %><br>Tracks
             </div>
           </div>
 
