@@ -9,5 +9,9 @@ Soundbolt.Collections.Comments = Backbone.Collection.extend({
 
   parse: function(response){
     this.set(response);
+  },
+
+  comparator: function(comment){
+    return comment.get('timeline_position');
   }
 })
