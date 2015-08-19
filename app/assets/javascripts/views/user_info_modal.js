@@ -2,7 +2,8 @@ Soundbolt.Views.UserModal = Backbone.View.extend({
   template: JST['modal'],
 
   events: {
-    "click #modal-close-button": "removeModal"
+    "click #modal-close-button": "removeModal",
+    "click #modal-track-switch": "switchTrack"
   },
 
   initialize: function(options){
@@ -23,5 +24,11 @@ Soundbolt.Views.UserModal = Backbone.View.extend({
   removeModal: function(event){
     event.preventDefault();
     this.remove();
+  },
+
+  switchTrack: function(event){
+    event.preventDefault();
+    var track_id = $(event.currentTarget).data('track-id');
+    Backbone.history.navigate("trackswitch/" + track_id, { trigger: true });
   }
 })
