@@ -23,7 +23,9 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
     this.listenTo(this.model, 'switch', this.render.bind(this));
   },
 
-  switchFocus: function(){
+  switchFocus: function(event){
+    event.preventDefault();
+
     if(window.focused){
       window.focused = false;
       Backbone.history.navigate("exitfocus", {trigger: true});
@@ -62,6 +64,8 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
   },
 
   pauseAudio: function(event){
+    event.preventDefault();
+
     var audioMaster = document.getElementById("player-master-audio");
     if(!audioMaster.paused){
       audioMaster.pause();
@@ -69,6 +73,8 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
   },
 
   playAudio: function(event){
+    event.preventDefault();
+
     var audioMaster = document.getElementById("player-master-audio");
     if(audioMaster.paused){
       audioMaster.play();
