@@ -3,6 +3,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
   className: 'user-view-normal-master row',
 
   events: {
+    "click a#sidebar-title": "displayOwnTracks",
     "click a#display-own-tracks": "displayOwnTracks",
     "click a#display-my-streams": "displayMyStreams",
     "click a#create-a-track": "createTrack",
@@ -12,6 +13,9 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
 
   initialize: function(options){
     this.model = options.user;
+
+    this.users = new Soundbolt.Collections.Users();
+    this.users.fetch();
 
     this.tracks = this.model.tracks();
     this.streams = this.model.streams();
@@ -34,7 +38,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
 
   createTrack: function(event){
     // event.preventDefault();
-    var trackNewView = new Soundbolt.Views.TrackNewView({
+    var trackNewView = new Soundsbolt.Views.TrackNewView({
       user: this.model,
       tracks: this.tracks
     });
@@ -43,10 +47,10 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
 
   exploreUsers: function(event){
     // event.preventDefault();
-    var allUsers = new Soundbolt.Collections.Users();
-    allUsers.fetch();
-
-    var exploreView = new Soundbolt.Views.UserExplore({ users: allUsers, user: this.model });
+    var exploreView = new Soundbolt.Views.UserExplore({
+      users: this.users,
+      user: this.model
+     });
     this._swapTrackField(exploreView);
   },
 
@@ -81,6 +85,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
 
   addStreamTrackField: function(){
     var tracksFieldView = new Soundbolt.Views.TracksFieldView({
+      users: this.users,
       user: this.model,
       tracks: this.streams,
       own: false

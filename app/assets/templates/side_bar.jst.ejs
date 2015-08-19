@@ -6,7 +6,7 @@
 
 <hr>
 <div class="sidebar-userinfo">
-  <h1 class="sidebar-username"><a class="clickable" href="#"><%= user.escape('username') %></a></h1>
+  <h1 class="sidebar-username"><a class="clickable" id="sidebar-title" href="#"><%= user.escape('username') %></a></h1>
   <p class="sidebar-useremail"><%= user.escape('email') %></p>
   <div class='sidebar-userbio'>
     <% if(user.escape('description').length > 0){ %>
@@ -20,13 +20,13 @@
 
 <div class="sidebar-datafield row">
   <div class="col-md-4 sidebar-data">
-    <%= user.followers_count %><br><a href="#" class="clickable">Followers</a>
+    <%= user.followers_count %><br>Followers
   </div>
   <div class="col-md-4 sidebar-data">
-    <%= user.followeds_count %><br><a href="#" class="clickable">Following</a>
+    <%= user.followeds_count %><br>Following
   </div>
   <div class="col-md-4 sidebar-data">
-    <%= user.track_count %><br><a href="#" class="clickable">Tracks</a>
+    <%= user.track_count %><br>Tracks
   </div>
 </div>
 

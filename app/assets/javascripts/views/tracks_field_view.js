@@ -12,11 +12,14 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   initialize: function(options){
     this.model = options.user;
     this.collection = options.tracks;
+    this.users = options.users;
+
     this.own = options.own;
 
     this.addTracks();
 
     this.listenTo(this.collection, 'add remove reset sync', this.updateRender.bind(this));
+    this.listenTo(this.users, 'add remove reset sync', this.updateRender.bind(this));
   },
 
   updateRender: function(){
@@ -34,9 +37,10 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
     }else{
       var tracks = this.collection;
     }
-
     tracks.each(function(track){
+      console.log(JSON.stringify(thisField.users.get(track.get("user_id"))));
       var trackView = new Soundbolt.Views.TrackView({
+        artist: thisField.users.get(track.get("user_id")),
         user: thisField.model,
         tracks: thisField.collection,
         track: track,

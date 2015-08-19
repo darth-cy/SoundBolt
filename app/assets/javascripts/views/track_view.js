@@ -4,12 +4,16 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
 
   events: {
     "click #track-switch": "switchTrack",
-    "click #track-delete": "deleteTrack"
+    "click #track-delete": "deleteTrack",
+    "click .track-tab-title": "switchTrack",
+    "click .track-tab-username": "seeInfoUser"
   },
 
   initialize: function(options){
     this.collection = options.tracks;
+
     this.user = options.user;
+    this.artist = options.artist;
 
     this.model = options.track;
     this.own = options.own;
@@ -44,5 +48,15 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
         thisView.user.fetch();
       }
     });
+  },
+
+  seeInfoUser: function(event){
+    event.preventDefault();
+    var modalField = $("#soundbolt-modal-field-master");
+    var modalView = new Soundbolt.Views.UserModal({
+      currentUser: this.user,
+      user: this.artist
+    })
+    modalField.html(modalView.render().$el);
   }
 })
