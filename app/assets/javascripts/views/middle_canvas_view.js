@@ -15,14 +15,13 @@ Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
     this.listenTo(this.collection, 'sync', this.render.bind(this));
   },
 
-  seekAudio: function(){
+  seekAudio: function(event){
     var audioMaster = document.getElementById("player-master-audio");
     var canvasControl = document.getElementById('focus-middle-canvas');
+    var showZone = document.getElementById('user-view-focus-middle-showzone');
 
     if(!audioMaster || !canvasControl){ return 0; };
-
-    var newMargLeft = event.pageX - canvasControl.offsetLeft - 30;
-    // RAZYNOIR-WARNING: hard-coded margin left offset with 113.
+    var newMargLeft = event.pageX - canvasControl.offsetLeft - showZone.offsetLeft - 30;
     var clickPercent = (newMargLeft) / (canvasControl.offsetWidth - 60);
     audioMaster.currentTime = audioMaster.duration * clickPercent;
   },
