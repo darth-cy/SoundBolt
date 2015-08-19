@@ -7,7 +7,7 @@
           <a class="btn btn-primary" id="modal-follow-user" href="#">Add to My Stream</a>
           <button class='btn' id="modal-close-button" href="#">X Close</button>
 
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Simple_Music.svg/2000px-Simple_Music.svg.png" class="user-modal-img" alt="avatar not found :(" />
+          <img src="<%= user.escape('image_url') %>" class="user-modal-img" alt="avatar not found :(" />
           <h1><%= user.escape('username') %></h1>
           <p><%= user.escape('description') %></p>
 
@@ -34,36 +34,19 @@
             </thead>
 
             <tbody>
-              <tr class="active">
-                <td>Title Name</td>
-                <td><marquee behavior="scroll" direction="left">Here is some description</marquee></td>
-                <td><a class="btn btn-warning" id="modal-track-switch" href="#">Play</a></td>
-              </tr>
 
-              <tr class="active">
-                <td>Title Name</td>
-                <td><marquee behavior="scroll" direction="left">Here is some description</marquee></td>
-                <td><a class="btn btn-warning" id="modal-track-switch" href="#">Play</a></td>
-              </tr>
+              <% user.get('tracks').forEach(function(track){ %>
+                <tr class="active">
+                  <td><%= track.title.trim() %></td>
+                  <td><%= track.description.trim() %></td>
+                  <td><a class="btn btn-warning" id="modal-track-switch" href="#">Play</a></td>
+                </tr>
+              <% }) %>
 
-              <tr class="active">
-                <td>Title Name</td>
-                <td><marquee behavior="scroll" direction="left">Here is some description</marquee></td>
-                <td><a class="btn btn-warning" id="modal-track-switch" href="#">Play</a></td>
-              </tr>
-
-              <tr class="active">
-                <td>Title Name</td>
-                <td><marquee behavior="scroll" direction="left">Here is some description</marquee></td>
-                <td><a class="btn btn-warning" id="modal-track-switch" href="#">Play</a></td>
-              </tr>
             </tbody>
 
           </table>
-
-
         </div>
-
       </div>
     </div>
   </div>
