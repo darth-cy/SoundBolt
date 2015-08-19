@@ -15,9 +15,64 @@
 
 .user-info-popout-panel{
   margin: 0 auto;
-  margin-top: 5%;
-  height: 300px;
-  width: 300px;
+  margin-top: 100px; // RAZYNOIR-INCOMPLETE: not dynamic top distance.
+  height: 700px;
+  width: 600px;
   background-color: white;
   opacity: 1;
 }
+
+.user-modal-stuff-container{
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  // border: 3px solid black;
+  width: 100%;
+  height: 100%;
+  padding-top: 75px;
+}
+
+.user-modal-img{
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  height: 150px;
+  width: 150px;
+}
+
+#modal-follow-user{
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.modal-stats{
+  padding-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.modal-stats > .modal-stat-item:first-child{
+  border-right: 1px dotted black;
+}
+
+.modal-stats > .modal-stat-item:last-child{
+  border-left: 1px dotted black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// sdf
