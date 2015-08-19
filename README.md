@@ -9,12 +9,12 @@ SoundBolt is a clone of SoundCloud built on Rails and Backbone. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create accounts
-- [ ] Log into their accounts
-- [ ] Upload tracks
-- [ ] Play tracks
-- [ ] Make comments on tracks
-- [ ] Follow other users
+- [X] Create accounts
+- [X] Log into their accounts
+- [X] Upload tracks
+- [X] Play tracks
+- [X] Make comments on tracks
+- [X] Follow other users
 
 ## Design Docs
 * [View Wireframes][views]
@@ -66,9 +66,8 @@ SoundBolt is a clone of SoundCloud built on Rails and Backbone. Users can:
 
 ### Bonus Features (TBD)
 - [ ] Users can star a track (staring join table, staring count)
-- [ ] Tracks have genre characterizations.
-- [ ] Users can follow specific genres.
-- [ ] Users can have a post board to post their music philosophy.
+- [X] Tracks have genre characterizations.
+- [X] Search and filtering functionalities.
 
 - [ ] **Infinite Bonus: Even fancier special effects (no upper limit)**.
 

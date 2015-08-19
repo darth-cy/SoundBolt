@@ -17,9 +17,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html{
+  height: inherit;
+}
+
 body {
   // font-family: "Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
   background-color: black;
+  position: relative;
 }
 
 textarea {
@@ -27,6 +32,7 @@ textarea {
 }
 
 .title-navbar{
+  z-index: 9999999;
   font-size: 36px;
   border: 0px;
 }
