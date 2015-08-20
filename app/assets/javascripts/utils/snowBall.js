@@ -27,11 +27,11 @@
   SnowBall.speed = function(maxX, maxY, numSnowBalls){
     rand = Math.random();
     if(rand <= 0.33){
-      return (maxY / 100);
+      return 0.5;
     }else if(rand > 0.33 && rand < 0.66){
-      return (maxY / 200);
+      return 1;
     }else{
-      return (maxY/ 300);
+      return 1.5;
     }
   }
 
