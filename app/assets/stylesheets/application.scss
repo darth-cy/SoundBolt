@@ -31,7 +31,7 @@ textarea {
   resize: none;
 }
 
-// Error styling
+// Static Pages Styling
 #main-error-box{
   width: 100%;
   text-align: center;
@@ -49,10 +49,15 @@ textarea {
   }
 }
 
-#soundbolt-player-master{
-  z-index: 999;
+.sign-up-form-field{
+  color: white;
+  width: 45%;
+  margin: 0 auto;
+  margin-top: 50px;
+  z-index: 600;
 }
 
+// Navbar
 .title-navbar{
   z-index: 999;
   font-size: 36px;
@@ -108,11 +113,7 @@ textarea {
   text-decoration: none;
 }
 
-.elegant-link:hover {
-  color: white;
-  text-decoration: none;
-}
-
+// Splash Page
 .sign-in-jumbo{
   background-image: url("https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/title-pic-2.jpg");
 }
@@ -172,11 +173,4 @@ textarea {
 
 .jumbotron{
   margin: 0;
-}
-
-// Player CSS
-
-#focus-mode-switch {
-  right: 0;
-  position: absolute;
 }

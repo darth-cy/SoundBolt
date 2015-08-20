@@ -1,0 +1,166 @@
+// Trackfield
+.user-view-normal-trackfield{
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  height: inherit;
+  width: inherit;
+}
+
+.user-view-normal-trackfield > .container-fluid{
+  width: 90%;
+}
+
+// Tracktab
+.track-tab{
+  position: relative;
+  background: white;
+  text-align: left;
+  width: inherit;
+  height: inherit;
+  margin-bottom: 10px;
+
+  hr {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+}
+
+.track-tab:hover{
+  box-shadow: 0 0 30px #0ff;
+}
+
+.track-tab-image-holder{
+  padding: 10px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  height: 105;
+  width: 105;
+  z-index: 20;
+}
+
+.track-tab-buffer{
+  height: 120px;
+}
+
+.track-tab-img{
+  cursor: pointer;
+  display: block;
+  height: 85px;
+  width: 85px;
+}
+
+.track-tab-title-holder{
+  position: absolute;
+  top: 47px;
+}
+
+.track-tab-header{
+  font-weight: bolder;
+  margin-left: 125px;
+}
+
+.track-tab-marquee{
+  width: 65%;
+  margin-left: 130px;
+}
+
+.track-field-subinfo-tags{
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+  height: 28px;
+  background: black;
+  color: white;
+  margin: 10px;
+  margin-left: 5px;
+  margin-right: 0px;
+  padding: 5px;
+  text-align: center;
+}
+
+// New track
+.new-track-form-field{
+  height: inherit;
+}
+
+.edit-track-form-field{
+  height: inherit;
+}
+
+.new-track-form {
+  margin: 50px;
+}
+
+// Explore
+#see-user-info{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+#unfollow-user{
+  position: absolute;
+  right: 115px;
+  top: 20px;
+}
+
+#follow-user{
+  position: absolute;
+  right: 115px;
+  top: 20px;
+}
+
+#track-switch{
+  position: absolute;
+  width: 80px;
+  right: 20px;
+  top: 20px;
+}
+
+#track-delete{
+  position: absolute;
+  width: 80px;
+  right: 110px;
+  top: 20px;
+}
+
+#track-edit{
+  position: absolute;
+  width: 80px;
+  right: 200px;
+  top: 20px;
+}
+
+.search-name-holder{
+  display: inline;
+}
+
+#click-filter-tab-notice{
+  display: inline;
+}
+
+#search-field-master{
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 0 0 10px #0ff;
+}
+
+#search-field{
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 180px;
+  height: 30px;
+  border-radius: 50px;
+  color: black;
+}

@@ -1,4 +1,3 @@
-
 #soundbolt-modal-field-master{
   position: absolute;
   width: 100%;
@@ -15,21 +14,22 @@
 
 .user-info-popout-panel{
   margin: 0 auto;
-  margin-top: 100px; // RAZYNOIR-INCOMPLETE: not dynamic top distance.
+  margin-top: 100px;
   height: inherit;
   width: 700px;
   background-color: white;
   opacity: 1;
+  z-index: 511;
 }
 
 .user-modal-stuff-container{
   text-align: center;
   margin: 0 auto;
   position: relative;
-  // border: 3px solid black;
   width: 95%;
   height: 95%;
   padding-top: 75px;
+  z-index: 522;
 }
 
 .user-modal-img{
@@ -71,7 +71,7 @@
   border-top: 3px solid black;
 }
 
-#modal-track-switch{
+.modal-track-switch{
   font-size: 14px;
   padding: 2px;
   padding-left: 5px;
@@ -86,24 +86,3 @@
   left: 15px;
   top: 15px;
 }
-
-#modal-track-table > marquee {
-  width: 100px;
-  display: inline;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// sdf

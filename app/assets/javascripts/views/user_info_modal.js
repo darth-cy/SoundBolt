@@ -3,9 +3,10 @@ Soundbolt.Views.UserModal = Backbone.View.extend({
 
   events: {
     "click #modal-close-button": "removeModal",
-    "click #modal-track-switch": "switchTrack",
+
+    "click .modal-track-switch": "switchTrack",
     "click #modal-follow-user": "followUser",
-    "click #modal-unfollow-user": "unfollowUser"
+    "click #modal-unfollow-user": "unfollowUser",
   },
 
   initialize: function(options){

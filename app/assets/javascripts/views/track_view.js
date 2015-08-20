@@ -18,6 +18,7 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
 
     this.model = options.track;
     this.own = options.own;
+
     this.listenTo(this.model, 'sync', this.render().$el);
   },
 
@@ -52,7 +53,8 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
   },
 
   seeInfoUser: function(event){
-    event.preventDefault();
+    // event.preventDefault();
+
     var modalField = $("#soundbolt-modal-field-master");
     var modalView = new Soundbolt.Views.UserModal({
       currentUser: this.user,

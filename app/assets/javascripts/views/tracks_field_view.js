@@ -4,18 +4,17 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   className: 'user-view-normal-trackfield col-md-8',
 
   events: {
-    "keyup #search-name-field": "filter",
+    "keyup #search-field": "filter",
     "click .filterable": "addFilter",
     "click .dismissable": "dismissTag"
   },
 
   initialize: function(options){
     this.model = options.user;
-    this.collection = options.tracks;
     this.users = options.users;
 
+    this.collection = options.tracks;
     this.own = options.own;
-
     this.addTracks();
 
     this.listenTo(this.collection, 'add remove reset sync', this.updateRender.bind(this));
@@ -117,7 +116,7 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   },
 
   filter: function(){
-    var nameCriteria = $("#search-name-field").val();
+    var nameCriteria = $("#search-field").val();
     nameCriteria = nameCriteria.toLowerCase();
 
     var tagNameArray = this.getTagArray();

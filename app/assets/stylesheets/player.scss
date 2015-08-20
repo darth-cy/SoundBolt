@@ -1,5 +1,14 @@
+#soundbolt-player-master{
+  z-index: 999;
+}
+
 #player-master-audio {
 	display: none;
+}
+
+#focus-mode-switch {
+  right: 0;
+  position: absolute;
 }
 
 #audio-seeking-control {
