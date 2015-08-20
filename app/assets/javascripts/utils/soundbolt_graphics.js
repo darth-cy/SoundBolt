@@ -3,26 +3,23 @@ Soundbolt.Graphics.drawMusicBlock = function(context, startX, startY, width, hei
   context.fillRect(startX, startY - height, width, height);
 };
 
-Soundbolt.Graphics.drawMusicWave = function(context, data, startX, startY, blockWidth, currentTime){
+Soundbolt.Graphics.drawMusicWave = function(context, data, startX, startY, blockWidth, currentTime, cursorTime){
   for(var i = 0; i < data.length; i++){
     var height = parseInt(data[i]);
 
-    if(i > currentTime){
-      var fillStyle = "#424242";
-    }else{
+    if(i < currentTime){
       var fillStyle = "#FF00FF";
+    }else if(cursorTime && i < cursorTime){
+      var fillStyle = "#542D54";
+    }else{
+      var fillStyle = "#424242";
     }
     Soundbolt.Graphics.drawMusicBlock(context, startX + i * blockWidth, startY, blockWidth, height, fillStyle);
   }
 };
 
-Soundbolt.Graphics.drawWaveForm = function(audioMaster, canvasEl){
+Soundbolt.Graphics.drawWaveForm = function(data, dataPoints, audioMaster, canvasEl, cursorTime){
   if(!audioMaster || !canvasEl){ return  0; }
-
-  dataPoints = Math.floor(audioMaster.duration);
-  data = Array.apply(null, Array(dataPoints)).map(function(){
-      return Math.floor(Math.random() * 50) + (canvasEl.height / 3);
-  });
 
   var ctx = canvasEl.getContext('2d');
   ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
@@ -32,5 +29,5 @@ Soundbolt.Graphics.drawWaveForm = function(audioMaster, canvasEl){
   blockWidth = (canvasEl.width - 60) / dataPoints;
   currentTime = Math.floor(audioMaster.currentTime);
 
-  Soundbolt.Graphics.drawMusicWave(ctx, data, startX, startY, blockWidth, currentTime);
+  Soundbolt.Graphics.drawMusicWave(ctx, data, startX, startY, blockWidth, currentTime, cursorTime);
 };
