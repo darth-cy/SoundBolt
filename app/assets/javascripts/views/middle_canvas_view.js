@@ -12,7 +12,7 @@ Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
     this.audioMaster = options.audioMaster;
 
     this.listenTo(this.model, 'sync', this.render.bind(this));
-    this.listenTo(this.collection, 'sync', this.render.bind(this));
+    this.listenTo(this.collection, 'add sync', this.render.bind(this));
   },
 
   seekAudio: function(event){
@@ -32,7 +32,24 @@ Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
        track: this.model
      });
     this.$el.html(content);
+    this.addNanoComments();
     this.newSyncSchedule();
+    return this;
+  },
+
+  addNanoComments: function(){
+    var fullTime = this.audioMaster.duration;
+    var sectionEl = this.$el.find('#user-view-focus-middle-showzone');
+    debugger;
+
+    this.collection.each(function(comment){
+      var content = JST['nano_comment']({
+        fullTime: fullTime,
+        comment: comment
+      })
+      sectionEl.append(content);
+    })
+
     return this;
   },
 

@@ -1,0 +1,11 @@
+<div class="comment-image-float" style="left: <%= (180 + 840 * (Number(comment.escape('timeline_position'))/fullTime)) %>px;">
+  <div class="comment-float-content-container">
+    <img src="<%= comment.escape('user_image_url') %>" alt="X("/>
+
+    <div class="comment-float">
+      <!-- <div class="comment-float-arrow"></div> -->
+      <p><strong><%= comment.escape('username') %></strong></p>
+      <p><strong><%= comment.escape('content') %></strong></p>
+    </div>
+  </div>
+</div>

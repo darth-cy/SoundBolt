@@ -82,3 +82,39 @@
 .all-comment-table > thead {
   color: white;
 }
+
+// Middle canvas comments insertion
+
+// RAZYNOIR-TEST: outline middle canvas holer
+#user-view-focus-middle-showzone{
+  border: 3px solid white;
+}
+
+.comment-image-float{
+  left: 180px;
+  top: 225px;
+  position: absolute;
+}
+
+.comment-float-content-container{
+  text-align: left;
+  position: relative;
+  padding: 0px;
+}
+
+.comment-float-content-container > img{
+  width: 20px;
+  height: 20px;
+}
+
+.comment-float-content-container > img:hover ~ .comment-float{
+  display: block;
+}
+
+.comment-float{
+  padding: 10px;
+  color: black;
+  background-color: gold;
+  display: none;
+  opacity: 0.9;
+}
