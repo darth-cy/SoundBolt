@@ -53,7 +53,7 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
   },
 
   seeInfoUser: function(event){
-    // event.preventDefault();
+    event.preventDefault();
 
     var modalField = $("#soundbolt-modal-field-master");
     var modalView = new Soundbolt.Views.UserModal({

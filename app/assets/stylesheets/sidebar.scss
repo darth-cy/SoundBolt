@@ -16,3 +16,23 @@
   color: black;
   text-decoration: none;
 }
+
+
+.clickable-white{
+  color: white;
+}
+
+.clickable-white:hover{
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.clickable-white:visited,
+.clickable-white:active,
+.clickable-white:link,
+.clickable-white:focus,
+{
+  color: white;
+  text-decoration: none;
+}

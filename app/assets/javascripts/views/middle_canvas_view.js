@@ -15,12 +15,6 @@ Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
 
     this.listenTo(this.model, 'sync', this.render.bind(this));
     this.listenTo(this.collection, 'add sync', this.render.bind(this));
-
-    // RAZYNOIR: Fixed waveform.
-    var dataPoints = Math.floor(this.audioMaster.duration);
-    this.waveData = Array.apply(null, Array(dataPoints)).map(function(){
-        return Math.floor(Math.random() * 50) + 100;
-    });
   },
 
   seekAudio: function(event){
@@ -94,6 +88,13 @@ Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
 
   updateWaveForm: function(){
     var middleCanvas = document.getElementById('focus-middle-canvas');
-    Soundbolt.Graphics.drawWaveForm(this.waveData, this.waveData.length ,this.audioMaster, middleCanvas, this.cursorTime);
+
+    if(!this._waveData){
+      var dataPoints = Math.floor(this.audioMaster.duration);
+      this._waveData = Array.apply(null, Array(dataPoints)).map(function(){
+          return Math.floor(Math.random() * 50) + 100;
+      });
+    }
+    Soundbolt.Graphics.drawWaveForm(this._waveData, this._waveData.length ,this.audioMaster, middleCanvas, this.cursorTime);
   }
 })

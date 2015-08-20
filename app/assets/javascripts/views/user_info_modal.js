@@ -23,6 +23,10 @@ Soundbolt.Views.UserModal = Backbone.View.extend({
       user: this.model
     })
     this.$el.html(content);
+
+    var $popOut = this.$el.find(".user-info-popout-panel");
+    $popOut.css("margin-top", $(window).scrollTop() + 100 + "px");
+
     return this;
   },
 
@@ -33,6 +37,7 @@ Soundbolt.Views.UserModal = Backbone.View.extend({
 
   switchTrack: function(event){
     event.preventDefault();
+    
     var track_id = $(event.currentTarget).data('track-id');
     Backbone.history.navigate("trackswitch/" + track_id, { trigger: true });
   },

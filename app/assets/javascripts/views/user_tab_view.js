@@ -26,7 +26,6 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
     return this;
   },
 
-  // RAZYNOIR-INCOMPLETE: SeeInfo function not implemented.
   followUser: function(event){
     event.preventDefault();
     var thisView = this;

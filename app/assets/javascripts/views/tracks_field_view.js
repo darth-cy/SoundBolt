@@ -65,10 +65,11 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
     searchBar.append(content);
 
     this.filter();
+    window.scrollTo(0, 0);
   },
 
   dismissTag: function(event){
-    event.preventDefault();
+    event.preventDefault;
     var tag = $(event.currentTarget);
     tag.remove();
 

@@ -5,8 +5,6 @@
 
         <div class="user-modal-stuff-container">
 
-
-
           <% if(user.follower_ids.indexOf(currentUser.id) !== -1){ %>
             <a class="btn btn-danger" id="modal-unfollow-user" href="#">Remove from Stream</a>
           <% }else{ %>
@@ -48,7 +46,7 @@
                 <tr class="active">
                   <td><%= track.title.trim() %></td>
                   <td><%= track.description.trim() %></td>
-                  <td><a class="btn btn-warning" id="modal-track-switch" href="#" data-track-id=<%= track.id %>>Play</a></td>
+                  <td><a class="btn btn-warning modal-track-switch" href="#" data-track-id=<%= track.id %>>Play</a></td>
                 </tr>
               <% }) %>
 
