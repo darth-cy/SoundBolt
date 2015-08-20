@@ -15,7 +15,10 @@
 class Track < ActiveRecord::Base
   validates :user, :title, :description, presence: true
   validates :image_url, presence: { message: " should be present." }
-  validates :trackfile_url, presence: { message: " should be provided." }
+
+  # RAZYNOIR-TEST: For testing purpose, the track can be blank.
+  # validates :trackfile_url, presence: { message: " should be provided." }
+
   validates :chategorizations, length: { maximum: 3, message: " can't exceed 3 items." }
   has_many :comments
   belongs_to :user
@@ -28,6 +31,4 @@ class Track < ActiveRecord::Base
     through: :chategorizations,
     source: :genre
   )
-  # has_one :image, as: :imageable
-  # has_attached_file :trackfile, storage: :s3
 end

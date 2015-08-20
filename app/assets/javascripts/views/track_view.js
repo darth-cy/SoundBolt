@@ -6,7 +6,8 @@ Soundbolt.Views.TrackView = Backbone.View.extend({
     "click #track-switch": "switchTrack",
     "click #track-delete": "deleteTrack",
     "click .track-tab-title": "switchTrack",
-    "click .track-tab-username": "seeInfoUser"
+    "click .track-tab-username": "seeInfoUser",
+    "click img": "seeInfoUser"
   },
 
   initialize: function(options){

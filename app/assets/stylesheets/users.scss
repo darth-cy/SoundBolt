@@ -121,15 +121,15 @@
   width: inherit;
   height: inherit;
   margin-bottom: 10px;
+
+  hr {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
 }
 
 .track-tab:hover{
   box-shadow: 0 0 30px #0ff;
-}
-
-.track-tab > hr {
-  margin-top: 3px;
-  margin-bottom: 3px;
 }
 
 .track-tab-image-holder{
@@ -139,6 +139,7 @@
   left: 20px;
   height: 105;
   width: 105;
+  z-index: 20;
 }
 
 .track-tab-buffer{
@@ -146,6 +147,7 @@
 }
 
 .track-tab-img{
+  cursor: pointer;
   display: block;
   height: 85px;
   width: 85px;

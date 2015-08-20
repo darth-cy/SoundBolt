@@ -23,7 +23,6 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
   },
 
   updateRender: function(){
-    // this.model.fetch();
     this.addTracks();
     this.render();
   },
