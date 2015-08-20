@@ -13,14 +13,14 @@
 
   <button type="button" class="btn btn-default btn-lg">
     <% if (track.id) {%>
-      Currently Playing: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <strong><%= track.get('title') %></strong>
+      Currently Playing: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <strong><%= track.escape('title') %></strong>
     <%}else{  %>
       Currently Playing: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nothing is playing.
     <%} %>
   </button>
 
   <audio id="player-master-audio" controls="controls" autoplay>
-    <source id="audio-master-source" src="<%= track.get('trackfile_url') %>" type="audio/mpeg"/>
+    <source id="audio-master-source" src="<%= track.escape('trackfile_url') %>" type="audio/mpeg"/>
   </audio>
 
   <div class="player-master-progress" id="audio-seeking-control">
@@ -28,16 +28,6 @@
   </div>
 
   <button type="button" class="btn btn-primary btn-lg" id="focus-mode-switch">
-    <!-- <% if (window.focused) { %>
-      Exit Focus Mode
-    <% }else{ %> -->
       Visualizer
-    <!-- <% } %> -->
   </button>
-
-    <!-- <h1><%= track.get('title') %></h1> -->
-
-  <!-- <div class="soundbolt-player-master-content">
-    <p><%= track.get('description') %></p>
-  </div> -->
 </div>

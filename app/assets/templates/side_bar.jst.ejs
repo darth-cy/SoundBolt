@@ -1,18 +1,18 @@
-<!-- have user passed in -->
-
 <div class="container-fluid">
   <img class="user-sidebar-img" src="<%= user.escape('image_url') %>" alt="image can't be found :(("/>
 </div>
 
 <hr>
+
 <div class="sidebar-userinfo">
   <h1 class="sidebar-username"><a class="clickable" id="sidebar-title" href="#"><%= user.escape('username') %></a></h1>
   <p class="sidebar-useremail"><%= user.escape('email') %></p>
+
   <div class='sidebar-userbio'>
     <% if(user.escape('description').length > 0){ %>
       <%= user.escape('description') %>
     <% }else{ %>
-      <%= "Add a bio to your profile! :)" %>
+      <%= "Double click to add a bio to your profile! :)" %>
     <% } %>
   </div>
 </div>
@@ -29,7 +29,6 @@
     <%= user.track_count %><br>Tracks
   </div>
 </div>
-
 
 <hr>
 

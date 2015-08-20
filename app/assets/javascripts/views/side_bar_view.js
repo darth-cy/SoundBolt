@@ -24,7 +24,7 @@ Soundbolt.Views.SideBarView = Backbone.View.extend({
 
     var $field = this.$el.find(".sidebar-userbio");
     $field.html(JST['bio_form']());
-    $field.find('.user-description-input').focus();
+    $field.find('#user-description-input').focus();
   },
 
   updateBio: function(event){
