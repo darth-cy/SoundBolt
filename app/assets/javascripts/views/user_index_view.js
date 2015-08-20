@@ -76,6 +76,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
 
   addOwnTrackField: function(){
     var tracksFieldView = new Soundbolt.Views.TracksFieldView({
+      users: this.users,
       user: this.model,
       tracks: this.tracks,
       own: true

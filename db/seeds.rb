@@ -21,7 +21,7 @@ Genre.create!(name: "Rock", genre_color: "mediumvioletred");
 Genre.create!(name: "Vocal", genre_color: "olive");
 Genre.create!(name: "Electro", genre_color: "gold");
 Genre.create!(name: "Classics", genre_color: "crimson");
-Genre.create!(name: "Blue", genre_color: "navy");
+Genre.create!(name: "Blues", genre_color: "navy");
 Genre.create!(name: "Punk", genre_color: "darkmagenta"); #15
 
 User.create!(username: "Demony", password: "demo123", email: "demo@soundbolt.co", description: "Demony is Soundbolt's demo wizard that allows guest users to experience the features of this site. Sign up for an account to view full features!", image_url: "https://www.filepicker.io/api/file/ASwd6wBST4a5C2o1S4Jt/convert?crop=0,0,4987,4987")
