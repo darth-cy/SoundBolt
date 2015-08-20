@@ -193,6 +193,10 @@
   height: inherit;
 }
 
+.edit-track-form-field{
+  height: inherit;
+}
+
 .new-track-form {
   margin: 50px;
 }
@@ -235,12 +239,6 @@
   width: 80px;
   right: 200px;
   top: 20px;
-  background-color: darkgreen;
-  border: 1px solid darkgreen;
-}
-
-#track-edit:hover {
-  background-color: #004600;
 }
 
 // USER BIO FORM CSS
