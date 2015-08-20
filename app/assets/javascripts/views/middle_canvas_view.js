@@ -16,6 +16,7 @@ Soundbolt.Views.MiddleCanvas = Backbone.View.extend({
     this.listenTo(this.model, 'sync', this.render.bind(this));
     this.listenTo(this.collection, 'add sync', this.render.bind(this));
 
+    // RAZYNOIR: Fixed waveform.
     var dataPoints = Math.floor(this.audioMaster.duration);
     this.waveData = Array.apply(null, Array(dataPoints)).map(function(){
         return Math.floor(Math.random() * 50) + 100;
