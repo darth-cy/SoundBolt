@@ -4,6 +4,7 @@ Soundbolt.Views.UserIndex = Backbone.FusedView.extend({
 
   events: {
     "click a#sidebar-title": "displayOwnTracks",
+    "click img.user-sidebar-img": "displayOwnTracks",
     "click a#display-own-tracks": "displayOwnTracks",
     "click a#display-my-streams": "displayMyStreams",
     "click a#create-a-track": "createTrack",
