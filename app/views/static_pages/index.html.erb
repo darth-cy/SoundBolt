@@ -1,17 +1,19 @@
-
-<!-- RAZYNOIR: Home page contains three jumbotrons. -->
-
 <div class="jumbotron sign-in-jumbo">
   <div class="container">
+
     <div class="sign-in-jumbo-content">
       <h1>A Cloud Streaming Service</h1>
       <h2>With Lightning Inspiration</h2>
 
       <div class="sign-in-form-field">
+
         <form action="<%= session_url %>" class="form-group sign-in-form" method="post">
           <%= insert_authenticity_token %>
+
           <h2>Sign in to your Account</h2>
+
           <br>
+
           <label for="username_field"><h4>Email</h4></label>
           <input type="text" class="form-control" id="username_field" name="session[email]">
 
@@ -19,8 +21,9 @@
           <input type="password" class="form-control" id="password_field" name="session[password]">
 
           <br>
-          <input type="submit" value="Sign in" class="btn btn-primary">
-          <button class = 'btn btn-primary' id='user-demo-button'>Demo</button>
+
+          <input class="btn btn-default" id="user-signin-button" type="submit" value="Sign in">
+          <button class = 'btn btn-default' id='user-demo-button'>Demo</button>
         </form>
       </div>
     </div>
@@ -29,12 +32,19 @@
 
 <div class="jumbotron info-jumbo-first">
   <div class="container">
+
     <div class="title-info-content">
+
       <h1>Classic and Modern Alike</h1>
+
       <br>
+
       <br>
+
       <p>SoundBolt is the hub for a diverse pull of artists and creators. Here, no matter if you're into classics or hip hop, you can always find your place.</p>
+
       <br>
+
       <p>Most of our content comes from artists who believe in open source culture. Here, you can find like-minded people and engage in deep conversations ranging from music concerts to music philosophy.</p>
     </div>
   </div>
@@ -42,12 +52,18 @@
 
 <div class="jumbotron info-jumbo-second">
   <div class="container">
+
     <div class="title-info-content">
       <h1>Join the Creative Vibe</h1>
+
       <br>
+
       <br>
+
       <p>We are a direct extension of the music community at large. Join us and create content that can be used to power videos, movies, advertisements and more. Be a part of the creative vibe and start expressing.</p>
+
       <br>
+
       <p>Create an account today and follow your favorite artist. You can also interact with their music in real time and express your opinions on tracks that you like.</p>
     </div>
   </div>
@@ -61,6 +77,8 @@
     var userpassField = document.getElementById("password_field");
     usernameField.value = "demo@soundbolt.co";
     userpassField.value = "demo123";
+
+    $(document.getElementById('user-signin-button')).trigger('click');
   })
 
   $("#soundbolt-focus-master").css('display', 'none');
