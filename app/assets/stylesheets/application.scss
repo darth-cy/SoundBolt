@@ -23,9 +23,18 @@ html{
 }
 
 body {
-  // font-family: "Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
   background-color: black;
   position: relative;
+}
+
+textarea {
+  resize: none;
+}
+
+// Error styling
+#main-error-box{
+  width: 100%;
+  text-align: center;
 }
 
 .about-info-holder{
@@ -34,18 +43,14 @@ body {
   width: 600px;
   margin: 0 auto;
   text-align: center;
-}
 
-.about-info-holder > p {
-  font-size: 18px;
+  p {
+    font-size: 18px;
+  }
 }
 
 #soundbolt-player-master{
   z-index: 999;
-}
-
-textarea {
-  resize: none;
 }
 
 .title-navbar{
@@ -86,7 +91,19 @@ textarea {
   width: 100%;
 }
 
-.elegant-link{
+.elegant-link,
+.elegant-link:visited,
+.elegant-link:active,
+.elegant-link:link,
+.elegant-link:focus,
+{
+  color: white;
+  text-decoration: none;
+}
+
+.elegant-link:hover,
+{
+  cursor: pointer;
   color: white;
   text-decoration: none;
 }
@@ -97,7 +114,6 @@ textarea {
 }
 
 .sign-in-jumbo{
-  // background-image: url("https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/title-pic-1.jpg");
   background-image: url("https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/title-pic-2.jpg");
 }
 
@@ -118,14 +134,14 @@ textarea {
   margin-bottom: 100px;
 }
 
-.sign-in-form{
+.sign-in-form {
   margin: 0 auto;
   width: 400px;
   padding: 50px;
-}
 
-.sign-in-form > input{
-  text-align: center;
+  input {
+    text-align: center;
+  }
 }
 
 .sign-in-form .btn-primary{

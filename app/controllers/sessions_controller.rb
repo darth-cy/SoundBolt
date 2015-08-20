@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       log_in!(@user)
       redirect_to user_url(@user)
     else
-      flash[:errors] = "The credential match failed. Try again."
+      flash[:errors] = ["The credential match failed. Try again."]
       redirect_to root_url
     end
   end

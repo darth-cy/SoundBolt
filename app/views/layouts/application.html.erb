@@ -2,22 +2,21 @@
 <html>
 <head>
   <link rel="icon" type="image/png" href="https://s3.amazonaws.com/soundbolt-appacademy-2015/internal-images/favicon-32x32.png" sizes="32x32">
+
   <title>
     Soundbolt
   </title>
+
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 
   <!-- RAZYNOIR: Use Filepicker -->
   <script type="text/javascript" src="//api.filepicker.io/v2/filepicker.js"></script>
-  <script>
-    filepicker.setKey("ADEuemHr8QhKL2J02GXF7z");
-  </script>
-
+  <script>filepicker.setKey("ADEuemHr8QhKL2J02GXF7z");</script>
 </head>
-<body>
 
+<body>
   <nav class="navbar navbar-default navbar-fixed-top title-navbar">
     <div class="container title-container">
       <div class="navbar-header">
@@ -26,7 +25,6 @@
 
       <div class="nav navbar-nav navbar-right">
 
-        <!-- RAZYNOIR: Title elements customized styling. -->
         <div class="title-elements title-small"><a href="<%= about_url %>" class="elegant-link">About</a></div>
         <div class="title-elements title-small"><a href="<%= support_url %>" class="elegant-link">Support</a></div>
 
@@ -36,23 +34,28 @@
           <div class="title-elements title-small"><a href="<%= new_user_url %>" class="elegant-link">Sign Up</a></div>
         <% end %>
       </div>
-
     </div> <!-- RAZYNOIR: Title container close. -->
-  </nav>
+  </nav> <!-- RAZYNOIR: Navbar close. -->
 
+  <!-- RAZYNOIR: The modal overlay goes here. -->
   <div id="soundbolt-modal-field-master">
   </div>
-
-  <div class="navbar-buffer"></div>
-
-  <!-- RAZYNOIR-INCOMPLETE: Flash errors styling pending. -->
-  <% if flash[:errors] %>
-    <h1><%= flash[:errors] %></h1>
-  <% end %>
 
   <!-- RAZYNOIR: The focus overlay goes here. -->
   <div id="soundbolt-focus-master">
   </div>
+
+  <!-- RAZYNOIR: Navbar distance buffer. -->
+  <div class="navbar-buffer"></div>
+
+  <% if flash[:errors] %>
+    <div class="alert alert-dismissible alert-danger" id="main-error-box">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <% flash[:errors].each do |msg| %>
+        <strong><%= msg %></strong></br>
+      <% end %>
+    </div>
+  <% end %>
 
   <!-- RAZYNOIR: The main content goes here. -->
   <div id="soundbolt-content-master">
@@ -78,6 +81,5 @@
       var currentUserId = <%= current_user.id %>;
     <% end %>
   </script>
-
 </body>
 </html>

@@ -16,13 +16,10 @@
 class User < ActiveRecord::Base
   attr_reader :password
 
-  validates :email, :password_digest, :session_token, presence: true
+  validates :username, :description, :email, :password_digest, :session_token, presence: true
   validates :username, :email, uniqueness: true
+  validates :image_url, presence: { message: " should be present." }
   validates :password, length: { minimum: 6, allow_nil: true }
-
-  # validates :avatar, attachment_size: { less_than: 2.megabytes }
-  # has_attached_file :avatar, styles: { thumb: '100x100>', square: '200x200#' }, storage: :s3
-  # validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   after_initialize :ensure_session_token
   has_many :tracks

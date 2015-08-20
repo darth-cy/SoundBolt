@@ -2,11 +2,6 @@ class UsersController < ApplicationController
   before_action :bounce_back_if_not_signed_in, only: [:show, :destroy]
   before_action :redirect_home_if_signed_in, only: [:index, :new, :create]
 
-  def index
-    # nothing to access here.
-    # Dummy Comments
-  end
-
   def show
     @user = User.find(params[:id])
     render :show
@@ -32,14 +27,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # No edit and update actions available
-
-  # def edit
-  # end
-  #
-  # def update
-  # end
-
   def destroy
     @user = User.find(params[:id])
     @user.destroy
@@ -49,6 +36,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :confirm, :image_url)
+    params.require(:user).permit(:username, :email, :password, :confirm, :image_url, :description)
   end
 end

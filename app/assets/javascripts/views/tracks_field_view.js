@@ -37,7 +37,7 @@ Soundbolt.Views.TracksFieldView = Backbone.FusedView.extend({
     }else{
       var tracks = this.collection;
     }
-    debugger;
+
     tracks.each(function(track){
       var trackView = new Soundbolt.Views.TrackView({
         artist: thisField.users.get(track.get("user_id")),

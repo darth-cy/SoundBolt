@@ -6,24 +6,23 @@ Rails.application.routes.draw do
 
   resources :static_pages, only: [:index, :about, :support]
 
-  resources :users
+  resources :users, only: [:show, :new, :create, :destroy]
   resource :session, only: [:create, :destroy]
 
   namespace :api, defaults: { format: :json } do
-    resources :users, only: [:index, :show, :update, :create, :destroy] do
+    resources :users, except: [:new, :edit] do
       resources :streams, only: [:index]
       resources :tracks, only: [:index]
     end
 
-    resources :tracks, only: [:index, :show, :create, :update, :destroy] do
+    resources :tracks, except: [:new, :edit] do
       resources :comments, only: [:index]
     end
 
-    resources :comments
+    resources :comments, except: [:index, :new, :edit]
     resources :followings, only: [:index, :show, :create, :update, :destroy]
 
     resources :chategorizations, only: [:show, :create, :destroy]
     resources :genres, only: [:index, :show, :create, :destroy]
-
   end
 end
