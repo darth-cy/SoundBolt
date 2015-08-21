@@ -43,11 +43,11 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
 
     // RAZYNOIR-WARNING: Hard-coded canvas size. Canvas size not dynamic.
     this._drawingSchedule = new SnowLoop(
-      300,
-      300
+      // 300,
+      // 300
 
-      // canvasEl.offsetWidth,
-      // canvasEl.offsetHeight
+      canvasEl.offsetWidth,
+      canvasEl.offsetHeight
     )
     this._drawingSchedule.start(canvasEl);
   }
