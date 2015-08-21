@@ -35,3 +35,23 @@
   color: #2F4F4F;
   text-decoration: none;
 }
+
+
+.clickable-white-inner{
+  color: white;
+}
+
+.clickable-white-inner:visited,
+.clickable-white-inner:active,
+.clickable-white-inner:link,
+.clickable-white-inner:focus,
+{
+  color: white;
+  text-decoration: none;
+}
+
+.clickable-white-inner:hover{
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}

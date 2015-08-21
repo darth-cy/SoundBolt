@@ -18,12 +18,18 @@
 </marquee>
 
 <% if(user.follower_ids.indexOf(currentUser.id) !== -1){ %>
-  <a class="btn btn-danger" id="unfollow-user" href="#">Remove from Stream</a>
+  <button class="btn btn-danger spin-button" id="unfollow-user" href="#">
+    <a class="clickable-white-inner" href="#">Remove from Stream</a>
+  </button>
 <% }else{ %>
-  <a class="btn btn-primary" id="follow-user" href="#">Add to My Stream</a>
+  <button class="btn btn-primary spin-button" id="follow-user" href="#">
+    <a class="clickable-white-inner" href="#">Add to My Stream</a>
+  </button>
 <% } %>
 
-<a class="btn btn-warning" id="track-switch" href="#">Info</a>
+<button class="btn btn-warning user-tab-info-button" id="track-switch">
+  <a class="clickable-white-inner" href="#">Info</a>
+</button>
 
 <hr>
 

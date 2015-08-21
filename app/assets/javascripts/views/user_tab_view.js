@@ -13,8 +13,14 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
   initialize: function(options){
     this.model = options.user;
     this.currentUser = options.currentUser;
+    this.loading = false;
 
-    this.listenTo(this.model, 'sync', this.render.bind(this));
+    this.listenTo(this.model, 'sync', this.syncRender.bind(this));
+  },
+
+  syncRender: function(){
+    this.loading = false;
+    this.render();
   },
 
   render: function(){
@@ -23,8 +29,17 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
       currentUser: this.currentUser
     });
 
+    if(this.loading){
+      this.addSpinner();
+    }
+
     this.$el.html(content);
     return this;
+  },
+
+  addSpinner: function(){
+    this.$el.find(".spin-button").prop("disabled", true);
+    this.$el.find(".spin-button > a").after(new Spinner(window.spinnerOpts).spin().el);
   },
 
   followUser: function(event){
@@ -37,13 +52,15 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
       following_user_id: this.currentUser.id,
     })
 
+    this.loading = true;
+    this.addSpinner();
+
     newFollowing.save({}, {
       success: function(){
         thisView.model.fetch();
         thisView.currentUser.fetch();
       }
     });
-
   },
 
   seeInfoUser: function(event){
@@ -64,6 +81,9 @@ Soundbolt.Views.UserTab = Backbone.View.extend({
       followed_id: this.model.id,
       following_id: this.currentUser.id
     })[0];
+
+    this.loading = true;
+    this.addSpinner();
 
     followingToDelete.destroy({
       success: function(){
