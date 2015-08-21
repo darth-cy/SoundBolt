@@ -14,7 +14,19 @@ Soundbolt.Views.UserModal = Backbone.View.extend({
     this.model = options.user;
     this.model.fetch();
 
-    this.listenTo(this.model, 'sync', this.render.bind(this));
+    this.loading = false;
+
+    this.listenTo(this.model, 'sync', this.syncRender.bind(this));
+  },
+
+  syncRender: function(){
+    this.loading = false;
+    this.render();
+  },
+
+  addSpinner: function(){
+    this.$el.find(".spin-button").prop("disabled", true);
+    this.$el.find(".spin-button > a").after(new Spinner(window.spinnerOpts).spin().el);
   },
 
   render: function(){
@@ -37,7 +49,7 @@ Soundbolt.Views.UserModal = Backbone.View.extend({
 
   switchTrack: function(event){
     event.preventDefault();
-    
+
     var track_id = $(event.currentTarget).data('track-id');
     Backbone.history.navigate("trackswitch/" + track_id, { trigger: true });
   },
@@ -51,6 +63,9 @@ Soundbolt.Views.UserModal = Backbone.View.extend({
       followed_user_id: this.model.id,
       following_user_id: this.currentUser.id,
     })
+
+    this.loading = true;
+    this.addSpinner();
 
     newFollowing.save({}, {
       success: function(){
@@ -68,6 +83,9 @@ Soundbolt.Views.UserModal = Backbone.View.extend({
       followed_id: this.model.id,
       following_id: this.currentUser.id
     })[0];
+
+    this.loading = true;
+    this.addSpinner();
 
     followingToDelete.destroy({
       success: function(){

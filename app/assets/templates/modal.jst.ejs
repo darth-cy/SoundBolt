@@ -6,11 +6,14 @@
         <div class="user-modal-stuff-container">
 
           <% if(user.follower_ids.indexOf(currentUser.id) !== -1){ %>
-            <a class="btn btn-danger" id="modal-unfollow-user" href="#">Remove from Stream</a>
+            <button class="btn btn-danger spin-button" id="modal-unfollow-user">
+              <a class="clickable-white-inner" href="#">Remove from Stream</a>
+            </button>
           <% }else{ %>
-            <a class="btn btn-primary" id="modal-follow-user" href="#">Add to My Stream</a>
+            <button class="btn btn-primary spin-button" id="modal-follow-user">
+              <a class="clickable-white-inner" href="#">Add to My Stream</a>
+            </button>
           <% } %>
-
 
           <button class='btn' id="modal-close-button" href="#">X Close</button>
 
