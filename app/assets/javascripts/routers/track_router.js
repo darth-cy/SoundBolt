@@ -29,6 +29,7 @@ Soundbolt.Routers.TrackRouter = Backbone.Router.extend({
 
     this._swap(playerView);
     this._swapTrack(track);
+    Backbone.history.navigate("");
   },
 
   enterFocus: function(){

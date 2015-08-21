@@ -26,6 +26,10 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
   switchFocus: function(event){
     event.preventDefault();
 
+    var $focusSwitch = this.$el.find("#focus-mode-switch")
+    $focusSwitch.removeClass("focus-mode-switch-glow-notice");
+    $focusSwitch.off("transitionend");
+
     if(window.focused){
       window.focused = false;
       Backbone.history.navigate("exitfocus", {trigger: true});
@@ -40,7 +44,6 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
   },
 
   render: function(){
-    // var thisController = this;
     if(window.currentTrackId){
       var content = this.template({ track: this.model });
     }else{
@@ -48,7 +51,38 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
     }
     this.$el.html(content);
 
+    this.audioMaster = this.$el.find("#player-master-audio");
+    if(this.audioMaster.length > 0){
+      this.$el.find("#focus-mode-switch").prop("disabled", true);
+      this.audioMaster[0].oncanplay = this.glowSwitch.bind(this);
+    }
+
     return this;
+  },
+
+  glowSwitch: function(){
+    var thisView = this;
+
+    if(!thisView.glowCount){
+      thisView.glowCount = 0;
+    }
+
+    var $visualSwitch = this.$el.find("#focus-mode-switch");
+    if($visualSwitch.attr("disabled")){
+      $visualSwitch.prop("disabled", false);
+    }
+
+    $visualSwitch.addClass("focus-mode-switch-glow-notice");
+
+    $visualSwitch.one("transitionend", function(){
+      $visualSwitch.removeClass("focus-mode-switch-glow-notice");
+      $visualSwitch.one("transitionend", function(){
+        thisView.glowCount += 1;
+        if(thisView.glowCount < 3){
+          thisView.glowSwitch();
+        }
+      })
+    })
   },
 
   updateTime: function(){
