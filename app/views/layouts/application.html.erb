@@ -20,18 +20,18 @@
   <nav class="navbar navbar-default navbar-fixed-top title-navbar">
     <div class="container title-container">
       <div class="navbar-header">
-        <div class="title-elements"><a href="<%= root_url %>" class="elegant-link"><strong>SoundBolt</strong></a></div>
+        <div class="title-elements"><a href="<%= root_url %>" class="elegant-link clickable-white"><strong>SoundBolt</strong></a></div>
       </div>
 
       <div class="nav navbar-nav navbar-right">
 
-        <div class="title-elements title-small"><a href="<%= about_url %>" class="elegant-link">About</a></div>
-        <div class="title-elements title-small"><a href="<%= support_url %>" class="elegant-link">Support</a></div>
+        <div class="title-elements title-small"><a href="<%= about_url %>" class="clickable-white">About</a></div>
+        <div class="title-elements title-small"><a href="<%= support_url %>" class="clickable-white">Support</a></div>
 
         <% if current_user %>
-          <div class="title-elements title-small"><a rel="nofollow" data-method="delete" href="<%= session_url %>" class="elegant-link">Sign Out</a></div>
+          <div class="title-elements title-small"><a rel="nofollow" data-method="delete" href="<%= session_url %>" class="clickable-white">Sign Out</a></div>
         <% else %>
-          <div class="title-elements title-small"><a href="<%= new_user_url %>" class="elegant-link">Sign Up</a></div>
+          <div class="title-elements title-small"><a href="<%= new_user_url %>" class="clickable-white">Sign Up</a></div>
         <% end %>
       </div>
     </div> <!-- RAZYNOIR: Title container close. -->

@@ -52,5 +52,7 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
         Soundbolt.Utilities.showErrors($domElement, response);
       }
     })
+
+    window.scrollTo(0, 0);
   }
 })

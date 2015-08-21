@@ -12,8 +12,6 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
   render: function(){
     var content = this.template({ track: this.model });
     this.$el.html(content);
-
-    // RAZYNOIR-WARNING: Rendering Frame too high.
     this._seekingSechdule = setInterval(this.seekAndDraw.bind(this), 10);
     return this;
   },
