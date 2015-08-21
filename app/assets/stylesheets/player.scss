@@ -8,11 +8,11 @@
 
 #focus-mode-switch {
   float: right;
-  transition: box-shadow 1s;
+  transition: box-shadow 0.7s;
 }
 
 .focus-mode-switch-glow-notice{
-  box-shadow: -10px -10px 100px 30px #00CED1;
+  box-shadow: -10px -10px 100px 30px white;
 }
 
 #audio-seeking-control {

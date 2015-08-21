@@ -18,6 +18,7 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
     }
 
     this.progressSyncSchedule = setInterval(this.updateTime.bind(this), 500);
+    this.visual = true;
 
     this.listenTo(this.model, 'change reset', this.render.bind(this));
     this.listenTo(this.model, 'switch', this.render.bind(this));
@@ -27,7 +28,9 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
     event.preventDefault();
 
     var $focusSwitch = this.$el.find("#focus-mode-switch")
-    $focusSwitch.removeClass("focus-mode-switch-glow-notice");
+    if($focusSwitch.hasClass("focus-mode-switch-glow-notice")){
+      $focusSwitch.removeClass("focus-mode-switch-glow-notice");
+    }
     $focusSwitch.off("transitionend");
 
     if(window.focused){
@@ -52,9 +55,9 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
     this.$el.html(content);
 
     this.audioMaster = this.$el.find("#player-master-audio");
-    if(this.audioMaster.length > 0){
+    if(this.visual && this.audioMaster.length > 0){
       this.$el.find("#focus-mode-switch").prop("disabled", true);
-      this.audioMaster[0].oncanplay = this.glowSwitch.bind(this);
+      this.audioMaster.one("canplay", this.glowSwitch.bind(this));
     }
 
     return this;
@@ -78,7 +81,7 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
       $visualSwitch.removeClass("focus-mode-switch-glow-notice");
       $visualSwitch.one("transitionend", function(){
         thisView.glowCount += 1;
-        if(thisView.glowCount < 3){
+        if(thisView.glowCount < 4){
           thisView.glowSwitch();
         }
       })
@@ -116,6 +119,8 @@ Soundbolt.Views.PlayerMainView = Backbone.FusedView.extend({
   },
 
   seekAudio: function(event){
+    event.preventDefault();
+
     var audioMaster = document.getElementById("player-master-audio");
     var seekControl = document.getElementById('audio-seeking-control');
     var progress_header = document.getElementById('player-master-inner-progress');

@@ -21,6 +21,8 @@ window.Soundbolt = {
       , zIndex: 150
     }
 
+    window.noticeVisual = true;
+
     new Soundbolt.Routers.Router({
       $rootEl: $("#soundbolt-content-master"),
     });
