@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       resources :tracks, only: [:index]
     end
 
-    resources :tracks, except: [:new, :edit] do
+    resources :tracks, except: [:index, :new, :edit] do
       resources :comments, only: [:index]
     end
 

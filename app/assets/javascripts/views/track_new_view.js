@@ -40,7 +40,7 @@ Soundbolt.Views.TrackNewView = Backbone.View.extend({
 
     newTrack.save(data.track, {
       wait: true,
-      success: function(model){
+      success: function(model, response){
         thisView.collection.add(model);
         thisView.model.fetch(); // refetch the user
         model.fetch();
