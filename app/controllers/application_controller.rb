@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   def bounce_back_if_not_signed_in
     unless current_user
-      flash[:errors] = "You must sign in to view features!"
+      flash[:errors] = ["You must sign in to view features!"]
       redirect_to root_url
     end
   end
