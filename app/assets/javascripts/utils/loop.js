@@ -14,8 +14,6 @@
   SnowLoop.prototype.render = function(ctx){
     ctx.clearRect(0, 0, this.xDim, this.yDim);
 
-    // ctx.scale(0.5, 0.5); // WARNING: Scale the canvas
-
     ctx.fillStyle = "black";
     ctx.fillRect(0,0,this.xDim,this.yDim);
 
@@ -59,11 +57,8 @@
   }
 
   SnowLoop.prototype.start = function (canvasEl) {
-    // get a 2d canvas drawing context. The canvas API lets us call
-    // a `getContext` method on a canvas DOM element.
     var ctx = canvasEl.getContext("2d");
 
-    // render at 60 FPS
     this._interval = window.setInterval((function () {
       this.createSnow(SnowLoop.density);
       this.deleteSnow();

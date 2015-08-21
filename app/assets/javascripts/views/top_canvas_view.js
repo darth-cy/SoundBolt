@@ -39,13 +39,7 @@ Soundbolt.Views.TopCanvas = Backbone.View.extend({
   },
 
   draw: function(canvasEl){
-    // RAZYNOIR-BUG: CANVAS ZOOM
-
-    // RAZYNOIR-WARNING: Hard-coded canvas size. Canvas size not dynamic.
     this._drawingSchedule = new SnowLoop(
-      // 300,
-      // 300
-
       canvasEl.offsetWidth,
       canvasEl.offsetHeight
     )

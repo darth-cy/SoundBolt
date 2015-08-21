@@ -1,6 +1,5 @@
 (function(){
   if(typeof Snowballs === "undefined"){
-    // window.SnowBalls = {};
   }
 
   SnowBall = SnowBalls.SnowBall = function(xCord, yCord, radius, speed){
