@@ -11,13 +11,13 @@
     <label for="title_field">Title</label>
 
     <input type="text" name="track[title]"
-           class="form-control" id="title_field" value="<%= track.escape('title') %>">
+           class="form-control" id="title_field" value="<%= track.escape('title') %>" placeholder="Edit the Title">
 
     <br>
 
     <label for="description_field">Description</label>
     <textarea name="track[description]"
-              class="form-control" id="description_field"><%= track.escape('description') %></textarea>
+              class="form-control" id="description_field" placeholder="Change Description"><%= track.escape('description') %></textarea>
 
     <br>
 

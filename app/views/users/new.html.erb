@@ -7,31 +7,31 @@
 
     <label for="email_field">Email</label>
     <input type="text" name="user[email]"
-           class="form-control" id="email_field" value="<%= @user.email %>">
+           class="form-control" id="email_field" value="<%= @user.email %>" placeholder="Enter Email Here">
 
     <br>
 
     <label for="password_field">Password</label>
     <input type="password" name="user[password]"
-           class="form-control" id="password_field">
+           class="form-control" id="password_field" placeholder="Choose a Password">
 
     <br>
 
     <label for="password_confirm_field">Confirm Password</label>
     <input type="password" name="user[confirm]"
-          class="form-control" id="password_confirm_field">
+          class="form-control" id="password_confirm_field" placeholder="Confirm Password">
 
     <hr>
 
     <label for="username_field">Choose A Username</label>
     <input type="text" name="user[username]"
-          class="form-control" id="username_field" value="<%= @user.username %>">
+          class="form-control" id="username_field" value="<%= @user.username %>" placeholder="Choose an Awsome Name">
 
     <br>
 
     <label for="description_field">Add a Short Bio</label>
     <textarea name="user[description]"
-          class="form-control" id="description_field"></textarea>
+          class="form-control" id="description_field" placeholder="Tell Us about Yourself"></textarea>
 
     <hr>
 
@@ -40,7 +40,7 @@
            data-fp-crop-ratio="1">
 
     <br>
-    <br>
+    <hr>
 
     <input class="btn btn-primary" type="submit" value="Submit">
   </form>
