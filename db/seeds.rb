@@ -172,12 +172,69 @@ Following.create!(following_user_id: 9, followed_user_id: 2)
 
 # ALL COMMENTS CREATION
 comments = [
-  "This part of the track is very natural! I like it a lot!"
+  "This part is very natural!",
+  "Weeeeeee!",
+  "Awsome!",
+  "I can listen to this all day.",
+  "I've loved this since childhood.",
+  "What a nice track.",
+  "This part is very fun!",
+  "The beats are good.",
+  "Hope you can create more of these",
+  "When are you back in the city?",
+
+  "Do you make tours?",
+  "Come to our city!!",
+  "There's so much talent showing here.",
+  "Do you do remixes?",
+  "This part sounds smooth!",
+  "Where do you record?",
+  "Are you releasing the next album?",
+  "5 starts out of 5.",
+  "Amazing!",
+  "Very good organization here.",
+
+  "Bravo!!",
+  "Well done.",
+  "Creators like this are hard to find.",
+  "I've never heard a track like this.",
+  "You are a natural!",
+  "Your other works are good too!",
+  "Fantastic!",
+  "That's dope man.",
+  "Yeah!",
+  "Yea!",
+
+  "yo yo yo",
+  "High and fly",
+  "Right on!",
+  "This is so good.",
+  "I love you.",
+  "Marry me.",
+  "Why is this so nice.",
+  "Greatest track ever",
+  "Best artist ever",
+  "Nothing compares to this.",
+
+  "unbelievable!",
+  "Unreal!",
+  "More than a track.",
+  "Very intricute.",
+  "Some nice techniques here.",
+  "Way to go!",
+  "Very relaxing too.",
+  "Go rocky go.",
+  "Best song ever.",
+  "Curiously engaging!"
 ]
 
+song_time = [290,250,190,140,170,  70,200,50,200,200,  80,110,210,110,260,  310,210,270,260]
 
-
-
+(1..19).each do |track_num|
+  (1..20).each do |comment_num|
+    Comment.create!(user_id: (rand(9) + 1).floor, track_id: track_num, content: comments.sample, timeline_position: rand(song_time[track_num - 1]))
+  end
+end
 
 # User.create!(username: "WinterChill", password: "winter123", email: "winter@gmail.com", description: "winter things", image_url: "https://www.filepicker.io/api/file/OxKrtQZRpacubokrXu4f/convert?crop=0,0,1200,1200")
 # User.create!(username: "BrensonK", password: "brenson123", email: "brenson@gmail.com", description: "Hey I'm brenson and live in New England. I sometimes go to night clubs to listen to some good blues and you can find me in the bars a lot.", image_url: "")
