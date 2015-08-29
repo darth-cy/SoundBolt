@@ -29,12 +29,12 @@ As a SoundBolt user, you can:
 
 ## Selected Screenshots
 
-+ Splash Page:
+### Splash Page
 ![splash]
 
 [splash]: ./docs/images/splash.png
 
-+ User Explore Page:
+### User Explore Page
 ![user-explore]
 
 [user-explore]: ./docs/images/user_explore.png
@@ -75,7 +75,7 @@ Here is the sample template:
 end
 ```
 
-Here is the modal screenshot:
+### Modal Screenshot
 ![user-modal]
 
 [user-modal]: ./docs/images/modal.png
@@ -103,7 +103,7 @@ Soundbolt.Graphics.drawMusicWave = function(context, data, startX, startY, block
 };
 ```
 
-Here is the screenshot for the visualizer:
+### Visualizer Screenshot
 ![visualizer]
 
 [visualizer]: ./docs/images/visualizer.png
